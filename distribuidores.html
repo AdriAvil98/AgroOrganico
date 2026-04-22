@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribuidores - AGRO ORGANICO</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/favicon.svg" alt="Agro Organico Logo" class="logo-img">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="distribuidores.html" class="active-link">Distribuidores</a></li>
+                    <li><a href="#">Contactos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-distribuidores">
+        <div class="container hero-dist-content">
+            <h1>AGROSERVICIOS</h1> <p>Encuentra en estos puntos nuestros productos de alta calidad, diseñados para mejorar la productividad de tu cultivo de forma eficiente y amigable con el medio ambiente.</p> </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="map-search-header">
+                <h2>Encuentra el Distribuidor más cercano</h2> <p>Consulta los diferentes distribuidores en el mapa y ubica el más cercano según tu provincia y ciudad</p> </div>
+
+            <div class="distributor-finder-layout">
+                <aside class="distributor-list">
+                        <div class="controls-container">
+                            <div class="search-bar">
+                                <i class="fas fa-search"></i>
+                                <input type="text" id="searchInput" placeholder="Escribe un nombre o ciudad..." onkeyup="filterSystem()">
+                            </div>
+
+                                <div class="filter-group">
+                                    <button class="filter-btn active" onclick="filterByProvince('ALL')">Todas</button>
+                                 
+                                </div>
+                            </div>
+
+                                
+                                
+                            
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=AGRICOLA%20AGRO%20FERTIL%2C%20RICAURTE%2C%20Ecuador&output=embed', 'https://maps.app.goo.gl/tbiPXGSbycQFVegm8?g_st=aw', this)">
+                                    <h3>AGRICOLA AGRO FERTIL</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / URDANETA / RICAURTE / AV. PINARGOTE S/N Y BARTOLOME BASTIDOS</p>
+                                    <p><i class="fas fa-phone"></i> 09398974700</p>
+                                    <span class="tag-province">LOS RÍOS</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.5756158,-79.4632804&output=embed', 'https://maps.app.goo.gl/r6AvXiHNRb7rAUF77', this)">
+                                    <h3>AGRO INTEGRAL AZOGUE</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / URDANETA / RICAURTE / CARLOS OLMES S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0991041413</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.5748395,-79.4709751&output=embed', 'https://maps.app.goo.gl/kG7n4CMT6vNHHreg8', this)">
+                                    <h3>AGROVENTANENSE</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / URDANETA / RICAURTE / S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0986075363</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.5722381,-79.4695171&output=embed', 'https://maps.app.goo.gl/C2Lb4rSYykYvaPo47', this)">
+                                    <h3>AGRO-GENFER-AGRICSA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / URDANETA / RICAURTE / AV. PINARGOTE S/N Y VIDAL MIRANDA</p>
+                                    <p><i class="fas fa-phone"></i> 0939433902</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.5740015,-79.4680842&output=embed', 'https://maps.app.goo.gl/dvc633QVWquJqhDB9', this)">
+                                    <h3>HNOS. VISCARRA INSUMOS AGRÍCOLAS</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / URDANETA / RICAURTE / S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0969594044</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.7990889,-79.5221434&output=embed', 'https://maps.app.goo.gl/gg2X9AmmP66rsA27A', this)">
+                                    <h3>AGROFREIRE S.A.</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / BABAHOYO / LA UNION / ROBERTO LAMAN S/N Y 6 DE OCTUBRE</p>
+                                    <p><i class="fas fa-phone"></i> 0969487413</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.708626,-79.3953546&output=embed', 'https://maps.app.goo.gl/LdqdaFapcWK8hSeB7', this)">
+                                    <h3>AGRICOLA AGRO MILPA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / BABAHOYO / LA UNION / JUAN CHANALATA 5 Y Y TRAVERSAL</p>
+                                    <p><i class="fas fa-phone"></i> 0969875927</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.7990875,-79.5318812&output=embed', 'https://maps.app.goo.gl/cXoD6W1Z5fk9rXtL9', this)">
+                                    <h3>GIVENCROP S.A.S</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / BABAHOYO / BABAHOYO / PROYECTO CEDEGE Y KM DOCE Y MEDIO</p>
+                                    <p><i class="fas fa-phone"></i> 0999328697</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.1074567,-79.2422375&output=embed', 'https://maps.app.goo.gl/VSHiS5LMArke48JXA', this)">
+                                    <h3>AGRO ELVIS</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / BABAHOYO / FEBRES CORDERO (LAS JUNTAS) (CAB. EN MATA DE CACAO)</p>
+                                    <p><i class="fas fa-phone"></i> 0969793958</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=AGROPECUARIA%20Y%20FERRETERIA%20LA%20GRANJA%2C%20BUENA%20FE%2C%20Ecuador&output=embed', 'https://maps.app.goo.gl/XXhGx6rJMaxpfZDd8?g_st=aw', this)">
+                                    <h3>AGROPECUARIA Y FERRETERIA LA GRANJA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / BUENA FE / SAN JACINTO DE BUENA FE / AV. 7 DE AGOSTO 1131 Y GABRIEL RIVERA</p>
+                                    <p><i class="fas fa-phone"></i> 0994670483</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.8691919,-79.4910492&output=embed', 'https://maps.app.goo.gl/fydFrWPrYeiFzbhS6', this)">
+                                    <h3>AGROERAZO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / BUENA FE / SAN JACINTO DE BUENA FE / PRINCIPAL S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0999503239</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.870451,-79.491133&output=embed', 'https://maps.app.goo.gl/nc8kcEzq9d4USKGx8', this)">
+                                    <h3>AGROPECUARIA Y SERVICIOS FIGUEROA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / BUENA FE / SAN JACINTO DE BUENA FE / AV. 7 DE AGOSTO 1 Y LOS RIOS</p>
+                                    <p><i class="fas fa-phone"></i> 099 705 0396</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.8943024,-79.4924896&output=embed', 'https://maps.app.goo.gl/gZ5Ek7H6WBZ1M2CK6', this)">
+                                    <h3>AGROYONG</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> BUENA FE / SAN JACINTO DE BUENA FE / AV. 7 DE AGOSTO 1402 Y TORIBIO</p>
+                                    <p><i class="fas fa-phone"></i> 0985449889</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=SERVIAGRO%2C%20nan%2C%20Ecuador&output=embed', 'https://maps.app.goo.gl/nKSRmpAHkQNeLa9b9?g_st=aw', this)">
+                                    <h3>SERVIAGRO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / BUENA FE / SAN JACINTO DE BUENA FE / MARIANA RODRIGUEZ 709 Y GABRIEL RIVERA</p>
+                                    <p><i class="fas fa-phone"></i> 0993504914</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.9730197,-79.535118&output=embed', 'https://maps.app.goo.gl/RUszpSM4vWrSB39R9', this)">
+                                    <h3>AGROPECUARIA LA GRANJA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / BUENA FE / SAN JACINTO DE BUENA FE / MARIANA RODRIGUEZ 614 Y LUCIA GILCES</p>
+                                    <p><i class="fas fa-phone"></i> 0993765463</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=AGROFERRETERIA%20FUMISA%2C%20FUMISA%2C%20Ecuador&output=embed', 'https://maps.app.goo.gl/JaZtdH6HD8bQbLNq6?g_st=aw', this)">
+                                    <h3>AGROFERRETERIA FUMISA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / BUENA FE / SAN JACINTO DE BUENA FE / RCTO. FUMISA VIA STO DOMINGO SN</p>
+                                    <p><i class="fas fa-phone"></i> 0991520866</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.6204302,-79.4306175&output=embed', 'https://maps.app.goo.gl/X5TyaNxibC1zzKh86', this)">
+                                    <h3>AGROVETERINARIA EL RANCHITO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / LOS ANGELES</p>
+                                    <p><i class="fas fa-phone"></i> 099 345 7930</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.5714833,-79.3717649&output=embed', 'https://maps.app.goo.gl/2cKS84uiAuj9xgmf8', this)">
+                                    <h3>AGROVETERINARIA EL RANCHO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / BUENA FE / PATRICIA PILAR / GRANDA CENTENO S/N Y CARCELEN</p>
+                                    <p><i class="fas fa-phone"></i> 0991941831</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.1873561,-79.5139136&output=embed', 'https://maps.app.goo.gl/fA1CsQivrkj6Exfc9', this)">
+                                    <h3>AGROQUIMICOS QUINTANA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / MOCACHE / MOCACHE / AV RAUL TRIVINO S/N Y CALLE PRINCIPAL</p>
+                                    <p><i class="fas fa-phone"></i> 0981245098</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=AGRO%20INTEGRAL%20AZOGUE%2C%20nan%2C%20Ecuador&output=embed', 'https://maps.app.goo.gl/PUx9a474TzVq6z9s7?g_st=aw', this)">
+                                    <h3>AGRO INTEGRAL AZOGUE</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / MOCACHE / MOCACHE / COOP 24 DE MAYO SN Y JAIME ROLDOS Y CUARTA</p>
+                                    <p><i class="fas fa-phone"></i> 0991041413</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.7868647,-79.2953709&output=embed', 'https://maps.app.goo.gl/3NyNpdMymBT1W7qFA', this)">
+                                    <h3>AGRI EXPERT</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / MONTALVO / MONTALVO / AV. 25 DE ABRIL S/N Y ARMANDO NARANJO</p>
+                                    <p><i class="fas fa-phone"></i> 0982876334</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.7864995,-79.295795&output=embed', 'https://maps.app.goo.gl/Ktc4BjGp6DFVfLue9', this)">
+                                    <h3>INSUMOS AGRICOLAS ENMANUEL</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / MONTALVO / MONTALVO / 25 DE ABRIL S/N Y LA Y</p>
+                                    <p><i class="fas fa-phone"></i> 0983359433</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=AGROQUIMICOS%20JAVIER%20VILLACIS%20G%2C%20nan%2C%20Ecuador&output=embed', 'https://maps.app.goo.gl/tKs9UUwFYuEHgBnx8?g_st=aw', this)">
+                                    <h3>AGROQUIMICOS JAVIER VILLACIS G</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / MONTALVO / MONTALVO / AV. 25 DE ABRIL S/N Y ANTONIO DE LA BASTIDAS</p>
+                                    <p><i class="fas fa-phone"></i> 099 372 0870</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.4366431,-79.7667354&output=embed', 'https://maps.app.goo.gl/zX6AfVvJCyq6PsGZ9', this)">
+                                    <h3>AGROVENTANANSE</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / PALENQUE / PALENQUE / LA ROCHA S/N Y JAIME ASPIAZU SEMINARIO</p>
+                                    <p><i class="fas fa-phone"></i> 0992253307</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.3999171,-79.8125583&output=embed', 'https://maps.app.goo.gl/2TGgviQjnfYzP1bVA', this)">
+                                    <h3>AGRO INTEGRAL AZOGUE</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / PALENQUE / PALENQUE / ROCHA S/N Y JUAN CARLOS ASPIAZU</p>
+                                    <p><i class="fas fa-phone"></i> 0991041413</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.5499744,-79.5377791&output=embed', 'https://maps.app.goo.gl/2FA94Ad7Vt5pgKn39', this)">
+                                    <h3>COMERCIAL AGROPECUARIO MACIAS AGROMAC</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / PUEBLO VIEJO / PUEBLOVIEJO / 24 DE MAYO SN Y MIGUEL SUAREZ SEMINARIO</p>
+                                    <p><i class="fas fa-phone"></i> 096 312 4595</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.6243142,-79.5649515&output=embed', 'https://maps.app.goo.gl/BaCjXSKLEDeLwNtUA', this)">
+                                    <h3>LOS AGROQUIMICOS LOS TRONCOS</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / PUEBLO VIEJO / SAN JUAN / CINCO DE JUNIO S/N Y SN</p>
+                                    <p><i class="fas fa-phone"></i> 0998227395</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.0233806,-79.4689852&output=embed', 'https://maps.app.goo.gl/4Jg4mVtVB5Jhkkph9', this)">
+                                    <h3>ALMACEN AGROPECUARIO LA HACIENDA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / QUEVEDO / SIETE DE OCTUBRE / 7 DE OCTUBRE SL 9 Y CALLE CUARTA</p>
+                                    <p><i class="fas fa-phone"></i> 0994856704</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.01635,-79.4527233&output=embed', 'https://maps.app.goo.gl/jzDjTZkgkCEFvSw86', this)">
+                                    <h3>AGRIMEN S.A.</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / QUEVEDO / SAN CRISTOBAL / PRINCIPAL S/N</p>
+                                    <p><i class="fas fa-phone"></i> 099 089 4490</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.023447,-79.4652715&output=embed', 'https://maps.app.goo.gl/LimS91NqSmdmR56TA', this)">
+                                    <h3>AGROPECUARIA DON NICO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / QUEVEDO / SAN CAMILO / JUAN MONTALVO 508 Y GUATEMALA</p>
+                                    <p><i class="fas fa-phone"></i> 0991787883</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.0126022,-79.446208&output=embed', 'https://maps.app.goo.gl/4LiMhcnR5vDt2CZE9', this)">
+                                    <h3>FERREAGROVET EL GIRASOL</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / QUEVEDO / SAN CRISTOBAL / PRINCIPAL SL-3</p>
+                                    <p><i class="fas fa-phone"></i> 0939130102</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.0202364,-79.4569645&output=embed', 'https://maps.app.goo.gl/DrBpqtzm8uaprmjP9', this)">
+                                    <h3>SERVIPAXA S.A.</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / QUEVEDO / SAN CRISTOBAL / PRINCIPAL S/N</p>
+                                    <p><i class="fas fa-phone"></i> 052780253</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.1172967,-79.4400752&output=embed', 'https://maps.app.goo.gl/CheDFhHqe3sLe61T7', this)">
+                                    <h3>TIENDA AGRICOLA KABAJ</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / QUEVEDO / SAN CARLOS / SANTA ROSA S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0985070626</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.1153229,-79.4377478&output=embed', 'https://maps.app.goo.gl/uKnrTXtmN2wNYwS1A', this)">
+                                    <h3>NUTRIKING</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / QUEVEDO / SAN CARLOS / AV. 2 DE JULIO S/N Y Y ESTENIO BURGOS</p>
+                                    <p><i class="fas fa-phone"></i> 0989670299</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.1164062,-79.4365384&output=embed', 'https://maps.app.goo.gl/LN9FwNcfoooAki7N9', this)">
+                                    <h3>AGROSERVICIOS RIVERA JIMENEZ</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / QUEVEDO / SAN CARLOS / AV. 2 DE JULIO SOLAR 7 Y 9 DE OCTUBRE</p>
+                                    <p><i class="fas fa-phone"></i> 0980335980</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.1153778,-79.4377393&output=embed', 'https://maps.app.goo.gl/psWH8AiKP62i7Xo79', this)">
+                                    <h3>AGROPECUARIA SAN CARLOS</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / QUEVEDO / SAN CARLOS / RAMON FUENTES 104 Y SN</p>
+                                    <p><i class="fas fa-phone"></i> 0997719266</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.9593175,-79.4035087&output=embed', 'https://maps.app.goo.gl/GWj7p1J6KiKxF1ss6', this)">
+                                    <h3>AGRO CARPIO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / QUEVEDO / LA ESPERANZA / G SOLAR 7 Y SEGUNDA Y CUARTA</p>
+                                    <p><i class="fas fa-phone"></i> 0997227361</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.2059427,-79.3167058&output=embed', 'https://maps.app.goo.gl/PJTE3n5Doiv62oi68', this)">
+                                    <h3>AGROSWER S.A.S.</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / QUINSALOMA / QUINSALOMA / VIA A LA LORENA SN Y EDUARDO SEMINARIO</p>
+                                    <p><i class="fas fa-phone"></i> 0985294733</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.364703,-79.9084898&output=embed', 'https://maps.app.goo.gl/ChzDWFdGDpNupUdEA', this)">
+                                    <h3>DOCTOR DEL CAMPO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / QUINSALOMA / QUINSALOMA / GUASMO S/N Y ZOILO FRANCO</p>
+                                    <p><i class="fas fa-phone"></i> 0992491749</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.2066382,-79.314228&output=embed', 'https://maps.app.goo.gl/ZFqbdSZGEKxJ76P36', this)">
+                                    <h3>AGROVETERIANARIA SUPER ANIMALES</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / QUINSALOMA / QUINSALOMA / PRINCIPAL 12 Y DIEZ DE AGOSTO</p>
+                                    <p><i class="fas fa-phone"></i> 0993295397</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.211777,-79.3233004&output=embed', 'https://maps.app.goo.gl/QwLM9yxWRJkxn9UH6', this)">
+                                    <h3>AGROPECUARIA JJ</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / QUINSALOMA / QUINSALOMA / AV. MIGUEL INFANTE S/N Y SN</p>
+                                    <p><i class="fas fa-phone"></i> 0999426559</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=AGROINSUMOS%20GALEAS%2C%20nan%2C%20Ecuador&output=embed', 'https://maps.app.goo.gl/7d1kSqVebK3cXRvL7?g_st=aw', this)">
+                                    <h3>AGROINSUMOS GALEAS</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / QUINSALOMA / QUINSALOMA / LOS BELDACOS S/N Y 3 DE MAYO</p>
+                                    <p><i class="fas fa-phone"></i> 0993427359</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.2677479,-79.428737&output=embed', 'https://maps.app.goo.gl/LFWWDe8tbaMd6Dgg8', this)">
+                                    <h3>AGROFERRETERIA EL PRODUCTOR</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / VENTANAS / ZAPOTAL / SAN EDUARDO SN Y SN</p>
+                                    <p><i class="fas fa-phone"></i> 0962918642</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.3975288,-79.7485608&output=embed', 'https://maps.app.goo.gl/wStmmnZHv7dGqzvw5', this)">
+                                    <h3>AGROINSUMOS CALDERON</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / VENTANAS / VENTANAS / PRINCIPAL S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0939049031</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.3545904,-79.4023458&output=embed', 'https://maps.app.goo.gl/povod8kwLZ5XufDC8', this)">
+                                    <h3>AGRO INSUMOS CIELITO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / VENTANAS / ZAPOTAL / PARROQUIA ZAPOTAL S/N Y ZAPOTAL</p>
+                                    <p><i class="fas fa-phone"></i> nan</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.4409427,-79.4742406&output=embed', 'https://maps.app.goo.gl/mxoHkDRcBSmvSxi76', this)">
+                                    <h3>AGROQUIMICOS NUTRIAGRO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / VENTANAS / VENTANAS / PANAMERICANA S/N Y 24</p>
+                                    <p><i class="fas fa-phone"></i> 0990143293</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.4401007,-79.4703266&output=embed', 'https://maps.app.goo.gl/ULzudFLgncqLBsvD7', this)">
+                                    <h3>FERTIAGRO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / VENTANAS / VENTANAS / S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0982890095</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.4378874,-79.4862461&output=embed', 'https://maps.app.goo.gl/h4o85fhJgZcANSc48', this)">
+                                    <h3>AGROVENT</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / VENTANAS / VENTANAS / SN SN Y SN</p>
+                                    <p><i class="fas fa-phone"></i> 0981536775</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.4452784,-79.4956326&output=embed', 'https://maps.app.goo.gl/FaYxoYoCLDKKEyYs5', this)">
+                                    <h3>VISCARRA HNOS - INSUMOS AGRICOLAS</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / VENTANAS / VENTANAS / MALECON NS Y SUCRE</p>
+                                    <p><i class="fas fa-phone"></i> 052970410</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.44572,-79.4737266&output=embed', 'https://maps.app.goo.gl/fLYXTtnZokTjMXaa9', this)">
+                                    <h3>INSUMOS AGRICOLAS KARLITA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / VENTANAS / VENTANAS / AV. SEMINARIO S/N Y MALECON</p>
+                                    <p><i class="fas fa-phone"></i> 0994051705</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=AGRO%20INTEGRAL%20AZOGUE%2C%20nan%2C%20Ecuador&output=embed', 'https://maps.app.goo.gl/8pHiqMUbahoiBp7R8?g_st=aw', this)">
+                                    <h3>AGRO INTEGRAL AZOGUE</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / VENTANAS / VENTANAS / CALLE SUCRE 001 Y MALECON 1</p>
+                                    <p><i class="fas fa-phone"></i> 0991041413</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.4354189,-79.4642352&output=embed', 'https://maps.app.goo.gl/Y5z2UmxU8CM249ty7', this)">
+                                    <h3>AGRIBBA S.A.</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / VENTANAS / VENTANAS / PANAMERICANA S/N Y 5 DE AGOSTO</p>
+                                    <p><i class="fas fa-phone"></i> 0967082953</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.5609953,-79.6693129&output=embed', 'https://maps.app.goo.gl/XPoNZinv9yvXUBGN7', this)">
+                                    <h3>AGROQUIMICOS LA SEMILLA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / VINCES / VINCES / 10 DE AGOSTO 304 Y BOLIVAR</p>
+                                    <p><i class="fas fa-phone"></i> 0991157732</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.5359908,-79.7218377&output=embed', 'https://maps.app.goo.gl/5qjxD6JW7NMCCGvF6', this)">
+                                    <h3>NUTVECOMSA S.A.</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> LOS RIOS / VINCES / VINCES / 10 DE AGOSTO S/N Y BOLIVAR</p>
+                                    <p><i class="fas fa-phone"></i> 0959556039</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.1747584,-79.224689&output=embed', 'https://maps.app.goo.gl/DKnALxEHZbymvNx17', this)">
+                                    <h3>AGRO VETERINARIA EL GANADERO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> COTOPAXI / PANGUA / MORASPUNGO / PRIMERO DE JUNIO S/N Y MANUEL VILLACRES</p>
+                                    <p><i class="fas fa-phone"></i> 0967191586</p>
+                                    <span class="tag-province">COTOPAXI</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.173396,-79.222552&output=embed', 'https://maps.app.goo.gl/ZGNrd89mYU5d1FfK9', this)">
+                                    <h3>AGROVETERINARIA Y FERRETERIA ESPINOZA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> COTOPAXI / PANGUA / MORASPUNGO / PRIMERO DE JUNIO S/N Y CARLOS MARX</p>
+                                    <p><i class="fas fa-phone"></i> 0985608731</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.9413994,-79.2324661&output=embed', 'https://maps.app.goo.gl/kihBA6uu9sp1RXmC8', this)">
+                                    <h3>CEINAGRO S.A.</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> COTOPAXI / LA MANA / LA MANA / AV. 19 DE MAYO S/N Y VELASCO IBARRA</p>
+                                    <p><i class="fas fa-phone"></i> 096 980 2570</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.9403555,-79.2255838&output=embed', 'https://maps.app.goo.gl/GhkoMLdZa4PbPCSo6', this)">
+                                    <h3>AGRO-INSUMOS LA FINCA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> COTOPAXI / LA MANA / LA MANA / AV LOS ALAMOS SI-4 Y 19 DE MAYO</p>
+                                    <p><i class="fas fa-phone"></i> 0982674245</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.9405172,-79.2231215&output=embed', 'https://maps.app.goo.gl/3SYmjdrvvG2xUfPF6', this)">
+                                    <h3>AGROSERVICIOS "EL SEMBRADOR"</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> COTOPAXI / LA MANA / LA MANÁ / ALAMOS SOZLAR 4 Y AV. 19 DE MAYO</p>
+                                    <p><i class="fas fa-phone"></i> 0991224810</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.9343973,-79.2250074&output=embed', 'https://maps.app.goo.gl/qFHUXNMU7L8wNvef6', this)">
+                                    <h3>AGRIPRO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> COTOPAXI / LA MANA / LA MANA / 19 DE MAYO S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0994394347</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.6333427,-79.2556823&output=embed', 'https://maps.app.goo.gl/rGYm8b7R3MwTfXLY6', this)">
+                                    <h3>AGRO JIMENEZ</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> BOLIVAR / CALUMA / CALUMA / AV. LA NARANJA</p>
+                                    <p><i class="fas fa-phone"></i> 0989018374</p>
+                                    <span class="tag-province">BOLIVAR</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.6302594,-79.2555339&output=embed', 'https://maps.app.goo.gl/DruzznCfLVCDwQnw8', this)">
+                                    <h3>AGROINSUMOS SANABRIA MONTERO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> BOLIVAR / CALUMA / CALUMA / ELIAS FIERRO 0000 Y JOSE RODRIGUEZ</p>
+                                    <p><i class="fas fa-phone"></i> 0991851162</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.6333248,-79.255465&output=embed', 'https://maps.app.goo.gl/odqhr7ssUrBV2cvE9', this)">
+                                    <h3>CENTRO AGROECOLOGICO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> BOLIVAR / CALUMA / CALUMA / HEROES DEL CENEPA Y ELIAS FIERRO</p>
+                                    <p><i class="fas fa-phone"></i> 0988254816</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.4301388,-79.2863744&output=embed', 'https://maps.app.goo.gl/PLVamHiSzqmAtj5YA', this)">
+                                    <h3>AGROVETERINARIO EL GANADERO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> BOLIVAR / ECHEANDIA / ECHEANDIA / SIMON BOLIVAR S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0986271419</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.4320155,-79.2816816&output=embed', 'https://maps.app.goo.gl/LNZ5xNXsc7wSfrfH9', this)">
+                                    <h3>EL AGRICULTOR</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> BOLIVAR / ECHEANDIA / ECHEANDIA / RAMON ULLOA Y SUCRE</p>
+                                    <p><i class="fas fa-phone"></i> 0994002267</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.288742,-79.3196384&output=embed', 'https://maps.app.goo.gl/pSyYisMbHDLHRsHWA', this)">
+                                    <h3>INSUMOS AGRICOLAS AGROSELL</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> BOLIVAR / LAS NAVES / LAS NAVES / AVENIDA GIL AVILES SN Y SIN NOMBRE</p>
+                                    <p><i class="fas fa-phone"></i> 096550618</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.5894717,-79.5157509&output=embed', 'https://maps.app.goo.gl/t1VXbDoAiEMW5PyC7', this)">
+                                    <h3>JAZAEL</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> MANABI / EL CARMEN / EL PARAISO LA 14 (CAB EN EL PARAISO) / 12 DE OCTUBRE S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0959136007</p>
+                                    <span class="tag-province">MANABI</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.5914209,-79.515761&output=embed', 'https://maps.app.goo.gl/42FfB7hjoSL1Mt9i7', this)">
+                                    <h3>INSUMOS AGRICOLAS LA COSECHA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> MANABI / EL CARMEN / EL PARAISO LA 14 (CAB EN EL PARAISO) / CALLE J AROSEMENA S/N Y CALLE CARLOS</p>
+                                    <p><i class="fas fa-phone"></i> 0980824446</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.5873629,-79.5146909&output=embed', 'https://maps.app.goo.gl/E3YB33JYyKnFiNyU8', this)">
+                                    <h3>INSUMOS JUSPIER</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> MANABI / EL CARMEN / EL PARAISO LA 14</p>
+                                    <p><i class="fas fa-phone"></i> 0997848537</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.5836349,-79.5089399&output=embed', 'https://maps.app.goo.gl/rHUtG7bkrkFXw3py7', this)">
+                                    <h3>MULTICOMERCIO LOS COMPADRES</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> MANABI / EL CARMEN / EL PARAISO LA 14</p>
+                                    <p><i class="fas fa-phone"></i> 0991651557</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.586132,-79.5138285&output=embed', 'https://maps.app.goo.gl/CZeCab78fZEcdD9q6', this)">
+                                    <h3>AGROSERVICIOS "EL SEMBRADOR"</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> MANABI / EL CARMEN / EL PARAISO LA 14</p>
+                                    <p><i class="fas fa-phone"></i> 0991224810</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.6689691,-79.6119001&output=embed', 'https://maps.app.goo.gl/r8DghWivZLArPE8aA', this)">
+                                    <h3>AGROPECUARIA "SANTA MARIA"</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> MANABI / EL CARMEN / SANTA MARIA / LUIS PINTO S/N Y 26 DE JUNIO</p>
+                                    <p><i class="fas fa-phone"></i> 0995862870</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.6837348,-79.6164119&output=embed', 'https://maps.app.goo.gl/MMKuPwr3vb8A4QGz6', this)">
+                                    <h3>AGROPECUARIA BACANCITO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> MANABI / EL CARMEN / SANTA MARIA</p>
+                                    <p><i class="fas fa-phone"></i> 0985818061</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.6704137,-79.6130996&output=embed', 'https://maps.app.goo.gl/P6JLgio1BpR4bhBm7', this)">
+                                    <h3>AGROVETERINARIA NUEVO AMANECER</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> MANABI / EL CARMEN / SANTA MARIA (CAB EN SANTA MARIA) / 26 DE JUNIO S/N Y AV. MANABI</p>
+                                    <p><i class="fas fa-phone"></i> 0990315814</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.6032747,-79.5926796&output=embed', 'https://maps.app.goo.gl/nojBGkTxQaQz29oKA', this)">
+                                    <h3>AGROSERVICIO EL PINTADO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> EL PINTADO</p>
+                                    <p><i class="fas fa-phone"></i> 0980312674</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.4452104,-79.5232881&output=embed', 'https://maps.app.goo.gl/Sb95Z6SYScDDjW5W6', this)">
+                                    <h3>INSUMOS AGRICOLAS EL PRODUCTOR</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> MANABI / EL CARMEN / EL CARMEN / VIA LA BRAMADORA SNN Y NUEVA FLORIDA</p>
+                                    <p><i class="fas fa-phone"></i> 0959220098</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.0290713,-80.3454882&output=embed', 'https://maps.app.goo.gl/TKUbCDt3hW6NyGZr9', this)">
+                                    <h3>RAIMAFINCA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> MANABI / PORTOVIEJO / ABDON CALDERON (SAN FRANCISCO) / OLMEDO S/N Y PRINCIPAL</p>
+                                    <p><i class="fas fa-phone"></i> 0969468142</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.0305067,-80.3422982&output=embed', 'https://maps.app.goo.gl/mi9WEZULCRREpT5p8', this)">
+                                    <h3>PROAGROALCIVAR CIA.LTDA.</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> MANABI / PORTOVIEJO / ABDON CALDERON (SAN FRANCISCO) / PRINCIPAL S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0982421035</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.9205586,-80.4620843&output=embed', 'https://maps.app.goo.gl/i9UVUaChR96QBNYu5', this)">
+                                    <h3>AGRICOLA BONANZA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> MANABI / ROCAFUERTE / ROCAFUERTE / RUTA DEL SPONDILLUS S/N Y ENTRADAS A LAS JAGS</p>
+                                    <p><i class="fas fa-phone"></i> nan</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.3954252,-80.2133845&output=embed', 'https://maps.app.goo.gl/askefSpLVvaewVSK8', this)">
+                                    <h3>TU AGRICULTOR DE CONFIANZA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> MANABI / OLMEDO / OLMEDO / S/N</p>
+                                    <p><i class="fas fa-phone"></i> 097 987 1276</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.0495219,-79.8566151&output=embed', 'https://maps.app.goo.gl/J57xmRkysfBPjv2Y8', this)">
+                                    <h3>AGRO-FERRETERO GAVILANEZ</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> MANABI / PICHINCHA / PICHINCHA / PRINCIPAL S/N Y MARIA PINTO</p>
+                                    <p><i class="fas fa-phone"></i> 0993680617</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.0551962,-80.0159353&output=embed', 'https://maps.app.goo.gl/kLrMGJteuy4nyMd28', this)">
+                                    <h3>AGRO BIO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> MANABI / PICHINCHA / SAN SEBASTIAN / S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0967421282</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.0494877,-79.823382&output=embed', 'https://maps.app.goo.gl/ZmEhHiJAqZKrrN3x6', this)">
+                                    <h3>AGROVETERINARIA VELEZ</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> MANABI / PICHINCHA / PICHINCHA / LUIS PINTO S/N Y BOLIVAR</p>
+                                    <p><i class="fas fa-phone"></i> 0993864231</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.0497979,-79.8228063&output=embed', 'https://maps.app.goo.gl/hNFMbF33HH9p9MY49', this)">
+                                    <h3>AGROVETERINARIO PICHINCHA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> MANABI / PICHINCHA / PICHINCHA / FILAMIL VELEZ SOLAR 14 Y 12 DE OCTUBRE</p>
+                                    <p><i class="fas fa-phone"></i> 0981184331</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.5499744,-79.5377791&output=embed', 'https://maps.app.goo.gl/2FA94Ad7Vt5pgKn39', this)">
+                                    <h3>AGRO VETERINARIA VERA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> MANABI / PICHINCHA / PICHINCHA / S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0992326449</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.0378079,-79.7114754&output=embed', 'https://maps.app.goo.gl/K16vdLmvsNYrc9f96', this)">
+                                    <h3>YOONG COX</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / EL EMPALME / VELASCO IBARRA (EL EMPALME) / SIMON BOLIVAR SOLAR 16 Y GUL</p>
+                                    <p><i class="fas fa-phone"></i> 0989359320</p>
+                                    <span class="tag-province">GUAYAS</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.0594645,-79.6455983&output=embed', 'https://maps.app.goo.gl/LkUJifKzsM4R3rj97', this)">
+                                    <h3>CENTRO AGROPECUARIO EL GATO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / EL EMPALME / VELASCO IBARRA (EL EMPALME) / AV. GUAYAQUIL SOLAR 6 Y ORIENTE ECUATORIANO</p>
+                                    <p><i class="fas fa-phone"></i> 0985545178</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.0384954,-79.6386487&output=embed', 'https://maps.app.goo.gl/D61QYZ3bAKjE6puo7', this)">
+                                    <h3>AGROSERVICIOS CEVALLOS</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / EL EMPALME / VELASCO IBARRA (EL EMPALME) / COOP SANCHEZ GONZALEZ MZ8 Y VIA LA GUAYAS</p>
+                                    <p><i class="fas fa-phone"></i> 0991011162</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.0433063,-79.6402023&output=embed', 'https://maps.app.goo.gl/CvTTDQCUncC9otgC6', this)">
+                                    <h3>AGRIFUENTES</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / EL EMPALME / VELASCO IBARRA (EL EMPALME) / JUAN LEON MERA 604 Y AV. MANABI</p>
+                                    <p><i class="fas fa-phone"></i> 0999417131</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.0432607,-79.6595145&output=embed', 'https://maps.app.goo.gl/ybPXWhRvmFL5MyQV9', this)">
+                                    <h3>AGROVETERINARIA CAMPO FERTIL</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / EL EMPALME / VELASCO IBARRA (EL EMPALME) / AV. LA GUAYAS SOLAR 37 Y ABDON CALDERON</p>
+                                    <p><i class="fas fa-phone"></i> 0989264118</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.037431,-79.6717403&output=embed', 'https://maps.app.goo.gl/qZET44UMwn53GLCD9', this)">
+                                    <h3>BUEN AGRO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / EL EMPALME / VELASCO IBARRA (EL EMPALME) / M 5 Y NOVENA</p>
+                                    <p><i class="fas fa-phone"></i> 0997444730</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.3646859,-79.909246&output=embed', 'https://maps.app.goo.gl/z1FqSHTmjSCLTtT48', this)">
+                                    <h3>AGROPECUARIA EL HOMBRE DEL CAMPO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / BALZAR / BALZAR / JUAN MONTALVO COLIMES 15B Y SN</p>
+                                    <p><i class="fas fa-phone"></i> 0967670210</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.364703,-79.9084898&output=embed', 'https://maps.app.goo.gl/ChzDWFdGDpNupUdEA', this)">
+                                    <h3>AGROSERVICIO PALESTINA CHIQUITO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / BALZAR / BALZAR / JUAN FALQUEZ MZ 3 SL4A Y AVDA GUAYAQUIL</p>
+                                    <p><i class="fas fa-phone"></i> 0993114377</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.1864408,-79.7582262&output=embed', 'https://maps.app.goo.gl/FiwHdPSB9w67W3LT7', this)">
+                                    <h3>AGROAMYR</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / BALZAR / BALZAR / PRINCIPAL S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0988769850</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.3658341,-79.9099158&output=embed', 'https://maps.app.goo.gl/v7gRPryoENnU9jd78', this)">
+                                    <h3>AGROCAMPO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / BALZAR / BALZAR / INCES 4 Y AV DAULE</p>
+                                    <p><i class="fas fa-phone"></i> 0990747340</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.1910397,-79.7595588&output=embed', 'https://maps.app.goo.gl/bme9rLjymGwBwq9a7', this)">
+                                    <h3>AGROPECUARIA EL CAMPO - LA FABRICA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / BALZAR / BALZAR / PRINCIPAL S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0992416603</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.54528,-80.0214849&output=embed', 'https://maps.app.goo.gl/9qH9WjAXA5WJWvKx8', this)">
+                                    <h3>REFUGIO "EL VECI"</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / COLIMES / COLIMES / 24 DE MAYO SL 9 Y ASSAD BUCARAM</p>
+                                    <p><i class="fas fa-phone"></i> 0989039499</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.7624249,-79.793662&output=embed', 'https://maps.app.goo.gl/5JG9D5LwjUUYVUvL6', this)">
+                                    <h3>AGROQUIMICOS GARCIA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / SALITRE / GENERAL VERNAZA (DOS ESTEROS) / SECTOR LAS ACACIAS 36 Y SN</p>
+                                    <p><i class="fas fa-phone"></i> 0994279935</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.2029805,-79.6306419&output=embed', 'https://maps.app.goo.gl/EUervrSfcbyif1t27', this)">
+                                    <h3>ASORAIZ S.A.S.</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / SAN JACINTO DE YAGUACHI / YAGUACHI VIEJO (CONE) / 1 02 Y VIA KM 26</p>
+                                    <p><i class="fas fa-phone"></i> 0994556997</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.2497898,-79.647006&output=embed', 'https://maps.app.goo.gl/qUyKLrt2KkNLPKWo8', this)">
+                                    <h3>AGROSERVICIOS JC</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / SAN JACINTO DE YAGUACHI / VIRGEN DE FATIMA / VIA DURAN TAMBO KM 27 COOO</p>
+                                    <p><i class="fas fa-phone"></i> 0986079547</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.1286378,-79.5918392&output=embed', 'https://maps.app.goo.gl/1RDh58mhMWZi6ed86', this)">
+                                    <h3>DARIAGRO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / MILAGRO / MILAGRO / AV. GARCIA MORENO S/N Y TORRES CAUSANA</p>
+                                    <p><i class="fas fa-phone"></i> 0960012535</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.1825508,-79.5211712&output=embed', 'https://maps.app.goo.gl/ZK5dbqLWZdcLpD9z6', this)">
+                                    <h3>AGRO-VILLANUH</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / MILAGRO / ROBERTO ASTUDILLO (CAB. EN CRUCE DE VENECIA) / AV. VELASCO IBARRA S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0991817647</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-3.0592401,-79.7442241&output=embed', 'https://maps.app.goo.gl/B3nkFhjN6K6qfpY2A', this)">
+                                    <h3>FAMYAGRO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / MILAGRO / ROBERTO ASTUDILLO (CAB. EN CRUCE DE VENECIA) / S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0967736491</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.9868982,-79.6082547&output=embed', 'https://maps.app.goo.gl/rNbdY6AsMN4EE3pDA', this)">
+                                    <h3>AGROQUIMICOS GAVILANEZ</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / ALFREDO BAQUERIZO MORENO / ALFREDO BAQUERIZO MORENO / S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0968880930</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.6828761,-79.6262098&output=embed', 'https://maps.app.goo.gl/pSUnjFVrkfLL7diB9', this)">
+                                    <h3>EL CAMPO LITORAL</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / NARANJAL / NARANJAL / VIA PANAMERICANA SUR S/N Y TERCERA SUR</p>
+                                    <p><i class="fas fa-phone"></i> 0990765422</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.6831283,-79.6262682&output=embed', 'https://maps.app.goo.gl/UVVsBPGJYtPhxnpHA', this)">
+                                    <h3>AGROSERVICIO MAR Y AGRO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / NARANJAL / NARANJAL / 13 ESTE S/N Y 4 NORTE ESTE</p>
+                                    <p><i class="fas fa-phone"></i> 0939163181</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.1306298,-79.3862776&output=embed', 'https://maps.app.goo.gl/2jrTMqBRzK8LQQzL7', this)">
+                                    <h3>GLOBAL AGRO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / NARANJITO / NARANJITO / PRINCIPAL S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0994593722</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.1368987,-79.3186397&output=embed', 'https://maps.app.goo.gl/GiVjwb13DiEYgzoB6', this)">
+                                    <h3>AGROSERVICIOS MICHAEL</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / NARANJITO / NARANJITO / RCTO. EL ROSARIO 358838 Y EN LA VIA NARANJITO Y</p>
+                                    <p><i class="fas fa-phone"></i> 0991171392</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.173841,-79.5598232&output=embed', 'https://maps.app.goo.gl/QEVkDrhXzpymsmPZ7', this)">
+                                    <h3>AGRO NARANJITO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / NARANJITO / NARANJITO / AV. 5 DE OCTUBRE S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0989709223</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=WELLPER%20AGRO%2C%20nan%2C%20Ecuador&output=embed', 'https://maps.app.goo.gl/CUgyphvSwUDzHDcv9', this)">
+                                    <h3>WELLPER AGRO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / NARANJITO / NARANJITO / AV. PRINCIPAL S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0980779590</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.167832,-79.4619746&output=embed', 'https://maps.app.goo.gl/qWkigZzkCgJQwBTn7', this)">
+                                    <h3>AGROSERVICIO VS</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / NARANJITO / NARANJITO / GRAL CORDOVA Y QUITO</p>
+                                    <p><i class="fas fa-phone"></i> 098 685 7515</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.1312453,-79.2905721&output=embed', 'https://maps.app.goo.gl/hH7GSa9Co5NAk9SM9', this)">
+                                    <h3>AGROSERVICIO LEON</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / NARANJITO / NARANJITO / AV. PRINCIPAL S/N Y ENTRADA A RCTO. INES MARIA</p>
+                                    <p><i class="fas fa-phone"></i> 0994180537</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.9067924,-79.707741&output=embed', 'https://maps.app.goo.gl/gbwjuN7Lp5ft9A7n6', this)">
+                                    <h3>ENCALADA ENCALADA ERIKA NELLY</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / BALAO / BALAO / AV. SAN MARTIN S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0993341692</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.9071326,-79.7084555&output=embed', 'https://maps.app.goo.gl/kwKfzsHQDYcDegRa6', this)">
+                                    <h3>AGROBAL SAN CARLOS</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / BALAO / BALAO / SN</p>
+                                    <p><i class="fas fa-phone"></i> 099179930</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.9071041,-79.7079761&output=embed', 'https://maps.app.goo.gl/8QLWvnZQFsinkVb1A', this)">
+                                    <h3>AGROSOLVET SAN CARLOS</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / BALAO / BALAO / AV. SAN MARTIN 01 Y SAN CARLOS</p>
+                                    <p><i class="fas fa-phone"></i> 0981204275</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-1.9998792,-79.4895943&output=embed', 'https://maps.app.goo.gl/rwSxTz7ui9GBug197', this)">
+                                    <h3>AGROSERVICIOS DANNY</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / SIMON BOLIVAR / SIMON BOLIVAR / ANTONIO VARGAS SN Y ALFREDO BAQUERIZO</p>
+                                    <p><i class="fas fa-phone"></i> 0980013147</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.0005599,-79.4914521&output=embed', 'https://maps.app.goo.gl/MgLe9chDH1SYwvUn8', this)">
+                                    <h3>AGROSERVICION EMANUEL</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / SIMON BOLIVAR / CORONEL LORENZO DE GARAICOA (PEDREGAL) / MACHALA 40 Y ABDON CALDERON</p>
+                                    <p><i class="fas fa-phone"></i> 0967952066</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.0012817,-79.4884874&output=embed', 'https://maps.app.goo.gl/Xt1uoPxK3Sa36DbA7', this)">
+                                    <h3>AGROSERVICIO CRESPO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / SIMON BOLIVAR / SIMON BOLIVAR / 28 DE NOVIEMBRE 411 Y FIDELINO DEL VALLE</p>
+                                    <p><i class="fas fa-phone"></i> 0988948974</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.4498239,-79.3207237&output=embed', 'https://maps.app.goo.gl/JceAzGktK9eBmF4y7', this)">
+                                    <h3>AGROMIRANDA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / SIMON BOLIVAR / CORONEL LORENZO DE GARAICOA (PEDREGAL) / SN SN Y SN</p>
+                                    <p><i class="fas fa-phone"></i> 0986053484</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.0655033,-79.4371134&output=embed', 'https://maps.app.goo.gl/Zbb5cwGfDNRrvUNH8', this)">
+                                    <h3>AGROECONOMIA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / SIMON BOLIVAR / CORONEL LORENZO DE GARAICOA (PEDREGAL) / RICARDO FIRMAT S/N Y 6 DE MARZO</p>
+                                    <p><i class="fas fa-phone"></i> 0969448753</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.1998767,-79.14188&output=embed', 'https://maps.app.goo.gl/gSdXdSoK6e5eykMH9', this)">
+                                    <h3>AGRICOLA LOS ANGELES S.A. AGRIANGELES</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / GENERAL ANTONIO ELIZALDE / GENERAL ANTONIO ELIZALDE (BUCAY) / PAQUISHAL</p>
+                                    <p><i class="fas fa-phone"></i> 0978645219</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.2023692,-79.1404686&output=embed', 'https://maps.app.goo.gl/7wZXkLWy2cGTvNTy8', this)">
+                                    <h3>AGROVETERINARIA LA GRANJA II</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / GENERAL ANTONIO ELIZALDE / GENERAL ANTONIO ELIZALDE (BUCAY) / GARCIA MA</p>
+                                    <p><i class="fas fa-phone"></i> 0985752825</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.3440731,-79.3029442&output=embed', 'https://maps.app.goo.gl/X6E46Qme56PcYc4z6', this)">
+                                    <h3>AGRIBANA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / EL TRIUNFO / EL TRIUNFO / S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0986203498</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.9953002,-79.7919481&output=embed', 'https://maps.app.goo.gl/zoSKLupGNyLue6GFA', this)">
+                                    <h3>AGROSERVICIOS LM LA BUENA SEMILLA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> GUAYAS / GUAYAQUIL / TENGUEL / PLAZOLETA S/N Y PLAZOLETA CENTRAL</p>
+                                    <p><i class="fas fa-phone"></i> 0980900502</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-3.264618,-79.9521789&output=embed', 'https://maps.app.goo.gl/krCRF1A4wpTmPwQL7', this)">
+                                    <h3>AGRO INSUMOS SV</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> EL ORO / MACHALA / LA PROVIDENCIA / BOYACA S/N Y DECIMA ESTE</p>
+                                    <p><i class="fas fa-phone"></i> 0985433660</p>
+                                    <span class="tag-province">EL ORO</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-3.4471257,-79.9573066&output=embed', 'https://maps.app.goo.gl/GTd47oocT51ehpXE8', this)">
+                                    <h3>MULTIAGRO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> EL ORO / SANTA ROSA / NUEVO SANTA ROSA / CUARTA S/N</p>
+                                    <p><i class="fas fa-phone"></i> 0986598110</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-3.4794881,-80.241449&output=embed', 'https://maps.app.goo.gl/L94CKcmCw4VoCZvw6', this)">
+                                    <h3>AGRO LEON</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> EL ORO / HUAQUILLAS / MILTON REYES / PRIMERO DE MAYO S/N Y 10 DE AGOSTO</p>
+                                    <p><i class="fas fa-phone"></i> 0969882396</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-3.4802488,-80.2449723&output=embed', 'https://maps.app.goo.gl/LE6bYKGtkJiBdzbk8', this)">
+                                    <h3>AGRONUEVO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> EL ORO / HUAQUILLAS / MILTON REYES / ARENILLAS 418 Y JOSE MENDOZA Y TENIENTE CORDOVEZ</p>
+                                    <p><i class="fas fa-phone"></i> 098 588 6358</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-3.3267585,-79.80861&output=embed', 'https://maps.app.goo.gl/TwbZ23VKWn4YjuEA8', this)">
+                                    <h3>SURDULAGRO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> EL ORO / PASAJE / PASAJE / ROCAFUERTE S/N Y PIEDRAHITA</p>
+                                    <p><i class="fas fa-phone"></i> 0979718429</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-3.3256336,-79.8065791&output=embed', 'https://maps.app.goo.gl/ZbtTe4QusArzzYJJ7', this)">
+                                    <h3>AGROINSUMAX</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> EL ORO / PASAJE / BOLIVAR / AZUAY LOTE0 Y OLMEDO</p>
+                                    <p><i class="fas fa-phone"></i> 0980041409</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.4325261,-79.3530443&output=embed', 'https://maps.app.goo.gl/v4b5U8j94CSscNGZA', this)">
+                                    <h3>AGROFUTURO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> CAÑAR / LA TRONCAL / LA TRONCAL / VIA DURAN TAMBO SN Y AV ALFONSO ANDRADE</p>
+                                    <p><i class="fas fa-phone"></i> 0983854561</p>
+                                    <span class="tag-province">CAÑAR</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-3.3642755,-79.7647965&output=embed', 'https://maps.app.goo.gl/Gx9Xp81xbmtrbVqS9', this)">
+                                    <h3>AGRO CANIVA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> CAÑAR / LA TRONCAL / LA TRONCAL / AV. 25 DE AGOSTO S/N Y HEROES DEL PAQUISHA</p>
+                                    <p><i class="fas fa-phone"></i> 0981774863</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.2052381,-79.1389238&output=embed', 'https://maps.app.goo.gl/9qdqXngApU44DjYdA', this)">
+                                    <h3>AGROSERVICIO SU AMIGO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> CHIMBORAZO / CUMANDA / CUMANDA / 9 DE OCTUBRE S/N Y ABDON CALDERON</p>
+                                    <p><i class="fas fa-phone"></i> 0988094662</p>
+                                    <span class="tag-province">CHIMBORAZO</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-2.9971478,-79.7939567&output=embed', 'https://maps.app.goo.gl/1A1nM2FwyeTCT1fJ9', this)">
+                                    <h3>DISTRIBUIDORA DE BALANCEADOS</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> AZUAY / CAMILO PONCE ENRIQUEZ / CAMILO PONCE ENRIQUEZ / GREGORIO SINCHO SN Y JUO</p>
+                                    <p><i class="fas fa-phone"></i> 0969495934</p>
+                                    <span class="tag-province">AZUAY</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.2139617,-79.1740166&output=embed', 'https://maps.app.goo.gl/oxzb68yrynF5R8Ez8', this)">
+                                    <h3>COMERCIALIZADORA "LO MEJOR DE LO MEJOR"</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> SANTO DOMINGO DE LOS TSACHILAS / SANTO DOMINGO / SANTO DOMINGO DE LOS COLORADOSO</p>
+                                    <p><i class="fas fa-phone"></i> 095 956 6354</p>
+                                    <span class="tag-province">SANTO DOMINGO DE LOS TSACHILAS</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.2439976,-79.348745&output=embed', 'https://maps.app.goo.gl/3VDQbzmFLu5UsdGB9', this)">
+                                    <h3>AGROVETERINARIA "SANTA LUCIA"</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> SANTO DOMINGO DE LOS TSACHILAS / NUEVO ISRAEL</p>
+                                    <p><i class="fas fa-phone"></i> 0989082404</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.2348278,-79.1712416&output=embed', 'https://maps.app.goo.gl/7YNVA8jmWmzVyQ8V6', this)">
+                                    <h3>AGROPECUARIA RONALD</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> SANTO DOMINGO DE LOS TSACHILAS / SANTO DOMINGO / SANTO DOMINGO DE LOS COLORADOSL</p>
+                                    <p><i class="fas fa-phone"></i> 0985866969</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.2543408,-79.2066244&output=embed', 'https://maps.app.goo.gl/aMRkpAz1abdxy4qo7', this)">
+                                    <h3>AGROMUNDO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> SANTO DOMINGO DE LOS TSACHILAS / SANTO DOMINGO / ABRAHAM CALAZACON / CALLE A LOE</p>
+                                    <p><i class="fas fa-phone"></i> 0997914080</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.387353,-79.3744391&output=embed', 'https://maps.app.goo.gl/swg1HGG5mpHUA1vK6', this)">
+                                    <h3>AGROVETERINARIA EL CAMPESINO</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> SANTO DOMINGO DE LOS TSACHILAS / SANTO DOMINGO / SANTO DOMINGO DE LOS COLORADOSO</p>
+                                    <p><i class="fas fa-phone"></i> 0994943920</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.2327443,-79.1702436&output=embed', 'https://maps.app.goo.gl/RmZcmysKW4MWxsYC6', this)">
+                                    <h3>AGROVETERINARIA "LA GRANJA DE PANCHO"</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> SANTO DOMINGO DE LOS TSACHILAS / SANTO DOMINGO / BOMBOLI / VIA ESMERALDAS SN Y S</p>
+                                    <p><i class="fas fa-phone"></i> 0992035444</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.2377201,-79.1701206&output=embed', 'https://maps.app.goo.gl/y4MiHi7EhFfoaFjz9', this)">
+                                    <h3>AGRIPEC</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> SANTO DOMINGO DE LOS TSACHILAS / SANTO DOMINGO / RIO TOACHI / AV. ESMERALDAS LO2</p>
+                                    <p><i class="fas fa-phone"></i> 0992217761</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.2365178,-79.1697616&output=embed', 'https://maps.app.goo.gl/7qUMoYPVFLMZNdSn7', this)">
+                                    <h3>AGRODISTRIBUIDORA IBARRA</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> SANTO DOMINGO DE LOS TSACHILAS / SANTO DOMINGO / ZARACAY / COMUNA CHIGUILPE 1 YS</p>
+                                    <p><i class="fas fa-phone"></i> 0985423737</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.2704727,-79.1989399&output=embed', 'https://maps.app.goo.gl/FGDCp4Fv7WV63P626', this)">
+                                    <h3>AGROCALERAS</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> SANTO DOMINGO DE LOS TSACHILAS / SANTO DOMINGO / RIO VERDE / VIA A QUEVEDO 1519 Y MARGEN IZQUIERDO</p>
+                                    <p><i class="fas fa-phone"></i> 0980669573</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.251655,-79.1715948&output=embed', 'https://maps.app.goo.gl/AK5vepZvHGZp8h529', this)">
+                                    <h3>AGROMARG</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> SANTO DOMINGO DE LOS TSACHILAS / SANTO DOMINGO / SANTO DOMINGO DE LOS COLORADOSO</p>
+                                    <p><i class="fas fa-phone"></i> 0999128309</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.2544292,-79.1893528&output=embed', 'https://maps.app.goo.gl/vBgovcUEmwN9U3wa9', this)">
+                                    <h3>AGROVETERINARIA "SANTA CECILIA"</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> ZONA 4 / SANTO DOMINGO DE LOS TSACHILAS /</p>
+                                    <p><i class="fas fa-phone"></i> 0986866425</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="distributor-item" onclick="updateMap('https://www.google.com/maps?q=-0.1801802,-79.3182824&output=embed', 'https://maps.app.goo.gl/pbYshWRyKyMfbY2j7', this)">
+                                    <h3>INSUMOS AGRICOLAS DON CARLOS</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> SANTO DOMINGO DE LOS TSACHILAS / SANTO DOMINGO / SANTO DOMINGO DE LOS COLORADOS / VIA A SAN JACINTO DEL BUA S/N Y CALLE F</p>
+                                    <p><i class="fas fa-phone"></i> nan</p>
+                                    <span class="tag-province">nan</span>
+                                    <div class="map-actions">
+                                        <small>📍 Ubicación exacta cargada</small>
+                                    </div>
+                                </div>
+                                
+
+                    
+                    
+            
+    
+    
+</aside>
+
+                <main class="map-container">
+                    <div class="map-mockup">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1021430.456!2d-79.5!3d-1.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d12ed7c0f167b%3A0x6331908b8b049615!2sEcuador!5e0!3m2!1ses!2sec!4v1648500000000!5m2!1ses!2sec" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">DESTACADOS</h2> <div class="grid-responsive">
+                <div class="prod-card">
+                    <img src="https://agroorganico.com.ec/wp-content/uploads/2021/04/triplexac-galon.jpg" alt="Triplexac">
+                    <h3>TRIPLEXAC</h3> <span class="designation">Herbicida Orgánico</span>
+                </div>
+                <div class="prod-card">
+                    <img src="https://agroorganico.com.ec/wp-content/uploads/2021/04/ferti-galon.jpg" alt="Ferti-Organ">
+                    <h3>FERTI-ORGAN</h3> <span class="designation">Fertilizante Foliar</span>
+                </div>
+                <div class="prod-card">
+                    <img src="https://agroorganico.com.ec/wp-content/uploads/2021/04/full-cacao.jpg" alt="Full Cacao">
+                    <h3>FULL CACAO</h3> <span class="designation">Nutrición Especializada</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+    <div class="container footer-content">
+         <div class="footer-logo">
+            <a href="#">
+                <img src="img/favicon.svg" alt="Agro Organico Logo" class="footer-logo-img">
+             </a>
+    </div>
+
+        <div class="footer-column">
+            <h3>Inicio</h3>
+            <ul>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Distribuidores</a></li>
+                <li><a href="#">Contactos</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Contáctanos</h3>
+            <p><strong>MATRIZ QUEVEDO</strong><br>
+            Km. 2.5 Vía Valencia, frente a la entrada Cañalito.</p>
+            <p>0968308676</p>
+            <p>agro_organico@live.com</p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Síguenos</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    <div class="distributor-item" data-province="SANTO DOMINGO" onclick="updateMap(-0.2540, -79.1718, this)">
+    <div class="dist-info">
+        <h3>AGROMARG</h3>
+        <p><i class="fas fa-map-marker-alt"></i> SANTO DOMINGO DE LOS TSACHILAS</p>
+    </div>
+    <div class="dist-actions">
+        <a href="https://www.google.com/maps/search/?api=1&query=-0.2540,-79.1718" target="_blank" class="btn-gps" onclick="event.stopPropagation();">
+            <i class="fas fa-location-arrow"></i> GPS
+        </a>
+    </div>
+</div>
+</script>
+
+
+
+
+<script>
+    let activeProvince = 'ALL';
+
+    function filterByProvince(prov) {
+        activeProvince = prov;
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.innerText.toUpperCase().includes(prov) || (prov === 'ALL' && btn.innerText === 'Todas'));
+        });
+        filterSystem();
+    }
+
+    function filterSystem() {
+        const input = document.getElementById('searchInput').value.toUpperCase();
+        const items = document.querySelectorAll('.distributor-item');
+
+        items.forEach(item => {
+            const itemProv = item.getAttribute('data-province') || "";
+            const itemText = item.innerText.toUpperCase();
+            
+            const matchesProv = (activeProvince === 'ALL' || itemProv === activeProvince);
+            const matchesText = itemText.includes(input);
+
+            item.style.display = (matchesProv && matchesText) ? "flex" : "none";
+        });
+    }
+
+    function updateMap(url, element) {
+        const iframe = document.querySelector('.map-container iframe');
+        if(iframe) iframe.src = url;
+
+        document.querySelectorAll('.distributor-item').forEach(i => i.classList.remove('active'));
+        element.classList.add('active');
+    }
+
+    window.onload = function() {
+        const primero = document.querySelector('.distributor-item');
+        if(primero) primero.click();
+    };
+</script>
+</body>
+</html>

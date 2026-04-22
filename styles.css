@@ -1,0 +1,1064 @@
+/* --- Variables --- */
+:root {
+    --verde: #438e32;
+    --verde-oscuro: #1a4a2e;
+    --gris-fondo: #f4f7f6;
+    --blanco: #ffffff;
+    --texto: #333333;
+}
+
+/* --- Reset --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
+body { overflow-x: hidden; color: var(--texto); line-height: 1.5; }
+img { max-width: 100%; height: auto; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 60px 0; }
+.section-title { text-align: center; margin-bottom: 40px; font-weight: 800; font-size: 2rem; }
+.bg-light { background: var(--gris-fondo); }
+
+/* --- Header --- */
+header { padding: 20px 0; background: #fff; border-bottom: 1px solid #eee; }
+.nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+.logo { color: var(--verde); font-size: 1.5rem; font-weight: 900; }
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { text-decoration: none; color: #555; font-weight: 600; font-size: 0.9rem; }
+
+/* --- Hero Slider --- */
+
+/* El contenedor "ventana" */
+.hero-slider {
+    width: 100%;
+    height: 70vh; /* Ajusta la altura a tu gusto */
+    overflow: hidden; 
+    position: relative;
+    background: #000;
+}
+
+/* El riel que contiene las fotos en fila */
+
+
+/* Cada slide individual */
+.slide {
+    width: 100vw; /* Cada uno ocupa el ancho total de la pantalla */
+    height: 70vh;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.slider-track {
+    display: flex;
+    width: fit-content;
+    /* NO debe haber ninguna línea de transition aquí */
+    will-change: transform;
+}
+
+/* El texto mantiene su propia animación independiente */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 1s ease 0.6s, filter 1s ease 0.6s;
+    z-index: 10;
+}
+
+.slide.active .hero-text {
+    opacity: 1;
+    filter: blur(0);
+}
+/* Botón Verde Estilo Imagen */
+.btn-green-solid {
+    background-color: #28c745;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+/* Estilo específico para el slide de Triplexac */
+.triplexac-slide {
+    left: 8%; /* Lo alinea a la izquierda como en la foto */
+    max-width: 450px; /* Limita el ancho del texto */
+    text-align: left;
+}
+
+.triplexac-slide h1 {
+    font-size: 4rem; /* Tamaño grande para el título */
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3); /* Sombra para legibilidad */
+}
+
+.triplexac-slide p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+/* Botón verde sólido como el de la imagen */
+
+
+.btn-green-solid:hover {
+    background-color: #21a33a;
+    transform: scale(1.05);
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .triplexac-slide h1 { font-size: 2.5rem; }
+    .triplexac-slide { text-align: center; left: 5%; right: 5%; }
+}
+
+/* --- Grillas Flexibles --- */
+.grid-categories { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+.grid-responsive { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+
+/* --- Tarjetas de Categoría (Efecto Profesional) --- */
+.card-cat { 
+    width: 200px; 
+    background: #fff; 
+    border: 1px solid #eee; 
+    border-radius: 15px; 
+    overflow: hidden; 
+    text-align: center; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+    cursor: pointer;
+    /* Transición súper fluida (cubic-bezier le da un pequeño rebote elegante) */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+/* Efecto Hover principal en la tarjeta */
+.card-cat:hover {
+    transform: translateY(-12px); /* Eleva la tarjeta */
+    /* Sombra más amplia y con un ligero tono verde de la marca */
+    box-shadow: 0 18px 35px rgba(67, 142, 50, 0.15); 
+    border-color: rgba(67, 142, 50, 0.3);
+}
+
+.icon-top { 
+    background: var(--verde); 
+    color: #fff; 
+    padding: 35px; 
+    font-size: 2.5rem; 
+    transition: background 0.4s ease;
+}
+
+/* Oscurece el fondo verde al pasar el mouse */
+.card-cat:hover .icon-top {
+    background: var(--verde-oscuro);
+}
+
+/* Animación individual del ícono (fontawesome) */
+.icon-top i {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hace que el ícono crezca un 20% al hacer hover en la tarjeta */
+.card-cat:hover .icon-top i {
+    transform: scale(1.2); 
+}
+
+.info-cat { 
+    padding: 15px; 
+    transition: background 0.4s ease;
+}
+
+.info-cat h3 { 
+    color: var(--verde); 
+    font-size: 0.95rem; 
+    margin-bottom: 5px; 
+    font-weight: 800;
+}
+
+.info-cat p { 
+    font-size: 0.75rem; 
+    color: #999; 
+}
+
+/* --- Distribuidores --- */
+.split-view { display: flex; align-items: center; gap: 50px; }
+.text-side, .map-side { flex: 1; }
+.btn-green { background: var(--verde); color: #fff; border: none; padding: 12px 35px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 20px; }
+
+/* --- CTA Section (Efecto Profesional sin botones) --- */
+.cta-dark { 
+    background: var(--verde-oscuro); 
+    color: #fff; 
+    padding: 70px 0; 
+    text-align: center; 
+}
+
+.cta-item { 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    padding: 40px 20px; /* Aumenté un poco el padding para compensar el espacio del botón */
+    border-radius: 10px; 
+    cursor: pointer;
+    background: transparent;
+    /* Misma transición fluida */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+/* Efecto Hover en las tarjetas oscuras */
+.cta-item:hover {
+    transform: translateY(-12px);
+    background: rgba(255, 255, 255, 0.05); /* Le da un brillo sutil al fondo */
+    border-color: rgba(255, 255, 255, 0.6); /* El borde se ilumina */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Sombra oscura para dar profundidad */
+}
+
+.cta-item i { 
+    font-size: 3.5rem; /* Ícono un poco más grande */
+    margin-bottom: 20px; 
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* El ícono crece al pasar el mouse */
+.cta-item:hover i {
+    transform: scale(1.2); 
+}
+
+.cta-item h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+/* --- Testimonios y Videos --- */
+.test-card { text-align: center; padding: 20px; }
+.avatar { width: 80px; height: 80px; background: #ddd; border-radius: 50%; margin: 0 auto 15px; }
+.video-card { text-align: left; }
+.video-thumb { position: relative; border-radius: 10px; overflow: hidden; margin-bottom: 10px; }
+.play-tag { position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 3px 8px; font-size: 0.7rem; border-radius: 4px; }
+.video-card p { font-weight: bold; font-size: 0.8rem; }
+
+/* --- Footer Estilo Profesional --- */
+.main-footer {
+    background-color: #1a4a2e; /* Verde oscuro de la imagen */
+    color: #ffffff;
+    padding: 60px 0;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
+    gap: 40px;
+}
+
+/* Logo Vectorial CSS */
+.agro-text { font-size: 2.5rem; font-weight: 900; display: block; line-height: 1; }
+.organico-text { font-size: 2.5rem; font-weight: 900; display: block; line-height: 1; margin-top: -5px; }
+.slogan { font-family: 'Cursive', sans-serif; font-style: italic; margin-top: 10px; font-size: 1.1rem; }
+
+.footer-column h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-column ul { list-style: none; padding: 0; }
+.footer-column ul li { margin-bottom: 10px; }
+.footer-column ul li a { color: #fff; text-decoration: none; transition: opacity 0.3s; }
+.footer-column ul li a:hover { opacity: 0.7; }
+
+.footer-column p { margin-bottom: 10px; line-height: 1.4; }
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 1.5rem;
+}
+
+.social-icons a { color: #fff; text-decoration: none; }
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .social-icons { justify-content: center; }
+}
+
+/* --- MEDIA QUERIES (Ajustes Celular) --- */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Oculta menú simple en móvil */
+    .hero-slider { height: 45vh; }
+    .hero-text h1 { font-size: 2.2rem; }
+    
+    /* Categorías en 2 columnas */
+    .grid-categories { display: grid; grid-template-columns: 1fr 1fr; padding: 0 10px; }
+    .card-cat { width: 100%; }
+    
+    /* Secciones de 1 sola columna */
+    .split-view { flex-direction: column; text-align: center; }
+    .footer-content { flex-direction: column; text-align: center; gap: 30px; }
+    
+    .section-title { font-size: 1.6rem; }
+}
+.logo-img {
+    height: 50px; /* Ajusta la altura según prefieras */
+    width: auto;
+    display: block;
+}
+
+/* Opcional: Centrar verticalmente en el nav-wrapper */
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header {
+    /* El cuarto valor (0.9) controla la transparencia (0 es invisible, 1 es sólido) */
+    background-color: rgba(51, 118, 85, 0.7); 
+    
+    /* Para un efecto moderno, añade un ligero desenfoque al fondo */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* Asegúrate de que el header se mantenga arriba si el diseño lo requiere */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
+    /* Otros estilos básicos */
+    padding: 15px 0;
+    transition: background-color 0.3s ease;
+}
+
+/* Asegúrate de que los enlaces sean visibles sobre el verde */
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Elimina los espacios automáticos del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Botón Distribuidores (Estilo Outline) --- */
+.btn-outline-green {
+    background: transparent;
+    color: var(--verde);
+    border: 1px solid var(--verde);
+    padding: 10px 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-green:hover {
+    background: var(--verde);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(67, 142, 50, 0.2);
+}
+
+/* --- Ajustes específicos para el Mapa SVG --- */
+.map-side {
+    display: flex;
+    justify-content: flex-end; /* Empuja el mapa hacia la derecha */
+    align-items: center;
+}
+
+.mapa-ecuador {
+    width: 100%;
+    max-width: 650px; /* Controla el tamaño máximo */
+    transform: scale(1.15); /* Agranda el mapa ligeramente para que llene el espacio como en tu diseño */
+    transition: transform 0.3s ease;
+}
+
+/* Opcional: Ajuste para pantallas móviles para que el mapa no se vea cortado */
+@media (max-width: 768px) {
+    .mapa-ecuador {
+        transform: scale(1); /* Quitamos la escala en celular para evitar desbordes */
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
+
+
+/* --- Efecto de Zoom Fijo (Se acerca y se queda) --- */
+.map-side {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    perspective: 2000px; 
+}
+
+.map-frame {
+    width: 100%;
+    max-width: 650px;
+    height: 550px; 
+    overflow: hidden; 
+    position: relative;
+    border-radius: 12px;
+}
+
+.mapa-ecuador {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(5px 15px 10px rgba(0,0,0,0.1));
+    
+    /* - 4s: Duración del movimiento.
+       - ease-out: Empieza rápido y termina suave.
+       - forwards: CLAVE. Mantiene el último fotograma de la animación.
+    */
+    animation: zoomYFijar 4s ease-out forwards;
+    
+    /* Estado inicial para que no salte al empezar */
+    transform: rotateX(10deg) rotateY(-5deg) scale(1.1);
+}
+
+@keyframes zoomYFijar {
+    0% { 
+        transform: rotateX(10deg) rotateY(-5deg) scale(1.1) translateX(0); 
+    }
+    100% { 
+        /* Posición final donde se quedará estático */
+        transform: rotateX(15deg) rotateY(5deg) scale(1.3) translateX(-30px); 
+    }
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .map-frame {
+        height: 380px;
+        margin-top: 20px;
+    }
+    
+    @keyframes zoomYFijar {
+        0% { transform: rotateX(5deg) scale(1.1); }
+        100% { transform: rotateX(10deg) scale(1.3); }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Estilos para la Página de Productos1 --- */
+/* --- Hero Productos (Fondo del PDF) --- */
+.hero-products-page {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/Users/Adrian Aviles/Desktop/Pagina Web AO/img/nuestros_productos.jpeg');
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+.hero-content { width: 100%; }
+.hero-content h1 { font-size: 3rem; font-weight: 800; margin-bottom: 10px; }
+.btn-tech-consult {
+    background: #4caf50;
+    color: white;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* --- Layout Principal --- */
+.main-products-layout { display: flex; gap: 40px; margin-top: 40px; }
+
+/* --- Sidebar Estilo Imagen --- */
+.sidebar-filter { width: 280px; flex-shrink: 0; }
+.sidebar-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 20px; color: #333; }
+.categories-container {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+.cat-list-vertical { list-style: none; }
+.cat-item-v {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    border-bottom: 1px solid #f5f5f5;
+    cursor: pointer;
+    font-weight: 600;
+    color: #444;
+}
+.cat-item-v.active { background: #f7fcf5; color: #2d5a27; }
+.cat-label { display: flex; align-items: center; gap: 15px; }
+.cat-label i { font-size: 1.2rem; color: #438e32; }
+.cat-item-v .fa-caret-down { color: #438e32; opacity: 0.6; }
+
+/* --- Grilla y Banner de Apoyo --- */
+.products-display { flex-grow: 1; }
+.products-grid-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+.product-item-card { text-align: center; }
+.prod-img-wrapper { 
+    background: #fff; 
+    padding: 15px; 
+    border-radius: 10px; 
+    margin-bottom: 15px; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.whatsapp-support-banner {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.btn-wa-large {
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* --- Distribuidores --- */
+.split-view-dist { display: flex; align-items: center; gap: 50px; }
+.dist-text, .dist-map { flex: 1; }
+.map-img-anim {
+    width: 100%;
+    animation: zoomMap 4s ease-out forwards;
+}
+
+@keyframes zoomMap {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .main-products-layout, .split-view-dist, .whatsapp-support-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .sidebar-filter { width: 100%; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Layout Detalle de Producto --- */
+.product-detail-layout {
+    display: flex;
+    gap: 60px;
+}
+
+.product-sidebar { width: 350px; flex-shrink: 0; }
+.main-product-img {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.product-info-content { flex-grow: 1; }
+.prod-main-title { font-size: 3rem; font-weight: 900; color: var(--verde); }
+.prod-subtitle { font-size: 1.5rem; color: #666; margin-bottom: 25px; }
+
+.prod-description { font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px; }
+
+.btn-quote {
+    display: inline-block;
+    background: var(--verde);
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/* Tabs de Información Técnica */
+.info-tabs { margin-bottom: 50px; border: 1px solid #eee; border-radius: 10px; overflow: hidden; }
+.tab-header { display: flex; background: #f9f9f9; border-bottom: 1px solid #eee; }
+.tab-item { padding: 15px 25px; cursor: pointer; font-weight: bold; color: #777; }
+.tab-item.active { background: #fff; color: var(--verde); border-top: 3px solid var(--verde); }
+.tab-body { padding: 30px; background: #fff; }
+.tab-body ul { list-style: none; }
+.tab-body li { margin-bottom: 12px; position: relative; padding-left: 25px; }
+.tab-body li::before { content: "✓"; position: absolute; left: 0; color: var(--verde); font-weight: bold; }
+
+/* Productos Relacionados */
+.related-section { border-top: 1px solid #eee; padding-top: 40px; }
+.related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+.related-card { text-align: center; background: #fff; padding: 15px; border-radius: 10px; }
+.related-card img { width: 120px; margin-bottom: 10px; }
+
+/* Animación del Mapa (Misma lógica anterior) */
+.map-frame { height: 500px; overflow: hidden; border-radius: 20px; }
+.mapa-ecuador { animation: zoomYFijar 4s ease-out forwards; }
+
+
+
+
+
+
+
+
+
+
+
+/* --- Hero Distribuidores --- */
+.hero-distribuidores {
+    background: linear-gradient(rgba(26, 74, 46, 0.8), rgba(26, 74, 46, 0.8)), 
+                url('/Users/Adrian Aviles/Desktop/Pagina Web AO/img/distribuidores.jpeg'); /* Fondo de bodega simulado */
+    height: 45vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-dist-content h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 15px; }
+.hero-dist-content p { max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6; }
+
+/* --- Buscador de Distribuidores --- */
+.map-search-header { text-align: center; margin-bottom: 40px; }
+.map-search-header h2 { color: var(--verde-oscuro); font-size: 2rem; }
+
+.distributor-finder-layout {
+    display: flex;
+    height: 600px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.distributor-list {
+    width: 350px;
+    overflow-y: auto;
+    background: #fdfdfd;
+    border-right: 1px solid #eee;
+}
+
+.list-count {
+    background: var(--verde-oscuro);
+    color: #fff;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.distributor-item {
+    padding: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.distributor-item:hover { background: #f4f7f4; }
+.distributor-item.active { border-left: 5px solid var(--verde); background: #f4f7f4; }
+
+.distributor-item h3 { color: var(--verde); font-size: 1.1rem; margin-bottom: 10px; }
+.distributor-item p { font-size: 0.85rem; color: #666; margin-bottom: 5px; }
+.distributor-item i { color: var(--verde); width: 20px; }
+
+.tag-province {
+    display: inline-block;
+    margin-top: 10px;
+    color: orange;
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+.map-container { flex-grow: 1; position: relative; }
+.map-mockup { width: 100%; height: 100%; background: #e5e3df; }
+
+/* Ajustes responsivos */
+@media (max-width: 992px) {
+    .distributor-finder-layout { flex-direction: column; height: auto; }
+    .distributor-list { width: 100%; height: 400px; }
+    .map-container { height: 400px; }
+}
+
+
+
+/* --- Variables de Marca --- */
+:root {
+    --verde: #438e32;
+    --verde-oscuro: #1a4a2e;
+    --gris-fondo: #f4f7f6;
+    --blanco: #ffffff;
+    --texto: #333333;
+    --transicion-elegante: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* --- Reset General --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+}
+
+body { 
+    overflow-x: hidden; 
+    color: var(--texto); 
+    line-height: 1.5; 
+}
+
+img { max-width: 100%; height: auto; }
+
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+/* --- Header Estilo Cristal --- */
+header {
+    background-color: rgba(51, 118, 85, 0.7); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-wrapper { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 20px; 
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: #ffffff; 
+    font-weight: 600; 
+    font-size: 0.9rem; 
+}
+
+/* --- Hero Slider (Transición Moderna) --- */
+.hero-slider {
+    width: 100%;
+    height: 75vh; /* Altura un poco más amplia para elegancia */
+    overflow: hidden; 
+    position: relative;
+    background: #000;
+}
+
+.slider-track {
+    display: flex;
+    width: fit-content;
+    /* Movimiento fluido tipo Apple */
+   transition: transform 1.2s var(--transicion-elegante);
+    will-change: transform;
+}
+
+.slide {
+    width: 100vw; 
+    height: 75vh;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Efecto de zoom suave al estar activo */
+    transition: transform 6s ease;
+}
+
+.slide.active img {
+    transform: scale(1.08);
+}
+
+/* --- Texto del Slide con Efectos --- */
+.hero-text {
+    position: absolute;
+    top: 55%;
+    left: 8%;
+    transform: translateY(-50%);
+    color: white;
+    z-index: 10;
+    max-width: 550px;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+    
+    /* Estado inicial (oculto) */
+    opacity: 0;
+    filter: blur(10px);
+    transition: all 1s ease 0.4s;
+}
+
+.slide.active .hero-text {
+    opacity: 1;
+    filter: blur(0);
+    top: 50%; /* Sube ligeramente al aparecer */
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 15px
+    }
+
+
+
+
+
+
+    /* Contenedor de la cuadrícula */
+.products-grid-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+/* Tarjeta de Producto */
+.product-item-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.product-item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.product-item-card img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* Estilo del menú lateral activo */
+.cat-item-v {
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.cat-item-v.active {
+    background-color: #27ae60;
+    color: white;
+}
+
+.cat-item-v:not(.active):hover {
+    background-color: #f4f4f4;
+}
+
+/* Lógica de filtrado (clase oculta) */
+.product-item-card.hidden {
+    display: none;
+}
+
+
+
+/* Vista de Detalle */
+.product-detail-section { padding: 20px; animation: fadeIn 0.3s; }
+
+.btn-back { background: none; border: none; color: #27ae60; cursor: pointer; font-weight: bold; margin-bottom: 20px; }
+
+.detail-header h1 { color: #1b5e20; font-size: 2.5rem; margin-bottom: 5px; }
+.detail-header h2 { color: #666; font-size: 1.2rem; font-weight: normal; margin-bottom: 20px; }
+
+.detail-description { line-height: 1.6; color: #444; margin-bottom: 30px; max-width: 800px; }
+/* 
+.detail-actions { display: flex; gap: 15px; margin-bottom: 40px; }
+.btn-quote, .btn-file { padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; }
+.btn-quote { background: #00843d; color: white; }
+.btn-file { background: #00843d; color: white; } */
+
+.detail-actions {
+    display: flex;
+    gap: 15px; /* Espacio entre botones */
+    margin-bottom: 40px;
+    max-width: 500px; /* Ajusta este ancho según qué tan largos quieras los botones */
+}
+
+.btn-quote, .btn-file {
+    flex: 1; /* <--- Esto obliga a ambos a ocupar exactamente el mismo ancho */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    padding: 15px 10px; /* Padding uniforme */
+    height: 55px; /* <--- Altura fija para asegurar que sean iguales */
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    background: #00843d;
+    transition: background 0.3s;
+}
+
+.btn-quote:hover, .btn-file:hover {
+    background: #006b31; /* Color un poco más oscuro al pasar el mouse */
+}
+
+/* Tabs (Pestañas) */
+.tabs-container { border: 1px solid #eee; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.tabs-header { display: flex; background: #fdfdfd; border-bottom: 1px solid #eee; }
+.tab-btn { padding: 15px 30px; border: none; background: none; cursor: pointer; color: #666; border-bottom: 3px solid transparent; }
+.tab-btn.active { color: #27ae60; border-bottom-color: #27ae60; font-weight: bold; }
+
+.tab-content { padding: 30px; display: none; }
+.tab-content.active { display: block; }
+
+/* Lista de checks */
+.check-list { list-style: none; padding: 0; }
+.check-list li { margin-bottom: 12px; position: relative; padding-left: 30px; }
+.check-list li::before { content: '✓'; position: absolute; left: 0; color: #27ae60; font-weight: bold; }
+
+
+/* Contenedor de imagen relativo para posicionar el overlay */
+.prod-img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Capa oscura oculta por defecto */
+.product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Oscurece la imagen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Mostrar overlay al pasar el mouse */
+.product-item-card:hover .product-overlay {
+    opacity: 1;
+}
+
+/* Estilo de los botones dentro del overlay */
+.btn-overlay {
+    background: #2ecc71; /* Verde Agro */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80%;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.btn-overlay:hover {
+    transform: scale(1.05);
+    background: #27ae60;
+}
