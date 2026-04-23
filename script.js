@@ -40,3 +40,27 @@ window.onload = function() {
     // Intervalo de 6 segundos
     setInterval(moveSlider, 6000);
 };
+
+
+const track = document.querySelector('.carousel-track');
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
+let index = 0;
+
+nextBtn.addEventListener('click', () => {
+    const cardWidth = document.querySelector('.prod-card').offsetWidth + 20;
+    const maxIndex = track.children.length - (window.innerWidth > 768 ? 3 : 1);
+    
+    if (index < maxIndex) {
+        index++;
+        track.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+});
+
+prevBtn.addEventListener('click', () => {
+    const cardWidth = document.querySelector('.prod-card').offsetWidth + 20;
+    if (index > 0) {
+        index--;
+        track.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+});
