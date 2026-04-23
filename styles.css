@@ -372,6 +372,9 @@ body {
     cursor: pointer;
     margin-top: 20px;
     transition: all 0.3s ease;
+    display: inline-block;  /* Permite que el margen superior funcione correctamente */
+    margin-top: 20px;       /* Crea el espacio que falta entre el texto y el botón */
+    text-decoration: none;  /* Quita el subrayado del texto */
 }
 
 .btn-outline-green:hover {
