@@ -5,24 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos - AGRO ORGANICO</title>
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- TUS ESTILOS ORIGINALES MANTENIDOS --- */
+        .prod-img-wrapper { position: relative; overflow: hidden; border-radius: 8px; }
+        .product-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7); display: flex; flex-direction: column;
+            justify-content: center; align-items: center; gap: 12px; opacity: 0; transition: opacity 0.3s ease;
+        }
+        .product-item-card:hover .product-overlay { opacity: 1; }
+        .btn-overlay {
+            background: #2ecc71; color: white; border: none; padding: 10px 15px;
+            border-radius: 5px; cursor: pointer; width: 80%; font-weight: bold;
+            font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 8px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn-overlay:hover { background: #27ae60; transform: scale(1.05); }
+        .btn-overlay.secondary { background: #34495e; }
+        
+        .cart-floating-icon {
+            position: fixed; bottom: 30px; right: 30px; background: #2ecc71;
+            color: white; width: 60px; height: 60px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer; z-index: 1000;
+        }
+        #cart-count {
+            position: absolute; top: 0; right: 0; background: #e74c3c;
+            color: white; font-size: 0.8rem; width: 22px; height: 22px;
+            border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            font-weight: bold; border: 2px solid white;
+        }
+        .hidden { display: none !important; }
+
+        /* --- NUEVO DISEÑO PARA LA VISTA DE DETALLE --- */
+        .product-detail-section { padding: 40px 0; display: none; }
+        .detail-main-wrapper { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 40px; 
+            background: #fff; 
+            padding: 30px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .detail-image-side { 
+            background: #f9f9f9; 
+            border-radius: 15px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 20px;
+            max-height: 500px;
+        }
+        .detail-image-side img { max-width: 100%; max-height: 400px; object-fit: contain; }
+        
+        .detail-header h1 { font-size: 2.2rem; color: #2c3e50; margin-bottom: 5px; }
+        .detail-header h2 { font-size: 1rem; color: #27ae60; margin-bottom: 15px; font-weight: 600; }
+        .detail-price-tag { font-size: 2rem; color: #2ecc71; font-weight: 800; margin-bottom: 20px; }
+
+        /* Tabs Estilizados */
+        .tabs-header { display: flex; gap: 10px; border-bottom: 2px solid #eee; margin: 25px 0; }
+        .tab-btn { 
+            padding: 10px 20px; border: none; background: none; cursor: pointer; 
+            font-weight: bold; color: #95a5a6; border-bottom: 3px solid transparent; 
+        }
+        .tab-btn.active { color: #27ae60; border-bottom-color: #27ae60; }
+        .tab-content { display: none; color: #555; line-height: 1.6; }
+        .tab-content.active { display: block; }
+
+        .check-list { list-style: none; padding: 0; }
+        .check-list li { margin-bottom: 10px; padding-left: 30px; position: relative; }
+        .check-list li::before { 
+            content: "\f058"; font-family: "Font Awesome 5 Free"; font-weight: 900; 
+            position: absolute; left: 0; color: #2ecc71; 
+        }
+
+        @media (max-width: 850px) { .detail-main-wrapper { grid-template-columns: 1fr; } }
+    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <header>
         <div class="container nav-wrapper">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="img/favicon.svg" alt="Agro Organico Logo" class="logo-img">
-                </a>
-            </div>
+            <div class="logo"><a href="index.html"><img src="img/favicon.svg" alt="Logo" class="logo-img"></a></div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="#">Nosotros</a></li>
                     <li><a href="productos.html" class="active-link">Productos</a></li>
-                    <li><a href="distribuidores.html">Distribuidores</a></li>
                     <li><a href="#">Contactos</a></li>
                 </ul>
             </nav>
@@ -31,309 +102,163 @@
 
     <section class="hero-products-page">
         <div class="container hero-content">
-            <h1>NUESTROS PRODUCTOS</h1> <p>Soluciones eficientes para mejorar la productividad de tu cultivo</p> <button class="btn-tech-consult">Habla con un técnico</button> </div>
+            <h1>NUESTROS PRODUCTOS</h1> 
+            <p>Soluciones eficientes para tu cultivo</p> 
+        </div>
     </section>
 
     <section class="section">
         <div class="container main-products-layout">
-    <aside class="sidebar-filter">
-        <h2 class="sidebar-title">CATEGORÍAS</h2>
-        <div class="categories-container">
-            <ul class="cat-list-vertical">
-                <li class="cat-item-v active" data-filter="todos">
-                    <div class="cat-label"><i class="fas fa-th"></i> Todos los Productos</div>
-                </li>
-                <li class="cat-item-v" data-filter="herbicidas">
-                    <div class="cat-label"><i class="fas fa-leaf"></i> Herbicidas</div>
-                </li>
-                <li class="cat-item-v" data-filter="fungicidas">
-                    <div class="cat-label"><i class="fas fa-biohazard"></i> Fungicidas</div>
-                </li>
-                <li class="cat-item-v" data-filter="foliar">
-                    <div class="cat-label"><i class="fas fa-seedling"></i> Fertilizante Foliar</div>
-                </li>
-                <li class="cat-item-v" data-filter="edaficos">
-                    <div class="cat-label"><i class="fas fa-recycle"></i> Fertilizantes Edáficos</div>
-                </li>
-                <li class="cat-item-v" data-filter="enmiendas">
-                    <div class="cat-label"><i class="fas fa-mountain"></i> Enmiendas</div>
-                </li>
-            </ul>
-        </div>
-    </aside>
+            <aside class="sidebar-filter" id="sidebar-filter">
+                <h2 class="sidebar-title">CATEGORÍAS</h2>
+                <ul class="cat-list-vertical">
+                    <li class="cat-item-v active" data-filter="todos">Todos los Productos</li>
+                    <li class="cat-item-v" data-filter="herbicidas">Herbicidas</li>
+                    <li class="cat-item-v" data-filter="fungicidas">Fungicidas</li>
+                    <li class="cat-item-v" data-filter="edaficos">Edáficos</li>
+                    <li class="cat-item-v" data-filter="foliar">Foliar / Kits</li>
+                    <li class="cat-item-v" data-filter="enmiendas">Enmiendas</li>
+                </ul>
+            </aside>
 
-    <main class="products-display">
-        <div class="products-grid-inner" id="grid-productos">
-            <div class="product-item-card" data-category="herbicidas">
-                <div class="prod-img-wrapper"><img src="img/productos/triplexac.jpg" alt="Triplexac"></div>
-                <h3>TRIPLEXAC</h3><p>Herbicida</p>
-            </div>
-            <div class="product-item-card" data-category="herbicidas">
-                <div class="prod-img-wrapper"><img src="img/productos/tx2.jpg" alt="TX2"></div>
-                <h3>TX2</h3><p>Herbicida</p>
-            </div>
+            <main class="products-display">
+                <div class="products-grid-inner" id="grid-productos">
+                    </div>
 
-            <div class="product-item-card" data-category="fungicidas">
-                <div class="prod-img-wrapper"><img src="img/productos/ferti-organ.jpg" alt="Ferti-Organ"></div>
-                <h3>FERTI-ORGAN</h3><p>Fungicida</p>
-            </div>
-
-            <div class="product-item-card" data-category="foliar">
-                <div class="prod-img-wrapper"><img src="img/productos/nutrifull.jpg" alt="Nutrifull"></div>
-                <h3>NUTRIFULL</h3><p>Fertilizante Foliar</p>
-            </div>
-            <div class="product-item-card" data-category="foliar">
-                <div class="prod-img-wrapper"><img src="img/productos/humi-pk.jpg" alt="Humi-PK"></div>
-                <h3>HUMI-PK</h3><p>Fertilizante Foliar</p>
-            </div>
-            <div class="product-item-card" data-category="foliar">
-                <div class="prod-img-wrapper"><img src="img/productos/complemento.jpg" alt="Complemento"></div>
-                <h3>COMPLEMENTO</h3><p>Fertilizante Foliar</p>
-            </div>
-
-            <div class="product-item-card" data-category="edaficos">
-                <div class="prod-img-wrapper"><img src="img/productos/full-cacao.jpg" alt="Full Cacao"></div>
-                <h3>FULL CACAO</h3><p>Fertilizante Edáfico</p>
-            </div>
-            <div class="product-item-card" data-category="edaficos">
-                <div class="prod-img-wrapper"><img src="img/productos/full-banano.jpg" alt="Full Banano"></div>
-                <h3>FULL BANANO</h3><p>Fertilizante Edáfico</p>
-            </div>
-
-            <div class="product-item-card" data-category="enmiendas">
-                <div class="prod-img-wrapper"><img src="img/productos/desbloqueador.jpg" alt="Desbloqueador"></div>
-                <h3>DESBLOQUEADOR</h3><p>Enmienda</p>
-            </div>
-        </div>
-    </main>
-
-
-
-
-
-                        <section id="product-detail-view" class="product-detail-section" style="display: none;">
-                        <button id="btn-back" class="btn-back"><i class="fas fa-arrow-left"></i> Volver a productos</button>
-                        
-                        <div class="detail-main-wrapper">
-                            <div class="detail-image-side">
-                                <img id="detail-main-img" src="" alt="Producto">
+                <section id="product-detail-view" class="product-detail-section">
+                    <button class="btn-back" onclick="cerrarDetalle()" style="margin-bottom: 20px; cursor: pointer; border: none; padding: 10px 20px; border-radius: 5px;"><i class="fas fa-arrow-left"></i> Volver</button>
+                    
+                    <div class="detail-main-wrapper">
+                        <div class="detail-image-side"><img id="detail-img" src="" alt=""></div>
+                        <div class="detail-info-side">
+                            <div class="detail-header">
+                                <h1 id="detail-title"></h1>
+                                <h2 id="detail-subtitle"></h2>
+                                <div class="detail-price-tag" id="detail-price"></div>
+                            </div>
+                            <p id="detail-desc"></p>
+                            
+                            <div class="tabs-header">
+                                <button class="tab-btn active" data-tab="ventajas">Ventajas</button>
+                                <button class="tab-btn" data-tab="composicion">Composición</button>
+                                <button class="tab-btn" data-tab="uso">Uso y Dosis</button>
                             </div>
 
-                            <div class="detail-info-side">
-                                <div class="detail-header">
-                                    <h1 id="detail-title">NOMBRE PRODUCTO</h1>
-                                    <h2 id="detail-subtitle">CATEGORÍA / TIPO</h2>
-                                </div>
+                            <div class="tab-content active" id="tab-ventajas"></div>
+                            <div class="tab-content" id="tab-composicion"></div>
+                            <div class="tab-content" id="tab-uso"></div>
 
-                                <div class="detail-description">
-                                    <p id="detail-text">Descripción aquí...</p>
-                                </div>
-
-                                <div class="detail-actions">
-                                    <a href="https://wa.me/593968308676" class="btn-quote">Solicitar cotización</a>
-                                    <a href="#" id="detail-pdf-btn" class="btn-file" target="_blank">Ficha Técnica</a>
-                                </div>
-
-                                <div class="tabs-container">
-                                    <div class="tabs-header">
-                                        <button class="tab-btn active" data-tab="ventajas">Ventajas</button>
-                                        <button class="tab-btn" data-tab="composicion">Composición</button>
-                                        <button class="tab-btn" data-tab="uso">Uso y dosis</button>
-                                    </div>
-                                    <div class="tab-content active" id="tab-ventajas">
-                                        <ul class="check-list" id="list-ventajas"></ul>
-                                    </div>
-                                    <div class="tab-content" id="tab-composicion">
-                                        <p id="text-composicion"></p>
-                                    </div>
-                                    <div class="tab-content" id="tab-uso">
-                                        <p id="text-uso"></p>
-                                    </div>
-                                </div>
+                            <div class="detail-actions" style="margin-top: 30px; display: flex; gap: 15px;">
+                                <a href="https://wa.me/593968308676" class="btn-overlay" style="width: auto; padding: 15px 30px;">Solicitar Cotización</a>
+                                <a href="#" id="detail-pdf-btn" class="btn-overlay secondary" style="width: auto; padding: 15px 30px;" target="_blank">Ficha Técnica</a>
                             </div>
                         </div>
-                    </section>
-</div>
-    </section>
-
-    <section class="section bg-light">
-        <div class="container split-view">
-            <div class="text-side">
-                <h2>NUESTROS DISTRIBUIDORES</h2>
-                <p>Contamos con más de 250 distribuidores a nivel nacional.</p>
-                <button class="btn-outline-green">Ver más</button>
-            </div>
-            <div class="map-side">
-                <div class="map-frame">
-                    <img src="img/mapa.svg" alt="Mapa Distribuidores Ecuador" class="mapa-ecuador">
-                </div>
-            </div>
+                    </div>
+                </section>
+            </main>
         </div>
     </section>
 
-    <footer class="main-footer">
-    <div class="container footer-content">
-         <div class="footer-logo">
-            <a href="#">
-                <img src="img/favicon.svg" alt="Agro Organico Logo" class="footer-logo-img">
-             </a>
-    </div>
+    <div class="cart-floating-icon" id="cart-icon"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></div>
 
-        <div class="footer-column">
-            <h3>Inicio</h3>
-            <ul>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="productos1.html">Productos</a></li>
-                <li><a href="distribuidores.html">Distribuidores</a></li>
-                <li><a href="#">Contactos</a></li>
-            </ul>
-        </div>
+    <script>
+        // BASE DE DATOS COMPLETA (18 PRODUCTOS)
+        const infoProductos = {
+            "TRIPLEXAC LITRO": { precio: 9.00, cat: "herbicidas", img: "triplexac-litro.jpg", subtitle: "HERBICIDA ORGÁNICO", desc: "Herbicida de origen natural obtenido de la fermentación de frutas.", ventajas: ["Nitrógeno de origen orgánico.", "Contiene más del 17% de materia orgánica.", "No afecta el sistema radicular.", "No afecta el PH del suelo."], composicion: "Ácido acético concentrado al 10%.", uso: "Aplicar directamente sobre la maleza." },
+            "TRIPLEXAC GALON": { precio: 36.00, cat: "herbicidas", img: "triplexac-galon.jpg", subtitle: "HERBICIDA ORGÁNICO", desc: "Destruye la membrana celular causando desecamiento.", ventajas: ["100% Biodegradable.", "No afecta la floración."], composicion: "Ácido acético.", uso: "Vía foliar en maleza cada 60 días." },
+            "TRIPLEXAC CANECA 10 LT": { precio: 90.00, cat: "herbicidas", img: "triplexac-10.png", subtitle: "HERBICIDA ORGÁNICO", desc: "Formato industrial para grandes extensiones.", ventajas: ["Control fitosanitario orgánico."], composicion: "Fermentado de frutas.", uso: "Uso directo según infestación." },
+            "TRIPLEXAC CANECA 20 LT": { precio: 180.00, cat: "herbicidas", img: "triplexac-20.png", subtitle: "HERBICIDA ORGÁNICO", desc: "Máximo rendimiento para control de gramíneas.", ventajas: ["Seguro para el cultivo."], composicion: "Ácido acético industrial.", uso: "2 L en 200 L de agua." },
+            "TX2 LITRO": { precio: 11.50, cat: "herbicidas", img: "tx2-litro.jpg", subtitle: "ESPECIAL HOJA ANCHA", desc: "Control de malezas como gramalote y ortiga.", ventajas: ["Acción rápida.", "Biodegradable."], composicion: "Ácido acético 33,40 g/l.", uso: "2 L en 200 L de agua." },
+            "TX2 GALON": { precio: 46.00, cat: "herbicidas", img: "tx2-galon.png", subtitle: "ESPECIAL HOJA ANCHA", desc: "Herbicida orgánico potente.", ventajas: ["Específico para hoja ancha."], composicion: "Extractos vegetales ácidos.", uso: "Aplicar en días secos." },
+            "TX2 CAN 10 LT": { precio: 115.00, cat: "herbicidas", img: "tx2-10.png", subtitle: "ESPECIAL HOJA ANCHA", desc: "Presentación de 10 litros.", ventajas: ["No residual."], composicion: "Ácido acético.", uso: "Foliar directamente." },
+            "TX2 CAN 20 LT": { precio: 230.00, cat: "herbicidas", img: "tx2-20.png", subtitle: "ESPECIAL HOJA ANCHA", desc: "Presentación de 20 litros.", ventajas: ["Máxima eficiencia."], composicion: "Ácido acético.", uso: "Uso profesional." },
+            "FERTI - ORGAN LITRO": { precio: 6.44, cat: "fungicidas", img: "ferti-organ.jpg", subtitle: "FERTILIZANTE ORGÁNICO", desc: "Fórmula mineral para desarrollo vegetativo.", ventajas: ["Plantas vigorosas ante plagas.", "Brillo en follaje y frutos."], composicion: "Nitrógeno (1.06%), Azufre (9.08%).", uso: "Foliar cada 30 días." },
+            "FERTI - ORGAN GALON": { precio: 23.18, cat: "fungicidas", img: "ferti-galon.jpg", subtitle: "FERTILIZANTE ORGÁNICO", desc: "Mejora fructificación y calidad.", ventajas: ["Energía por azufre y calcio."], composicion: "Materia orgánica (16.49%).", uso: "Cacao/Banano: 4 L/ha." },
+            "FERTI - ORGAN CAN 10 LT": { precio: 51.50, cat: "fungicidas", img: "ferti-10.png", subtitle: "FERTILIZANTE ORGÁNICO", desc: "Ideal para pre-floración.", ventajas: ["Promueve fertilidad de flores."], composicion: "Mineral orgánico.", uso: "Arroz/Maíz: 3 L/ha cada 15 días." },
+            "FERTI - ORGAN CAN 20 LT": { precio: 103.00, cat: "fungicidas", img: "ferti-20.png", subtitle: "FERTILIZANTE ORGÁNICO", desc: "Concentrado industrial.", ventajas: ["Aumenta rendimientos."], composicion: "Calcio (3.92%).", uso: "Cítricos: 4 L/ha cada 45 días." },
+            "FULL BANANO 25KG": { precio: 15.00, cat: "edaficos", img: "full-banano.jpg", subtitle: "ABONO GRANULADO", desc: "Mezcla mineral de origen animal y vegetal.", ventajas: ["Liberación controlada.", "Mejora el anclaje."], composicion: "N (5.35%), P (2.46%), K (6.96%).", uso: "12 a 14 sacos por ha al año." },
+            "FULL CACAO 25 KG": { precio: 15.00, cat: "edaficos", img: "full-cacao.jpg", subtitle: "ABONO GRANULADO", desc: "Nutrición específica para cacao.", ventajas: ["Resistencia a enfermedades."], composicion: "Materia Orgánica (26.58%).", uso: "10 a 12 sacos por ha." },
+            "DESBLOQUEADOR 1KG": { precio: 4.00, cat: "enmiendas", img: "desbloq-1kg.png", subtitle: "ENMIENDA ORGÁNICA", desc: "Acondicionador que corrige bloqueos nutricionales.", ventajas: ["Equilibra el pH.", "Aumenta retención de agua."], composicion: "Materia Orgánica (36.00%).", uso: "4.5 a 6.0 Kg/Ha." },
+            "DESBLOQUEADOR 25KG": { precio: 10.00, cat: "enmiendas", img: "desbloqueador-.jpg", subtitle: "ENMIENDA ORGÁNICA", desc: "Libera nutrientes bloqueados en el suelo.", ventajas: ["Cicatrizante para podas.", "Raíces más fuertes."], composicion: "Silicio (14.00%), Azufre (7.00%).", uso: "Aplicación edáfica directa." },
+            "NUTRI KIT": { precio: 20.00, cat: "foliar", img: "nutrikit.jpg", subtitle: "KIT BIOESTIMULANTE", desc: "Mayor velocidad de crecimiento.", ventajas: ["Reduce estrés post-poda.", "Penetración rápida por estomas."], composicion: "Algas Marinas (33.96%).", uso: "Vía foliar etapa productiva." },
+            "SUPER KIT": { precio: 28.00, cat: "foliar", img: "superkit.jpg", subtitle: "KIT NUTRICIONAL", desc: "Humato enriquecido con fósforo y potasio.", ventajas: ["Aumenta sistema inmunológico.", "Evita erosión del suelo."], composicion: "Potasio (14.74%), Fósforo (20.70%).", uso: "Vía Foliar: 1 lt. Edáfica: 2 lt." }
+        };
 
-        <div class="footer-column">
-            <h3>Contáctanos</h3>
-            <p><strong>MATRIZ QUEVEDO</strong><br>
-            Km. 2.5 Vía Valencia, frente a la entrada Cañalito.</p>
-            <p>0968308676</p>
-            <p>agro_organico@live.com</p>
-        </div>
+        function render() {
+            const grid = document.getElementById('grid-productos');
+            grid.innerHTML = "";
+            for (let nombre in infoProductos) {
+                const p = infoProductos[nombre];
+                grid.innerHTML += `
+                    <div class="product-item-card" data-category="${p.cat}">
+                        <div class="prod-img-wrapper">
+                            <img src="img/productos/${p.img}">
+                            <div class="product-overlay">
+                                <button class="btn-overlay" onclick="mostrarDetalle('${nombre}')"><i class="fas fa-eye"></i> Detalles</button>
+                                <button class="btn-overlay secondary" onclick="sumarCarrito()"><i class="fas fa-cart-plus"></i> Añadir</button>
+                            </div>
+                        </div>
+                        <h3>${nombre}</h3>
+                        <p style="font-weight:bold; color:#27ae60;">$${p.precio.toFixed(2)}</p>
+                    </div>`;
+            }
+        }
 
-        <div class="footer-column">
-            <h3>Síguenos</h3>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/agroorganicoec2" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.youtube.com/@agroorganicoec" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="https://www.tiktok.com/@agro_organico" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-tiktok"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</footer>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const filterButtons = document.querySelectorAll('.cat-item-v');
-    const productCards = document.querySelectorAll('.product-item-card');
+        function mostrarDetalle(n) {
+            const d = infoProductos[n];
+            document.getElementById('detail-title').innerText = n;
+            document.getElementById('detail-subtitle').innerText = d.subtitle;
+            document.getElementById('detail-price').innerText = `$${d.precio.toFixed(2)}`;
+            document.getElementById('detail-img').src = `img/productos/${d.img}`;
+            document.getElementById('detail-desc').innerText = d.desc;
+            
+            // Ficha PDF dinámica
+            const baseFile = n.split(' ')[0];
+            document.getElementById('detail-pdf-btn').href = `fichas_tecnicas/${baseFile}.pdf`;
 
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remover 'active' de todos y ponerlo en el seleccionado
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
+            document.getElementById('tab-ventajas').innerHTML = `<ul class="check-list">${d.ventajas.map(v => `<li>${v}</li>`).join('')}</ul>`;
+            document.getElementById('tab-composicion').innerText = d.composicion;
+            document.getElementById('tab-uso').innerText = d.uso;
 
-            const selectedCategory = button.getAttribute('data-filter');
+            document.getElementById('grid-productos').style.display = 'none';
+            document.getElementById('sidebar-filter').style.display = 'none';
+            document.querySelector('.hero-products-page').style.display = 'none';
+            document.getElementById('product-detail-view').style.display = 'block';
+            window.scrollTo(0,0);
+        }
 
-            productCards.forEach(card => {
-                const cardCategory = card.getAttribute('data-category');
-                
-                // Mostrar si es 'todos' o si coincide la categoría
-                if (selectedCategory === 'todos' || selectedCategory === cardCategory) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
+        function cerrarDetalle() {
+            document.getElementById('product-detail-view').style.display = 'none';
+            document.getElementById('grid-productos').style.display = 'grid';
+            document.getElementById('sidebar-filter').style.display = 'block';
+            document.querySelector('.hero-products-page').style.display = 'block';
+        }
+
+        let count = 0;
+        function sumarCarrito() { count++; document.getElementById('cart-count').innerText = count; }
+
+        // Tabs Logic
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn, .tab-content').forEach(el => el.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById('tab-' + btn.getAttribute('data-tab')).classList.add('active');
             });
         });
-    });
-});
-</script>
 
-<script>
-// 1. Base de datos de productos
-const infoProductos = {
-    "TRIPLEXAC": {
-        subtitle: "HERBICIDA 100% ORGÁNICO",
-        imagePath: "img/productos/400/triplexac-galon.jpg",
-        pdfPath: "fichas_tecnicas/TRIPLEXAC.pdf", // <--- Ruta de tu PDF
-        desc: "Herbicidas de origen natural, obtenido a partir de la fermentación de frutas dando como resultado ácido acético (vinagre).",
-        ventajas: [
-            "Tiene Nitrógeno de origen orgánico.",
-            "Contiene más del 17% de materia orgánica.",
-            "No afecta el sistema radicular ni la floración de tu cultivo.",
-            "No afecta el PH del suelo."
-        ],
-        composicion: "Ácido acético concentrado al 10% y coadyuvantes orgánicos.",
-        uso: "Diluir 1 litro en 200 litros de agua. Aplicación foliar dirigida."
-    },
-    "TX2": {
-        subtitle: "HERBICIDA HOJA ANCHA",
-        imagePath: "img/productos/tx2.jpg",
-        pdfPath: "pdf/ficha-tecnica-triplexac.pdf", // <--- Ruta de tu PDF
-        desc: "Solución efectiva para el control de malezas de hoja ancha en diversos cultivos.",
-        ventajas: ["Efecto desecante rápido", "Biodegradable", "Seguro para el aplicador"],
-        composicion: "Extractos vegetales ácidos.",
-        uso: "Aplicar sobre maleza joven en crecimiento activo."
-    }
-    // Puedes seguir agregando el resto de productos aquí...
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-    const grid = document.querySelector('.products-grid-inner');
-    const sidebar = document.querySelector('.sidebar-filter');
-    const detailView = document.getElementById('product-detail-view');
-
-    // 2. Lógica para abrir el detalle
-    document.querySelectorAll('.product-item-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const nombre = card.querySelector('h3').innerText.trim();
-            const data = infoProductos[nombre];
-
-            if (data) {
-                // Llenar textos e imagen principal
-                document.getElementById('detail-title').innerText = nombre;
-                document.getElementById('detail-subtitle').innerText = data.subtitle;
-                document.getElementById('detail-main-img').src = data.imagePath;
-                document.getElementById('detail-pdf-btn').href = data.pdfPath;
-                document.getElementById('detail-text').innerText = data.desc;
-
-                // --- ESTO ES LO QUE FALTABA: Llenar la lista de Ventajas ---
-                const listaV = document.getElementById('list-ventajas');
-                listaV.innerHTML = ""; // Limpiar lista previa
-                data.ventajas.forEach(item => {
-                    const li = document.createElement('li');
-                    li.innerText = item;
-                    listaV.appendChild(li);
+        // Filtros
+        document.querySelectorAll('.cat-item-v').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.cat-item-v').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                const filter = item.getAttribute('data-filter');
+                document.querySelectorAll('.product-item-card').forEach(card => {
+                    card.classList.toggle('hidden', filter !== 'todos' && card.dataset.category !== filter);
                 });
-
-                // Llenar Composición y Uso
-                document.getElementById('text-composicion').innerText = data.composicion;
-                document.getElementById('text-uso').innerText = data.uso;
-
-                // Cambiar vistas
-                grid.style.display = 'none';
-                sidebar.style.display = 'none';
-                detailView.style.display = 'block';
-                window.scrollTo(0, 0); // Subir al inicio de la página
-            }
+            });
         });
-    });
 
-    // 3. Botón Volver (Ahora fuera del bucle para que funcione bien)
-    document.getElementById('btn-back').addEventListener('click', () => {
-        grid.style.display = 'grid';
-        sidebar.style.display = 'block';
-        detailView.style.display = 'none';
-    });
-
-    // 4. Lógica de Pestañas (Tabs)
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Quitar clase active de todos los botones y contenidos
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            
-            // Activar el actual
-            btn.classList.add('active');
-            const tabId = 'tab-' + btn.getAttribute('data-tab');
-            document.getElementById(tabId).classList.add('active');
-        });
-    });
-});
-</script>
-
-
+        render();
+    </script>
 </body>
 </html>
