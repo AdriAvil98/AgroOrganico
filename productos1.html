@@ -92,8 +92,10 @@
             <div class="logo"><a href="index.html"><img src="img/favicon.svg" alt="Logo" class="logo-img"></a></div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="productos.html" class="active-link">Productos</a></li>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="productos1.html">Productos</a></li>
+                    <li><a href="distribuidores.html">Distribuidores</a></li>
                     <li><a href="#">Contactos</a></li>
                 </ul>
             </nav>
@@ -259,6 +261,25 @@
         });
 
         render();
+
+        render();
+
+        // --- NUEVO CÓDIGO: Filtro automático por URL ---
+        window.addEventListener('DOMContentLoaded', () => {
+            // Leer el parámetro "cat" de la URL (ej: productos1.html?cat=herbicidas)
+            const params = new URLSearchParams(window.location.search);
+            const categoriaSeleccionada = params.get('cat');
+            
+            if (categoriaSeleccionada) {
+                // Buscar el botón en la barra lateral que corresponde a esta categoría
+                const btnFiltro = document.querySelector(`.cat-item-v[data-filter="${categoriaSeleccionada}"]`);
+                
+                // Si el botón existe, simulamos un "clic" para que se aplique tu lógica de filtrado existente
+                if (btnFiltro) {
+                    btnFiltro.click();
+                }
+            }
+        });
     </script>
 </body>
 </html>
