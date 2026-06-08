@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabaja con Nosotros - AGRO ORGANICO</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/favicon.svg" alt="Agro Organico Logo" class="logo-img">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="productos1.html">Productos</a></li>
+                    <li><a href="distribuidores.html">Distribuidores</a></li>
+                    <li><a href="#">Contactos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-trabaja">
+        <div class="container hero-content text-center">
+            <h1>ÚNETE A NUESTRO EQUIPO</h1>
+            <p>Buscamos talento apasionado por el agro, la innovación y el desarrollo sostenible. Déjanos tus datos y forma parte de la familia AGRO ORGANICO.</p>
+        </div>
+    </section>
+
+    <section class="section form-section bg-light">
+        <div class="container">
+            <div class="form-wrapper">
+                <h2 class="form-title">POSTULACIÓN DE TALENTO</h2>
+                <form id="empleoForm" onsubmit="enviarPostulacion(event)">
+                    <div class="form-grid">
+                        
+                        <div class="input-group">
+                            <label for="nombres">Nombres <span class="required">*</span></label>
+                            <input type="text" id="nombres" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="apellidos">Apellidos <span class="required">*</span></label>
+                            <input type="text" id="apellidos" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="correo">Correo electrónico <span class="required">*</span></label>
+                            <input type="email" id="correo" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="telefono">Teléfono / Celular <span class="required">*</span></label>
+                            <input type="tel" id="telefono" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="ciudad">Ciudad de Residencia <span class="required">*</span></label>
+                            <input type="text" id="ciudad" placeholder="Ej. Quevedo" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="area">Área de Interés <span class="required">*</span></label>
+                            <select id="area" required>
+                                <option value="" disabled selected>- Seleccionar -</option>
+                                <option value="ventas">Ventas y Asesoría Comercial</option>
+                                <option value="agronomia">Agronomía y Campo</option>
+                                <option value="logistica">Logística y Bodega</option>
+                                <option value="administracion">Administración y Finanzas</option>
+                                <option value="marketing">Marketing y Diseño</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label for="cv">Adjuntar Currículum Vitae (PDF o Word) <span class="required">*</span></label>
+                            <input type="file" id="cv" accept=".pdf,.doc,.docx" required class="file-input">
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label for="presentacion">Breve presentación (Opcional)</label>
+                            <textarea id="presentacion" rows="4" placeholder="Cuéntanos por qué te gustaría trabajar con nosotros y qué puedes aportar al equipo..."></textarea>
+                        </div>
+
+                        <div class="input-group full-width checkbox-group">
+                            <label class="check-container">
+                                <input type="checkbox" required>
+                                <span class="checkmark"></span>
+                                Acepto las Políticas de privacidad y el tratamiento de mis datos personales para fines de reclutamiento <span class="required">*</span>
+                            </label>
+                        </div>
+
+                        <div class="input-group full-width recaptcha-mockup">
+                            <div class="recaptcha-box">
+                                <label class="check-container recaptcha-label">
+                                    <input type="checkbox" required>
+                                    <span class="checkmark"></span>
+                                    No soy un robot
+                                </label>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/RecaptchaLogo.svg/1200px-RecaptchaLogo.svg.png" alt="reCAPTCHA" class="recaptcha-logo">
+                            </div>
+                            <small>This question is for testing whether or not you are a human visitor and to prevent automated spam submissions.</small>
+                        </div>
+
+                        <div class="input-group full-width text-center">
+                            <button type="submit" class="btn-green-solid submit-btn">ENVIAR POSTULACIÓN</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+             <div class="footer-logo">
+                <a href="#"><img src="img/favicon.svg" alt="Agro Organico Logo" class="footer-logo-img"></a>
+            </div>
+            <div class="footer-column">
+                <h3>Inicio</h3>
+                <ul>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="productos1.html">Productos</a></li>
+                    <li><a href="distribuidores.html">Distribuidores</a></li>
+                    <li><a href="#">Contactos</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contáctanos</h3>
+                <p><strong>MATRIZ QUEVEDO</strong><br>Km. 2.5 Vía Valencia, frente a la entrada Cañalito.</p>
+                <p>0968308676</p>
+                <p>agro_organico@live.com</p>
+            </div>
+            <div class="footer-column">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/agroorganicoec2" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@agroorganicoec" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@agro_organico" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function enviarPostulacion(event) {
+            event.preventDefault();
+            
+            // Validar que se haya subido un archivo
+            const cvInput = document.getElementById('cv');
+            if (cvInput.files.length === 0) {
+                alert("Por favor, adjunta tu currículum antes de enviar.");
+                return;
+            }
+
+            alert("¡Postulación enviada con éxito! Hemos recibido tu información y currículum. Si tu perfil se ajusta a nuestras búsquedas, nos pondremos en contacto contigo.");
+            document.getElementById('empleoForm').reset();
+        }
+    </script>
+</body>
+</html>

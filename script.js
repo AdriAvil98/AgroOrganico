@@ -1,66 +1,119 @@
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', () => {
+    initHeroSlider();
+    initProductsCarousel();
+});
+
+function initHeroSlider() {
     const track = document.querySelector('.slider-track');
     const slides = document.querySelectorAll('.slide');
-    let index = 0;
 
-    // Inicializar el primer slide
+    if (!track || slides.length === 0) return;
+
+    let index = 0;
     slides[0].classList.add('active');
 
+    if (slides.length < 2) return;
+
     function moveSlider() {
-        // 1. Avanzamos el índice
         index++;
-        
-        // 2. Quitamos la clase active de todos para limpiar
-        slides.forEach(s => s.classList.remove('active'));
+        slides.forEach(slide => slide.classList.remove('active'));
 
-        // 3. Aplicamos la animación de movimiento
-        track.style.transition = "transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1)";
+        track.style.transition = 'transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1)';
         track.style.transform = `translateX(-${index * 100}vw)`;
-
-        // 4. Encendemos el texto del slide actual (incluido el clon)
         slides[index].classList.add('active');
 
-        // 5. SI LLEGAMOS AL CLON (Último slide)
         if (index === slides.length - 1) {
-            // Esperamos a que termine la animación (1.2s) + un pequeño margen
             setTimeout(() => {
-                // DESACTIVAMOS la transición para el salto invisible
-                track.style.transition = "none";
+                track.style.transition = 'none';
                 index = 0;
-                track.style.transform = `translateX(0vw)`;
-                
-                // MANTENEMOS el texto encendido en el original 
-                // para que no haya parpadeo visual
+                track.style.transform = 'translateX(0vw)';
                 slides[slides.length - 1].classList.remove('active');
                 slides[0].classList.add('active');
-            }, 1250); 
+            }, 1250);
         }
     }
 
-    // Intervalo de 6 segundos
     setInterval(moveSlider, 6000);
-};
+}
 
+function initProductsCarousel() {
+    const section = document.querySelector('.featured-products-section');
+    if (!section) return;
 
-const track = document.querySelector('.carousel-track');
-const nextBtn = document.querySelector('.next-btn');
-const prevBtn = document.querySelector('.prev-btn');
-let index = 0;
+    const track = section.querySelector('.carousel-track');
+    const cards = section.querySelectorAll('.prod-card');
+    const nextBtn = section.querySelector('.next-btn');
+    const prevBtn = section.querySelector('.prev-btn');
+    const dotsContainer = section.querySelector('.carousel-dots');
 
-nextBtn.addEventListener('click', () => {
-    const cardWidth = document.querySelector('.prod-card').offsetWidth + 20;
-    const maxIndex = track.children.length - (window.innerWidth > 768 ? 3 : 1);
-    
-    if (index < maxIndex) {
-        index++;
-        track.style.transform = `translateX(-${index * cardWidth}px)`;
+    if (!track || cards.length === 0 || !nextBtn || !prevBtn) return;
+
+    let index = 0;
+    let maxIndex = 0;
+    let step = 0;
+
+    function getCardsPerView() {
+        if (window.matchMedia('(max-width: 768px)').matches) return 1;
+        if (window.matchMedia('(max-width: 992px)').matches) return 2;
+        return 3;
     }
-});
 
-prevBtn.addEventListener('click', () => {
-    const cardWidth = document.querySelector('.prod-card').offsetWidth + 20;
-    if (index > 0) {
-        index--;
-        track.style.transform = `translateX(-${index * cardWidth}px)`;
+    function measure() {
+        const firstCard = cards[0];
+        const styles = window.getComputedStyle(track);
+        const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+
+        step = firstCard.getBoundingClientRect().width + gap;
+        maxIndex = Math.max(0, cards.length - getCardsPerView());
+        index = Math.min(index, maxIndex);
     }
-});
+
+    function renderDots() {
+        if (!dotsContainer) return;
+
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i <= maxIndex; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot';
+            dot.type = 'button';
+            dot.setAttribute('aria-label', `Ir al producto ${i + 1}`);
+            dot.addEventListener('click', () => {
+                index = i;
+                updateCarousel();
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${index * step}px)`;
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index === maxIndex;
+
+        if (dotsContainer) {
+            dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, dotIndex) => {
+                dot.classList.toggle('active', dotIndex === index);
+                dot.setAttribute('aria-current', dotIndex === index ? 'true' : 'false');
+            });
+        }
+    }
+
+    function refresh() {
+        measure();
+        renderDots();
+        updateCarousel();
+    }
+
+    nextBtn.addEventListener('click', () => {
+        index = Math.min(index + 1, maxIndex);
+        updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        index = Math.max(index - 1, 0);
+        updateCarousel();
+    });
+
+    window.addEventListener('resize', refresh);
+    refresh();
+}

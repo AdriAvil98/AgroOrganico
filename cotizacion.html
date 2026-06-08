@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización - AGRO ORGANICO</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/favicon.svg" alt="Agro Organico Logo" class="logo-img">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="productos1.html">Productos</a></li>
+                    <li><a href="distribuidores.html">Distribuidores</a></li>
+                    <li><a href="#">Contactos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-cotizacion">
+        <div class="container hero-content text-center">
+            <h1>COTIZA CON NOSOTROS</h1>
+            <p>Por favor ingresa tus datos y los productos que te gustaría cotizar y nos contactaremos contigo lo más pronto posible.</p>
+        </div>
+    </section>
+
+    <section class="section form-section bg-light">
+        <div class="container">
+            <div class="form-wrapper">
+                <h2 class="form-title">SOLICITUD DE COTIZACIÓN</h2>
+                <form id="cotizacionForm" onsubmit="enviarCotizacion(event)">
+                    <div class="form-grid">
+                        
+                        <div class="input-group">
+                            <label for="nombres">Nombres <span class="required">*</span></label>
+                            <input type="text" id="nombres" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="apellidos">Apellidos <span class="required">*</span></label>
+                            <input type="text" id="apellidos" required>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label for="correo">Correo electrónico <span class="required">*</span></label>
+                            <input type="email" id="correo" required>
+                        </div>
+                        <div class="input-group full-width">
+                            <label for="tipoPersona">Tipo de persona <span class="required">*</span></label>
+                            <select id="tipoPersona" required>
+                                <option value="" disabled selected>- Seleccionar -</option>
+                                <option value="natural">Persona Natural</option>
+                                <option value="juridica">Persona Jurídica (Empresa)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" id="direccion">
+                        </div>
+                        <div class="input-group full-width">
+                            <label for="ciudad">Ciudad <span class="required">*</span></label>
+                            <select id="ciudad" required>
+                                <option value="" disabled selected>- Seleccionar -</option>
+                                <option value="quevedo">Quevedo</option>
+                                <option value="guayaquil">Guayaquil</option>
+                                <option value="quito">Quito</option>
+                                <option value="santo-domingo">Santo Domingo</option>
+                                <option value="machala">Machala</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="soluciones">Soluciones <span class="required">*</span></label>
+                            <select id="soluciones" required>
+                                <option value="" disabled selected>- Seleccionar -</option>
+                                <option value="triplexac">Triplexac</option>
+                                <option value="ferti-organ">Ferti-Organ</option>
+                                <option value="full-cacao">Full Cacao</option>
+                                <option value="full-banano">Full Banano</option>
+                                <option value="tx2">TX2</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="cantidad">Cantidad <span class="required">*</span></label>
+                            <input type="number" id="cantidad" min="1" required>
+                        </div>
+
+                        <div class="input-group full-width checkbox-group">
+                            <label class="check-container">
+                                <input type="checkbox" id="asesor">
+                                <span class="checkmark"></span>
+                                ¿Deseas que uno de nuestros asesores te contacte para mayor información?
+                            </label>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label for="comentarios">Comentarios</label>
+                            <textarea id="comentarios" rows="4"></textarea>
+                        </div>
+
+                        <div class="input-group full-width checkbox-group">
+                            <label class="check-container">
+                                <input type="checkbox" required>
+                                <span class="checkmark"></span>
+                                Acepto las Políticas de privacidad <span class="required">*</span>
+                            </label>
+                            <label class="check-container">
+                                <input type="checkbox" required>
+                                <span class="checkmark"></span>
+                                Acepto los Términos y Condiciones <span class="required">*</span>
+                            </label>
+                        </div>
+
+                        <div class="input-group full-width recaptcha-mockup">
+                            <div class="recaptcha-box">
+                                <label class="check-container recaptcha-label">
+                                    <input type="checkbox" required>
+                                    <span class="checkmark"></span>
+                                    No soy un robot
+                                </label>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/RecaptchaLogo.svg/1200px-RecaptchaLogo.svg.png" alt="reCAPTCHA" class="recaptcha-logo">
+                            </div>
+                            <small>This question is for testing whether or not you are a human visitor and to prevent automated spam submissions.</small>
+                        </div>
+
+                        <div class="input-group full-width text-center">
+                            <button type="submit" class="btn-green-solid submit-btn">ENVIAR</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">DESTACADOS</h2> 
+            <div class="grid-responsive">
+                <div class="prod-card">
+                    <img src="https://agroorganico.com.ec/wp-content/uploads/2021/04/triplexac-galon.jpg" alt="Triplexac">
+                    <h3>TRIPLEXAC</h3> <span class="designation">Herbicida Orgánico</span>
+                </div>
+                <div class="prod-card">
+                    <img src="https://agroorganico.com.ec/wp-content/uploads/2021/04/ferti-galon.jpg" alt="Ferti-Organ">
+                    <h3>FERTI-ORGAN</h3> <span class="designation">Fertilizante Foliar</span>
+                </div>
+                <div class="prod-card">
+                    <img src="https://agroorganico.com.ec/wp-content/uploads/2021/04/full-cacao.jpg" alt="Full Cacao">
+                    <h3>FULL CACAO</h3> <span class="designation">Nutrición Especializada</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+             <div class="footer-logo">
+                <a href="#"><img src="img/favicon.svg" alt="Agro Organico Logo" class="footer-logo-img"></a>
+            </div>
+            <div class="footer-column">
+                <h3>Inicio</h3>
+                <ul>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="productos1.html">Productos</a></li>
+                    <li><a href="distribuidores.html">Distribuidores</a></li>
+                    <li><a href="#">Contactos</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contáctanos</h3>
+                <p><strong>MATRIZ QUEVEDO</strong><br>Km. 2.5 Vía Valencia, frente a la entrada Cañalito.</p>
+                <p>0968308676</p>
+                <p>agro_organico@live.com</p>
+            </div>
+            <div class="footer-column">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/agroorganicoec2" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@agroorganicoec" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@agro_organico" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function enviarCotizacion(event) {
+            event.preventDefault(); // Evita que la página se recargue
+            
+            // Aquí puedes conectar tu lógica de envío (AJAX, Fetch API hacia tu servidor/correo)
+            
+            alert("¡Gracias por contactarnos! Tu solicitud de cotización ha sido enviada con éxito. Un asesor se comunicará contigo pronto.");
+            document.getElementById('cotizacionForm').reset(); // Limpia el formulario
+        }
+    </script>
+</body>
+</html>
