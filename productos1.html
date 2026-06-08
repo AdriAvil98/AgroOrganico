@@ -92,7 +92,7 @@
             <div class="logo"><a href="index.html"><img src="img/favicon.svg" alt="Logo" class="logo-img"></a></div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href="index.html">Inicio</a></li>
                     <li><a href="nosotros.html">Nosotros</a></li>
                     <li><a href="productos1.html">Productos</a></li>
                     <li><a href="distribuidores.html">Distribuidores</a></li>
@@ -103,7 +103,7 @@
     </header>
 
     <section class="hero-products-page">
-        <div class="container hero-content">
+        <div class="container hero-dist-content">
             <h1>NUESTROS PRODUCTOS</h1> 
             <p>Soluciones eficientes para tu cultivo</p> 
         </div>
@@ -183,8 +183,31 @@
             "DESBLOQUEADOR 1KG": { precio: 4.00, cat: "enmiendas", img: "desbloq-1kg.png", subtitle: "ENMIENDA ORGÁNICA", desc: "Acondicionador que corrige bloqueos nutricionales.", ventajas: ["Equilibra el pH.", "Aumenta retención de agua."], composicion: "Materia Orgánica (36.00%).", uso: "4.5 a 6.0 Kg/Ha." },
             "DESBLOQUEADOR 25KG": { precio: 10.00, cat: "enmiendas", img: "desbloqueador-.jpg", subtitle: "ENMIENDA ORGÁNICA", desc: "Libera nutrientes bloqueados en el suelo.", ventajas: ["Cicatrizante para podas.", "Raíces más fuertes."], composicion: "Silicio (14.00%), Azufre (7.00%).", uso: "Aplicación edáfica directa." },
             "NUTRI KIT": { precio: 20.00, cat: "foliar", img: "nutrikit.jpg", subtitle: "KIT BIOESTIMULANTE", desc: "Mayor velocidad de crecimiento.", ventajas: ["Reduce estrés post-poda.", "Penetración rápida por estomas."], composicion: "Algas Marinas (33.96%).", uso: "Vía foliar etapa productiva." },
-            "SUPER KIT": { precio: 28.00, cat: "foliar", img: "superkit.jpg", subtitle: "KIT NUTRICIONAL", desc: "Humato enriquecido con fósforo y potasio.", ventajas: ["Aumenta sistema inmunológico.", "Evita erosión del suelo."], composicion: "Potasio (14.74%), Fósforo (20.70%).", uso: "Vía Foliar: 1 lt. Edáfica: 2 lt." }
+            "SUPER KIT": { precio: 28.00, cat: "foliar", img: "superkit.jpg", subtitle: "KIT NUTRICIONAL", desc: "Humato enriquecido con fósforo y potasio.", ventajas: ["Aumenta sistema inmunológico.", "Evita erosión del suelo."], composicion: "Potasio (14.74%), Fósforo (20.70%).", uso: "Vía Foliar: 1 lt. Edáfica: 2 lt." },
+            "ALGAMID 500GR": { 
+                precio: 15.00, /* Cambia este precio por el real */
+                cat: "foliar", /* Lo asigne a foliar, luego lo puedes cambiar */
+                img: "empaque-algamid2.jpg", 
+                subtitle: "FERTILIZANTE INORGÁNICO", 
+                desc: "Fertilizante con alta concentración de potasio, ácidos algínicos y aminoácidos para aplicación foliar y edáfica.", 
+                ventajas: ["Aplicación Foliar y Edáfica.", "Aporta un 20% de Potasio.", "Enriquecido con 23% de Ácidos algínicos."], 
+                composicion: "Potasio (20.0%), Azufre (3.0%), Hierro (0.7%), Magnesio (1.5%), Calcio (1.5%), Boro (0.03%), Zinc (0.20%), Ácidos algínicos (23.0%), Aminoácidos totales (2.5%).", 
+                uso: "Dosis: 250 g/ha.",
+                pdf: "fichas_tecnicas/ALGAMID.pdf"
+            },
+            "ENKAPSULADOR 1KG": { 
+                precio: 18.00, /* Cambia este precio por el real */
+                cat: "edaficos", /* Lo asigne a edáficos por ser de aplicación al suelo */
+                img: "empaque-enkapsulador.jpg", 
+                subtitle: "HIDROGELES", 
+                desc: "Polímero retenedor de agua diseñado para optimizar la hidratación del suelo y asegurar el desarrollo en épocas de déficit hídrico.", 
+                ventajas: ["Aplicación Edáfica.", "Mantiene la humedad en la zona radicular.", "Reduce la frecuencia de riego."], 
+                composicion: "Polímero de acrilamida de potasio 27.00% p/p.", 
+                uso: "Dosis: 2-360 g/planta según el tamaño y tipo de cultivo.",
+                pdf: "fichas_tecnicas/ENKAPSULADOR DE AGUA.pdf"
+            }
         };
+        
 
         function render() {
             const grid = document.getElementById('grid-productos');
@@ -214,9 +237,10 @@
             document.getElementById('detail-img').src = `img/productos/${d.img}`;
             document.getElementById('detail-desc').innerText = d.desc;
             
-            // Ficha PDF dinámica
-            const baseFile = n.split(' ')[0];
-            document.getElementById('detail-pdf-btn').href = `fichas_tecnicas/${baseFile}.pdf`;
+           
+            // Ficha PDF dinámica mejorada
+            const pdfPath = d.pdf ? d.pdf : `fichas_tecnicas/${n.split(' ')[0]}.pdf`;
+            document.getElementById('detail-pdf-btn').href = pdfPath;
 
             document.getElementById('tab-ventajas').innerHTML = `<ul class="check-list">${d.ventajas.map(v => `<li>${v}</li>`).join('')}</ul>`;
             document.getElementById('tab-composicion').innerText = d.composicion;

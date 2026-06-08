@@ -488,7 +488,7 @@ body {
 /* --- Estilos para la Página de Productos1 --- */
 /* --- Hero Productos (Fondo del PDF) --- */
 .hero-products-page {
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/Users/Adrian Aviles/Desktop/Pagina Web AO/img/nuestros_productos.jpeg');
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/nuestros_productos.jpeg');
     height: 50vh;
     background-size: cover;
     background-position: center;
@@ -687,14 +687,15 @@ body {
 
 
 
-
 /* --- Hero Distribuidores --- */
 .hero-distribuidores {
-    background: linear-gradient(rgba(26, 74, 46, 0.8), rgba(26, 74, 46, 0.8)), 
-                url('/Users/Adrian Aviles/Desktop/Pagina Web AO/img/distribuidores.jpeg'); /* Fondo de bodega simulado */
-    height: 45vh;
+    /* Separamos el background-image para evitar conflictos de sintaxis */
+    background-image: linear-gradient(rgba(26, 74, 46, 0.4), rgba(26, 74, 46, 0.4)), url('img/distribuidores.jpeg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    
+    height: 45vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1495,7 +1496,7 @@ header {
    ESTILOS PARA PÁGINA DE DISTRIBUIDORES
 ========================================= */
 .hero-distribuidor-form {
-    background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(39, 174, 96, 0.75)), url('img/slide/slider2.jpg') center/cover;
+    background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(39, 174, 96, 0.75)), url('img/distribuidores.jpeg') center/cover;
     padding: 80px 20px;
     color: white;
     text-align: center;
@@ -1519,22 +1520,18 @@ header {
 ========================================= */
 
 .hero-trabaja {
-    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(211, 84, 0, 0.7)), url('img/slide/slider3.jpg') center/cover;
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(211, 84, 0, 0.7)), url('img/nosotros.jpeg') center/cover;
     padding: 80px 20px;
     color: white;
     text-align: center;
 }
 
 .hero-trabaja h1 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    font-weight: bold;
+    font-size: 3.5rem; font-weight: 800; margin-bottom: 15px;
 }
 
 .hero-trabaja p {
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin: 0 auto;
+    max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;
 }
 
 /* Ajuste específico para el input de archivo */
