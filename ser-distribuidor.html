@@ -7,6 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
@@ -40,30 +41,30 @@
         <div class="container">
             <div class="form-wrapper">
                 <h2 class="form-title">SOLICITUD PARA NUEVOS DISTRIBUIDORES</h2>
-                <form id="distribuidorForm" onsubmit="enviarSolicitudDistribuidor(event)">
+                <form id="distribuidorForm" action="procesar_distribuidor.php" method="POST">
                     <div class="form-grid">
                         
                         <div class="input-group full-width">
                             <label for="nombreNegocio">Nombre del Negocio / Razón Social <span class="required">*</span></label>
-                            <input type="text" id="nombreNegocio" placeholder="Ej. Agrícola El Sembrador" required>
+                            <input type="text" id="nombreNegocio" name="Nombre_Negocio" placeholder="Ej. Agrícola El Sembrador" required>
                         </div>
 
                         <div class="input-group">
                             <label for="ruc">RUC <span class="required">*</span></label>
-                            <input type="text" id="ruc" pattern="[0-9]{13}" maxlength="13" placeholder="Ej. 1234567890001" required>
+                            <input type="text" id="ruc" name="RUC" pattern="[0-9]{13}" maxlength="13" placeholder="Ej. 1234567890001" required>
                         </div>
                         <div class="input-group">
                             <label for="correo">Correo electrónico <span class="required">*</span></label>
-                            <input type="email" id="correo" placeholder="Ej. contacto@tunegocio.com" required>
+                            <input type="email" id="correo" name="Correo" placeholder="Ej. contacto@tunegocio.com" required>
                         </div>
 
                         <div class="input-group">
                             <label for="telefono">Teléfono de Contacto <span class="required">*</span></label>
-                            <input type="tel" id="telefono" placeholder="Ej. 09XXXXXXXX" required>
+                            <input type="tel" id="telefono" name="Telefono" placeholder="Ej. 09XXXXXXXX" required>
                         </div>
                         <div class="input-group">
                             <label for="ciudad">Ciudad <span class="required">*</span></label>
-                            <select id="ciudad" required>
+                            <select id="ciudad" name="Ciudad" required>
                                 <option value="" disabled selected>- Seleccionar -</option>
                                 <option value="quevedo">Quevedo</option>
                                 <option value="babahoyo">Babahoyo</option>
@@ -78,27 +79,27 @@
 
                         <div class="input-group full-width">
                             <label for="direccion">Dirección completa del Establecimiento <span class="required">*</span></label>
-                            <input type="text" id="direccion" placeholder="Ej. Av. Principal y Calle Secundaria" required>
+                            <input type="text" id="direccion" name="Direccion" placeholder="Ej. Av. Principal y Calle Secundaria" required>
                         </div>
 
                         <div class="input-group full-width">
                             <label for="lineaInteres">Línea de productos de mayor interés</label>
-                            <select id="lineaInteres">
-                                <option value="todas" selected>Todas las líneas (Herbicidas, Fungicidas, Abonos, Enmiendas)</option>
-                                <option value="herbicidas">Solo Herbicidas Orgánicos</option>
-                                <option value="nutricion">Nutrición y Fertilización Foliar</option>
-                                <option value="edaficos">Edáficos y Enmiendas de Suelo</option>
+                            <select id="lineaInteres" name="Linea_Interes">
+                                <option value="Todas las líneas" selected>Todas las líneas (Herbicidas, Fungicidas, Abonos, Enmiendas)</option>
+                                <option value="Solo Herbicidas Orgánicos">Solo Herbicidas Orgánicos</option>
+                                <option value="Nutrición y Fertilización Foliar">Nutrición y Fertilización Foliar</option>
+                                <option value="Edáficos y Enmiendas de Suelo">Edáficos y Enmiendas de Suelo</option>
                             </select>
                         </div>
 
                         <div class="input-group full-width">
                             <label for="comentarios">Cuéntanos un poco sobre tu negocio (Años en el mercado, principales cultivos de tu zona, etc.)</label>
-                            <textarea id="comentarios" rows="4" placeholder="Escribe aquí tus comentarios..."></textarea>
+                            <textarea id="comentarios" name="Comentarios" rows="4" placeholder="Escribe aquí tus comentarios..."></textarea>
                         </div>
 
                         <div class="input-group full-width checkbox-group">
                             <label class="check-container">
-                                <input type="checkbox" id="urgente">
+                                <input type="checkbox" id="urgente" name="Urgente" value="Si">
                                 <span class="checkmark"></span>
                                 Requiero una llamada telefónica urgente de un asesor comercial.
                             </label>
@@ -106,27 +107,19 @@
 
                         <div class="input-group full-width checkbox-group">
                             <label class="check-container">
-                                <input type="checkbox" required>
+                                <input type="checkbox" name="Acepta_Privacidad" value="Si" required>
                                 <span class="checkmark"></span>
                                 Acepto las Políticas de privacidad <span class="required">*</span>
                             </label>
                             <label class="check-container">
-                                <input type="checkbox" required>
+                                <input type="checkbox" name="Acepta_Terminos" value="Si" required>
                                 <span class="checkmark"></span>
                                 Acepto los Términos y Condiciones comerciales <span class="required">*</span>
                             </label>
                         </div>
 
-                        <div class="input-group full-width recaptcha-mockup">
-                            <div class="recaptcha-box">
-                                <label class="check-container recaptcha-label">
-                                    <input type="checkbox" required>
-                                    <span class="checkmark"></span>
-                                    No soy un robot
-                                </label>
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/RecaptchaLogo.svg/1200px-RecaptchaLogo.svg.png" alt="reCAPTCHA" class="recaptcha-logo">
-                            </div>
-                            <small>This question is for testing whether or not you are a human visitor and to prevent automated spam submissions.</small>
+                        <div class="input-group full-width text-center" style="display: flex; justify-content: center;">
+                        <div class="g-recaptcha" data-sitekey="6LdKuRotAAAAAF_ZSo2Aj2-_v9eo-dE78LG9weZA"></div>
                         </div>
 
                         <div class="input-group full-width text-center">
@@ -170,20 +163,5 @@
         </div>
     </footer>
 
-    <script>
-        function enviarSolicitudDistribuidor(event) {
-            event.preventDefault();
-            
-            // Validación básica del RUC ecuatoriano (longitud)
-            const rucInput = document.getElementById('ruc').value;
-            if (rucInput.length !== 13) {
-                alert("Por favor, ingresa un número de RUC válido de 13 dígitos.");
-                return;
-            }
-
-            alert("¡Solicitud recibida! Tus datos de distribuidor han sido registrados. Nuestro equipo comercial analizará la información y se contactará contigo a la brevedad.");
-            document.getElementById('distribuidorForm').reset();
-        }
-    </script>
 </body>
 </html>

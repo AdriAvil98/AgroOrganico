@@ -7,6 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
@@ -40,25 +41,25 @@
         <div class="container">
             <div class="form-wrapper">
                 <h2 class="form-title">SOLICITUD DE COTIZACIÓN</h2>
-                <form id="cotizacionForm" onsubmit="enviarCotizacion(event)">
+                <form id="cotizacionForm" action="procesar_cotizacion.php" method="POST">
                     <div class="form-grid">
                         
                         <div class="input-group">
                             <label for="nombres">Nombres <span class="required">*</span></label>
-                            <input type="text" id="nombres" required>
+                            <input type="text" id="nombres" name="Nombres" required>
                         </div>
                         <div class="input-group">
                             <label for="apellidos">Apellidos <span class="required">*</span></label>
-                            <input type="text" id="apellidos" required>
+                            <input type="text" id="apellidos" name="Apellidos" required>
                         </div>
 
                         <div class="input-group full-width">
                             <label for="correo">Correo electrónico <span class="required">*</span></label>
-                            <input type="email" id="correo" required>
+                            <input type="email" id="correo" name="Correo" required>
                         </div>
                         <div class="input-group full-width">
                             <label for="tipoPersona">Tipo de persona <span class="required">*</span></label>
-                            <select id="tipoPersona" required>
+                            <select id="tipoPersona" name="Tipo_Persona" required>
                                 <option value="" disabled selected>- Seleccionar -</option>
                                 <option value="natural">Persona Natural</option>
                                 <option value="juridica">Persona Jurídica (Empresa)</option>
@@ -67,11 +68,11 @@
 
                         <div class="input-group full-width">
                             <label for="direccion">Dirección</label>
-                            <input type="text" id="direccion">
+                            <input type="text" id="direccion" name="Direccion">
                         </div>
                         <div class="input-group full-width">
                             <label for="ciudad">Ciudad <span class="required">*</span></label>
-                            <select id="ciudad" required>
+                            <select id="ciudad" name="Ciudad" required>
                                 <option value="" disabled selected>- Seleccionar -</option>
                                 <option value="quevedo">Quevedo</option>
                                 <option value="guayaquil">Guayaquil</option>
@@ -84,7 +85,7 @@
 
                         <div class="input-group">
                             <label for="soluciones">Soluciones <span class="required">*</span></label>
-                            <select id="soluciones" required>
+                            <select id="soluciones" name="Solucion" required>
                                 <option value="" disabled selected>- Seleccionar -</option>
                                 <option value="triplexac">Triplexac</option>
                                 <option value="ferti-organ">Ferti-Organ</option>
@@ -95,12 +96,12 @@
                         </div>
                         <div class="input-group">
                             <label for="cantidad">Cantidad <span class="required">*</span></label>
-                            <input type="number" id="cantidad" min="1" required>
+                            <input type="number" id="cantidad" name="Cantidad" min="1" required>
                         </div>
 
                         <div class="input-group full-width checkbox-group">
                             <label class="check-container">
-                                <input type="checkbox" id="asesor">
+                                <input type="checkbox" id="asesor" name="Contactar_Asesor" value="Si">
                                 <span class="checkmark"></span>
                                 ¿Deseas que uno de nuestros asesores te contacte para mayor información?
                             </label>
@@ -108,32 +109,24 @@
 
                         <div class="input-group full-width">
                             <label for="comentarios">Comentarios</label>
-                            <textarea id="comentarios" rows="4"></textarea>
+                            <textarea id="comentarios" name="Comentarios" rows="4"></textarea>
                         </div>
 
                         <div class="input-group full-width checkbox-group">
                             <label class="check-container">
-                                <input type="checkbox" required>
+                                <input type="checkbox" name="Acepta_Privacidad" value="Si" required>
                                 <span class="checkmark"></span>
                                 Acepto las Políticas de privacidad <span class="required">*</span>
                             </label>
                             <label class="check-container">
-                                <input type="checkbox" required>
+                                <input type="checkbox" name="Acepta_Terminos" value="Si" required>
                                 <span class="checkmark"></span>
                                 Acepto los Términos y Condiciones <span class="required">*</span>
                             </label>
                         </div>
 
-                        <div class="input-group full-width recaptcha-mockup">
-                            <div class="recaptcha-box">
-                                <label class="check-container recaptcha-label">
-                                    <input type="checkbox" required>
-                                    <span class="checkmark"></span>
-                                    No soy un robot
-                                </label>
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/RecaptchaLogo.svg/1200px-RecaptchaLogo.svg.png" alt="reCAPTCHA" class="recaptcha-logo">
-                            </div>
-                            <small>This question is for testing whether or not you are a human visitor and to prevent automated spam submissions.</small>
+                        <div class="input-group full-width text-center" style="display: flex; justify-content: center;">
+                        <div class="g-recaptcha" data-sitekey="6LdKuRotAAAAAF_ZSo2Aj2-_v9eo-dE78LG9weZA"></div>
                         </div>
 
                         <div class="input-group full-width text-center">
@@ -160,7 +153,7 @@
                 </div>
                 <div class="prod-card">
                     <img src="https://agroorganico.com.ec/wp-content/uploads/2021/04/full-cacao.jpg" alt="Full Cacao">
-                    <h3>FULL CACAO</h3> <span class="designation">Nutrición Especializada</span>
+                    <h3>FULL CACAO</h3> <span class="designation">Nutrición Specialized</span>
                 </div>
             </div>
         </div>
@@ -197,15 +190,5 @@
         </div>
     </footer>
 
-    <script>
-        function enviarCotizacion(event) {
-            event.preventDefault(); // Evita que la página se recargue
-            
-            // Aquí puedes conectar tu lógica de envío (AJAX, Fetch API hacia tu servidor/correo)
-            
-            alert("¡Gracias por contactarnos! Tu solicitud de cotización ha sido enviada con éxito. Un asesor se comunicará contigo pronto.");
-            document.getElementById('cotizacionForm').reset(); // Limpia el formulario
-        }
-    </script>
 </body>
 </html>

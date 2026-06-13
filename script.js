@@ -51,6 +51,7 @@ function initProductsCarousel() {
     let index = 0;
     let maxIndex = 0;
     let step = 0;
+    let autoPlayInterval; // Variable para el temporizador automático
 
     function getCardsPerView() {
         if (window.matchMedia('(max-width: 768px)').matches) return 1;
@@ -104,16 +105,48 @@ function initProductsCarousel() {
         updateCarousel();
     }
 
+    // Funciones del AutoPlay
+    function autoSlide() {
+        if (index < maxIndex) {
+            index++;
+        } else {
+            index = 0; // Regresa al inicio si llega al final
+        }
+        updateCarousel();
+    }
+
+    function startAutoPlay() {
+        // Mueve el carrusel cada 3500 milisegundos (4.5 segundos)
+        autoPlayInterval = setInterval(autoSlide, 4500);
+    }
+
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+
+    // Controles de botones
     nextBtn.addEventListener('click', () => {
         index = Math.min(index + 1, maxIndex);
         updateCarousel();
+        // Reiniciar el temporizador para que no gire de golpe después del click
+        stopAutoPlay();
+        startAutoPlay();
     });
 
     prevBtn.addEventListener('click', () => {
         index = Math.max(index - 1, 0);
         updateCarousel();
+        stopAutoPlay();
+        startAutoPlay();
     });
+
+    // Pausar si el mouse está encima del carrusel
+    section.addEventListener('mouseenter', stopAutoPlay);
+    section.addEventListener('mouseleave', startAutoPlay);
 
     window.addEventListener('resize', refresh);
     refresh();
+    
+    // Iniciar el giro automático al cargar la página
+    startAutoPlay();
 }
