@@ -10,23 +10,41 @@
 </head>
 <body>
 
-    <header>
-        <div class="container nav-wrapper">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="img/favicon.svg" alt="Agro Organico Logo" class="logo-img">
-                </a>
-            </div>
+     <header>
+    <div class="container nav-wrapper" style="display: flex; align-items: center; justify-content: space-between;">
+        
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/favicon.svg" alt="Agro Organico Logo" class="logo-img">
+            </a>
+        </div>
+        
+        <div class="menu-and-icons" style="display: flex; align-items: center; gap: 30px;">
             <nav>
-                <ul class="nav-links">
+                <ul class="nav-links" style="display: flex; align-items: center; gap: 20px; list-style: none; margin: 0; padding: 0;">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="nosotros.html">Nosotros</a></li>
                     <li><a href="productos1.html">Productos</a></li>
-                    <li><a href="distribuidores.html" class="active-link">Distribuidores</a></li>
-                    <li><a href="#">Contactos</a></li>
+                    <li><a href="distribuidores.html">Distribuidores</a></li>
+                    <li><a href="contactos.html">Contactos</a></li>
                 </ul>
             </nav>
+
+            <div class="nav-icons" style="display: flex; gap: 15px; align-items: center; font-size: 1.2rem;">
+                <a href="https://www.facebook.com/agroorganicoec2" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@agroorganicoec" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@agro_organico" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-tiktok"></i></a>
+                
+                <span style="color: white;">|</span>
+                
+                <a href="productos1.html" id="cart-link" style="color: white; text-decoration: none; font-size: 1.2rem; position: relative; display: flex; align-items: center;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count" style="position: absolute; top: -10px; right: -12px; background: #e74c3c; color: white; border-radius: 50%; font-size: 0.7rem; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-weight: bold;">0</span>
+                </a>
+            </div>
         </div>
+        
+    </div>
     </header>
 
     <section class="hero-trabaja">

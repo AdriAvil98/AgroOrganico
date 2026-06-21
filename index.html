@@ -12,23 +12,40 @@
 <body>
 
     <header>
+    <div class="container nav-wrapper" style="display: flex; align-items: center; justify-content: space-between;">
         
-        <div class="container nav-wrapper">
-            <div class="logo">
+        <div class="logo">
             <a href="#">
                 <img src="img/favicon.svg" alt="Agro Organico Logo" class="logo-img">
             </a>
         </div>
+        
+        <div class="menu-and-icons" style="display: flex; align-items: center; gap: 30px;">
             <nav>
-                <ul class="nav-links">
+                <ul class="nav-links" style="display: flex; align-items: center; gap: 20px; list-style: none; margin: 0; padding: 0;">
                     <li><a href="#">Inicio</a></li>
                     <li><a href="nosotros.html">Nosotros</a></li>
                     <li><a href="productos1.html">Productos</a></li>
                     <li><a href="distribuidores.html">Distribuidores</a></li>
-                    <li><a href="#">Contactos</a></li>
+                    <li><a href="contactos.html">Contactos</a></li>
                 </ul>
             </nav>
+
+            <div class="nav-icons" style="display: flex; gap: 15px; align-items: center; font-size: 1.2rem;">
+                <a href="https://www.facebook.com/agroorganicoec2" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@agroorganicoec" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@agro_organico" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-tiktok"></i></a>
+                
+                <span style="color: white;">|</span>
+                
+                <a href="productos1.html" id="cart-link" style="color: white; text-decoration: none; font-size: 1.2rem; position: relative; display: flex; align-items: center;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" style="position: absolute; top: -10px; right: -12px; background: #e74c3c; color: white; border-radius: 50%; font-size: 0.7rem; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-weight: bold;">0</span>
+                </a>
+            </div>
         </div>
+        
+    </div>
     </header>
 
     <section class="hero-slider">
@@ -36,27 +53,27 @@
         <div class="slide">
             <img src="img/slide/slider1.jpg" alt="Triplexac">
             <div class="hero-text triplexac-slide">
-                <h1>Triplexac</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
-                <button class="btn-green-solid">Ver Producto</button>
+                <h1>TRIPLEXAC</h1>
+                <p>Su aplicación directa sobre las maleza, le permitirá realizar un control fitosanitario 100% orgánico.</p>
+                <button class="btn-green-solid" onclick="window.location.href='productos1.html?producto=TRIPLEXAC GALON'" style="cursor: pointer;">Ver Producto</button>
             </div>
         </div>
 
         <div class="slide">
             <img src="img/slide/slider2.jpg" alt="Slider 2">
             <div class="hero-text">
-                <h1>SUSTENTABILIDAD</h1>
-                <p>Cuidando la tierra de hoy para el mañana.</p>
-                <button class="btn-green-solid">Nosotros</button>
+                <h1>FERTIORGAN</h1>
+                <p>Su aplicación ayuda a mantener plantas mas vigorosas ante cualquier problema de plagas.</p>
+                <button class="btn-green-solid" onclick="window.location.href='productos1.html?producto=FERTI - ORGAN GALON'" style="cursor: pointer;">Ver Producto</button>
             </div>
         </div>
 
         <div class="slide">
-            <img src="img/slide/slider3.jpg" alt="Slider 3">
+            <img src="img/slide/slider3.png" alt="Slider 3">
             <div class="hero-text">
                 <h1>CALIDAD PREMIUM</h1>
                 <p>Resultados visibles en cada cosecha.</p>
-                <button class="btn-green-solid">Contactar</button>
+                <a href="contactos.html" class="btn-green-solid" style="text-decoration: none; display: inline-block;">Contactar</a>
             </div>
         </div>
         <div class="slide">
@@ -76,7 +93,7 @@
                 <div class="icon-top"><i class="fas fa-seedling"></i></div>
                 <div class="info-cat">
                     <h3>FERTILIZANTES</h3>
-                    <p>Talk with expert</p>
+                    
                 </div>
             </a>
 
@@ -84,7 +101,7 @@
                 <div class="icon-top"><i class="fas fa-bug-slash"></i></div>
                 <div class="info-cat">
                     <h3>FUNGICIDAS</h3>
-                    <p>Talk with expert</p>
+                    
                 </div>
             </a>
 
@@ -92,7 +109,7 @@
                  <div class="icon-top"><i class="fas fa-layer-group"></i></div>
                  <div class="info-cat">
                     <h3>ABONOS</h3>
-                    <p>Talk with expert</p>
+                    
                 </div>
             </a>
 
@@ -100,7 +117,7 @@
                 <div class="icon-top"><i class="fas fa-mountain"></i></div>
                 <div class="info-cat">
                     <h3>ENMIENDAS</h3>
-                    <p>Talk with expert</p>
+                    
                 </div>
             </a>
 
@@ -108,7 +125,7 @@
                 <div class="icon-top"><i class="fas fa-leaf"></i></div>
                 <div class="info-cat">
                     <h3>HERBICIDAS</h3>
-                    <p>Talk with expert</p>
+                   
                 </div>
             </a>
 
@@ -151,7 +168,7 @@
                 <article class="prod-card" onclick="window.location.href='productos1.html?producto=TRIPLEXAC GALON'" style="cursor: pointer;">
                     <span class="product-badge">Top ventas</span>
                     <div class="prod-image-stage">
-                        <img src="img/productos/triplexac-galon.jpg" alt="Triplexac galon">
+                        <img src="img/productos/galon-triplexac.png" alt="Triplexac galon">
                     </div>
                     <div class="prod-card-body">
                         <span class="designation">Fertilizante foliar</span>
@@ -163,7 +180,7 @@
                 <article class="prod-card" onclick="window.location.href='productos1.html?producto=FERTI - ORGAN GALON'" style="cursor: pointer;">
                     <span class="product-badge">Organico</span>
                     <div class="prod-image-stage">
-                        <img src="img/productos/ferti-galon.jpg" alt="Ferti-Organ galon">
+                        <img src="img/productos/ferti-galon.png" alt="Ferti-Organ galon">
                     </div>
                     <div class="prod-card-body">
                         <span class="designation">Proteccion vegetal</span>
@@ -175,7 +192,7 @@
                 <article class="prod-card" onclick="window.location.href='productos1.html?producto=FULL CACAO 25 KG'" style="cursor: pointer;">
                     <span class="product-badge">Cacao</span>
                     <div class="prod-image-stage">
-                        <img src="img/productos/full-cacao.jpg" alt="Full Cacao">
+                        <img src="img/productos/full-cacao.png" alt="Full Cacao">
                     </div>
                     <div class="prod-card-body">
                         <span class="designation">Nutricion especializada</span>
@@ -187,7 +204,7 @@
                 <article class="prod-card" onclick="window.location.href='productos1.html?producto=FULL BANANO 25KG'" style="cursor: pointer;">
                     <span class="product-badge">Banano</span>
                     <div class="prod-image-stage">
-                        <img src="img/productos/full-banano.jpg" alt="Full Banano">
+                        <img src="img/productos/full-banano.png" alt="Full Banano">
                     </div>
                     <div class="prod-card-body">
                         <span class="designation">Nutricion especializada</span>
@@ -199,7 +216,7 @@
                 <article class="prod-card" onclick="window.location.href='productos1.html?producto=NUTRI KIT'" style="cursor: pointer;">
                     <span class="product-badge">Bioestimulante</span>
                     <div class="prod-image-stage">
-                        <img src="img/productos/nutrikit.jpg" alt="Nutrikit">
+                        <img src="img/productos/nutrikit.png" alt="Nutrikit">
                     </div>
                     <div class="prod-card-body">
                         <span class="designation">Kit de nutricion</span>
@@ -223,7 +240,7 @@
                 <article class="prod-card" onclick="window.location.href='productos1.html?producto=SUPER KIT'" style="cursor: pointer;">
                     <span class="product-badge">Kit</span>
                     <div class="prod-image-stage">
-                        <img src="img/productos/superkit.jpg" alt="Superkit">
+                        <img src="img/productos/superkit.png" alt="Superkit">
                     </div>
                     <div class="prod-card-body">
                         <span class="designation">Programa completo</span>
@@ -247,7 +264,7 @@
                 <article class="prod-card" onclick="window.location.href='productos1.html?producto=ALGAMID 500GR'" style="cursor: pointer;">
                     <span class="product-badge">Nuevo</span>
                     <div class="prod-image-stage">
-                        <img src="img/productos/empaque-algamid2.jpg" alt="Algamid">
+                        <img src="img/productos/empaque-algamid2.png" alt="Algamid">
                     </div>
                     <div class="prod-card-body">
                         <span class="designation">Foliar y Edáfico</span>
@@ -259,7 +276,7 @@
                 <article class="prod-card" onclick="window.location.href='productos1.html?producto=ENKAPSULADOR 1KG'" style="cursor: pointer;">
                     <span class="product-badge">Nuevo</span>
                     <div class="prod-image-stage">
-                        <img src="img/productos/empaque-enkapsulador.jpg" alt="Enkapsulador">
+                        <img src="img/productos/empaque-enkapsulador.png" alt="Enkapsulador">
                     </div>
                     <div class="prod-card-body">
                         <span class="designation">Hidrogeles</span>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactos - AGRO ORGANICO</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* Estilos específicos para la página de Contactos */
+        
+        /* Banner Principal (Hero) */
+        .contact-hero {
+            /* Asegúrate de tener esta imagen en tu carpeta img o cámbiala por la ruta correcta */
+            background-image: linear-gradient(rgba(30, 74, 34, 0.6), rgba(30, 74, 34, 0.8)), url('img/chica-contacto.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+        .contact-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+        .contact-hero p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Sección de Tarjetas de Ubicación */
+        .locations-section {
+            padding: 80px 20px;
+            background-color: #ffffff;
+        }
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .location-card {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+        }
+        .location-card .icon-pin {
+            color: #7ed957; /* Verde claro del pin */
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .location-card h3 {
+            color: #000;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        .location-card p {
+            color: #333;
+            margin: 5px 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Sección Trabaja con Nosotros */
+        .work-section {
+            padding: 80px 20px;
+            background-color: #eef5ed; /* Fondo verde muy claro */
+            text-align: center;
+        }
+        .work-section h2 {
+            color: #265c28; /* Verde oscuro */
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        .work-section > p {
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .work-image-wrapper {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+        }
+        .work-image-wrapper img {
+            width: 100%;
+            display: block;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .btn-aplica {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            background: #eef5ed;
+            color: #265c28;
+            padding: 20px 40px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .btn-aplica:hover {
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        /* Ajuste responsivo para el botón */
+        @media (max-width: 768px) {
+            .btn-aplica {
+                position: static;
+                transform: none;
+                display: inline-block;
+                margin-top: -30px;
+                position: relative;
+                z-index: 2;
+            }
+            .btn-aplica:hover {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+
+     <header>
+    <div class="container nav-wrapper" style="display: flex; align-items: center; justify-content: space-between;">
+        
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/favicon.svg" alt="Agro Organico Logo" class="logo-img">
+            </a>
+        </div>
+        
+        <div class="menu-and-icons" style="display: flex; align-items: center; gap: 30px;">
+            <nav>
+                <ul class="nav-links" style="display: flex; align-items: center; gap: 20px; list-style: none; margin: 0; padding: 0;">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="productos1.html">Productos</a></li>
+                    <li><a href="distribuidores.html">Distribuidores</a></li>
+                    <li><a href="contactos.html">Contactos</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-icons" style="display: flex; gap: 15px; align-items: center; font-size: 1.2rem;">
+                <a href="https://www.facebook.com/agroorganicoec2" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@agroorganicoec" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@agro_organico" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-tiktok"></i></a>
+                
+                <span style="color: white;">|</span>
+                
+                <a href="productos1.html" id="cart-link" style="color: white; text-decoration: none; font-size: 1.2rem; position: relative; display: flex; align-items: center;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count" style="position: absolute; top: -10px; right: -12px; background: #e74c3c; color: white; border-radius: 50%; font-size: 0.7rem; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-weight: bold;">0</span>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+    </header>
+
+    <section class="contact-hero">
+        <div class="container">
+            <h1>CONTACTANOS</h1>
+            <p>¿Tienes dudas sobre nuestros productos o necesitas asesoría para tu cultivo? Nuestro equipo está listo para brindarte atención personalizada y ayudarte a encontrar la mejor solución para tus necesidades.</p>
+        </div>
+    </section>
+
+    <section class="locations-section">
+        <div class="locations-grid">
+            
+            <div class="location-card">
+                <i class="fas fa-map-marker-alt icon-pin"></i>
+                <h3>MATRIZ</h3>
+                <p>Km. 2.5 Vía Valencia,</p>
+                <p>frente a la entrada Cañalito.</p>
+                <p>PBX (593) 969542880</p>
+            </div>
+
+            <div class="location-card">
+                <i class="fas fa-map-marker-alt icon-pin"></i>
+                <h3>SAMBORONDON</h3>
+                <p>Km. 14,5 Vía Samborondón</p>
+                <p>Almax Plus</p>
+                <p>PBX (593) 968308676</p>
+            </div>
+
+            <div class="location-card">
+                <i class="fas fa-map-marker-alt icon-pin"></i>
+                <h3>JOYA DE LOS SACHAS</h3>
+                <p>Comunidad Valladolid</p>
+                <br>
+                <p>PBX (593) 980842422</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="work-section">
+        <div class="container">
+            <h2>TRABAJA CON NOSOTROS</h2>
+            <p>Forma parte de un equipo comprometido con la agricultura sostenible y el desarrollo del sector agrícola. Buscamos personas apasionadas, innovadoras y con ganas de crecer profesionalmente junto a nosotros.</p>
+            
+            <div class="work-image-wrapper">
+                <img src="img/agronomo-trabaja.jpg" alt="Trabaja con nosotros en Agro Organico">
+                <a href="trabaja-con-nosotros.html" class="btn-aplica">APLICA<br>AQUI</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer" style="background-color: #1e4a22; color: white; padding: 40px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+            
+            <div style="flex: 1; min-width: 200px;">
+                <img src="img/favicon.svg" alt="Agro Organico Logo" style="height: 80px; margin-bottom: 10px;">
+                <p style="font-style: italic; font-size: 0.9rem;">Sembrando vida en tus cultivos</p>
+            </div>
+
+            <div style="flex: 1; min-width: 150px; line-height: 1.8;">
+                <a href="nosotros.html" style="color: white; text-decoration: none; display: block;">Nosotros</a>
+                <a href="productos1.html" style="color: white; text-decoration: none; display: block;">Productos</a>
+                <a href="blog.html" style="color: white; text-decoration: none; display: block;">Blog</a>
+                <a href="distribuidores.html" style="color: white; text-decoration: none; display: block;">Distribuidores</a>
+                <a href="contactos.html" style="color: white; text-decoration: none; display: block;">Contactos</a>
+            </div>
+
+            <div style="flex: 1; min-width: 250px; line-height: 1.6; font-size: 0.9rem;">
+                <p><strong>MATRIZ QUEVEDO</strong><br>
+                Km. 2.5 Vía Valencia, frente a la<br>
+                entrada Cañalito.</p>
+                <p>0968308676</p>
+                <p>agro_organico@live.com</p>
+            </div>
+
+            <div style="flex: 0; min-width: 100px; display: flex; gap: 15px; font-size: 1.2rem;">
+                <a href="#" style="color: white;"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="color: white;"><i class="fab fa-youtube"></i></a>
+                <a href="#" style="color: white;"><i class="fab fa-tiktok"></i></a>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
