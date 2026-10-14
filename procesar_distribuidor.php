@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // A partir de aquí sigue el código que ya tienes (recoger datos, configurar correo, enviar, etc.)
     // Configuración del correo receptor
-    $destinatario = "agro_organico@live.com"; 
+    $destinatario = "adrian.avil199823@gmail.com"; 
     $asunto = "Nueva Solicitud de Distribuidor - Web";
 
     // Recoger y limpiar los datos del formulario
@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensaje .= "Comentarios:\n$comentarios\n";
 
     // Cabeceras del correo (Usa el correo creado en Hostinger)
-    $headers = "From: web@agroorganico.com.ec\r\n";
+    $headers = "From: aaviles@agroorganicoec.com\r\n";
     $headers .= "Reply-To: $correo\r\n";
     $headers .= "X-Mailer: PHP/" . phpversion();
 

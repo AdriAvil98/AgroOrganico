@@ -6,133 +6,130 @@
     <title>AGRO ORGANICO - Oficial</title>
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="stylesheet" href="styles.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <header>
-    <div class="container nav-wrapper" style="display: flex; align-items: center; justify-content: space-between;">
-        
-        <div class="logo">
-            <a href="#">
-                <img src="img/favicon.svg" alt="Agro Organico Logo" class="logo-img">
-            </a>
-        </div>
-        
-        <div class="menu-and-icons" style="display: flex; align-items: center; gap: 30px;">
-            <nav>
-                <ul class="nav-links" style="display: flex; align-items: center; gap: 20px; list-style: none; margin: 0; padding: 0;">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="productos1.html">Productos</a></li>
-                    <li><a href="distribuidores.html">Distribuidores</a></li>
-                    <li><a href="contactos.html">Contactos</a></li>
-                </ul>
-            </nav>
-
-            <div class="nav-icons" style="display: flex; gap: 15px; align-items: center; font-size: 1.2rem;">
-                <a href="https://www.facebook.com/agroorganicoec2" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.youtube.com/@agroorganicoec" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.tiktok.com/@agro_organico" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-tiktok"></i></a>
-                
-                <span style="color: white;">|</span>
-                
-                <a href="productos1.html" id="cart-link" style="color: white; text-decoration: none; font-size: 1.2rem; position: relative; display: flex; align-items: center;">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count" style="position: absolute; top: -10px; right: -12px; background: #e74c3c; color: white; border-radius: 50%; font-size: 0.7rem; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-weight: bold;">0</span>
+        <div class="container nav-wrapper">
+            
+            <div class="logo">
+                <a href="#">
+                    <img src="img/favicon.svg" alt="Agro Organico Logo" class="logo-img">
                 </a>
             </div>
+            
+            <div class="menu-and-icons">
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav>
+                    <ul class="nav-links" id="nav-links">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="productos1.html">Productos</a></li>
+                        <li><a href="distribuidores.html">Distribuidores</a></li>
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="contactos.html">Contactos</a></li>
+                    </ul>
+                </nav>
+
+                <div class="nav-icons">
+                    <a href="https://www.facebook.com/agroorganicoec2" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@agroorganicoec" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@agro_organico" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-tiktok"></i></a>
+                    
+                    <span style="color: white;">|</span>
+                    
+                    <a href="productos1.html" id="cart-link" style="color: white; text-decoration: none; position: relative; display: flex; align-items: center;">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+            
         </div>
-        
-    </div>
     </header>
 
     <section class="hero-slider">
-    <div class="slider-track">
-        <div class="slide">
-            <img src="img/slide/slider1.jpg" alt="Triplexac">
-            <div class="hero-text triplexac-slide">
-                <h1>TRIPLEXAC</h1>
-                <p>Su aplicación directa sobre las maleza, le permitirá realizar un control fitosanitario 100% orgánico.</p>
-                <button class="btn-green-solid" onclick="window.location.href='productos1.html?producto=TRIPLEXAC GALON'" style="cursor: pointer;">Ver Producto</button>
+        <div class="slider-track">
+            <div class="slide">
+                <img src="img/slide/slider1.jpg" alt="Triplexac">
+                <div class="hero-text triplexac-slide">
+                    <h1>TRIPLEXAC</h1>
+                    <p>Su aplicación directa sobre las maleza, le permitirá realizar un control fitosanitario 100% orgánico.</p>
+                    <button class="btn-green-solid" onclick="window.location.href='productos1.html?producto=TRIPLEXAC GALON'" style="cursor: pointer;">Ver Producto</button>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="img/slide/slider2.jpg" alt="Slider 2">
+                <div class="hero-text">
+                    <h1>FERTIORGAN</h1>
+                    <p>Su aplicación ayuda a mantener plantas más vigorosas ante cualquier problema de plagas.</p>
+                    <button class="btn-green-solid" onclick="window.location.href='productos1.html?producto=FERTI - ORGAN GALON'" style="cursor: pointer;">Ver Producto</button>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="img/slide/slider3.jpg" alt="Slider 3">
+                <div class="hero-text">
+                    <h1>CALIDAD PREMIUM</h1>
+                    <p>Resultados visibles en cada cosecha.</p>
+                    <a href="contactos.html" class="btn-green-solid" style="text-decoration: none; display: inline-block;">Contactar</a>
+                </div>
+            </div>
+
+           
+
+            <div class="slide">
+                <img src="img/slide/slider1.jpg" alt="Triplexac">
             </div>
         </div>
-
-        <div class="slide">
-            <img src="img/slide/slider2.jpg" alt="Slider 2">
-            <div class="hero-text">
-                <h1>FERTIORGAN</h1>
-                <p>Su aplicación ayuda a mantener plantas mas vigorosas ante cualquier problema de plagas.</p>
-                <button class="btn-green-solid" onclick="window.location.href='productos1.html?producto=FERTI - ORGAN GALON'" style="cursor: pointer;">Ver Producto</button>
-            </div>
-        </div>
-
-        <div class="slide">
-            <img src="img/slide/slider3.png" alt="Slider 3">
-            <div class="hero-text">
-                <h1>CALIDAD PREMIUM</h1>
-                <p>Resultados visibles en cada cosecha.</p>
-                <a href="contactos.html" class="btn-green-solid" style="text-decoration: none; display: inline-block;">Contactar</a>
-            </div>
-        </div>
-        <div class="slide">
-            <img src="img/slide/slider1.jpg" alt="Triplexac">
-            
-        </div>
-    </div>
-</section>
-
-
+    </section>
 
     <section class="section">
         <h2 class="section-title">CATEGORÍAS</h2>
         <div class="container grid-categories">
             
-            <a href="productos1.html?cat=foliar" class="card-cat" style="text-decoration: none; color: inherit; display: block; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+            <a href="productos1.html?cat=foliar" class="card-cat" style="text-decoration: none; color: inherit; display: block;">
                 <div class="icon-top"><i class="fas fa-seedling"></i></div>
                 <div class="info-cat">
                     <h3>FERTILIZANTES</h3>
-                    
                 </div>
             </a>
 
-            <a href="productos1.html?cat=fungicidas" class="card-cat" style="text-decoration: none; color: inherit; display: block; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+            <a href="productos1.html?cat=fungicidas" class="card-cat" style="text-decoration: none; color: inherit; display: block;">
                 <div class="icon-top"><i class="fas fa-bug-slash"></i></div>
                 <div class="info-cat">
                     <h3>FUNGICIDAS</h3>
-                    
                 </div>
             </a>
 
-            <a href="productos1.html?cat=edaficos" class="card-cat" style="text-decoration: none; color: inherit; display: block; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+            <a href="productos1.html?cat=edaficos" class="card-cat" style="text-decoration: none; color: inherit; display: block;">
                  <div class="icon-top"><i class="fas fa-layer-group"></i></div>
                  <div class="info-cat">
                     <h3>ABONOS</h3>
-                    
                 </div>
             </a>
 
-            <a href="productos1.html?cat=enmiendas" class="card-cat" style="text-decoration: none; color: inherit; display: block; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+            <a href="productos1.html?cat=enmiendas" class="card-cat" style="text-decoration: none; color: inherit; display: block;">
                 <div class="icon-top"><i class="fas fa-mountain"></i></div>
                 <div class="info-cat">
                     <h3>ENMIENDAS</h3>
-                    
                 </div>
             </a>
 
-            <a href="productos1.html?cat=herbicidas" class="card-cat" style="text-decoration: none; color: inherit; display: block; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+            <a href="productos1.html?cat=herbicidas" class="card-cat" style="text-decoration: none; color: inherit; display: block;">
                 <div class="icon-top"><i class="fas fa-leaf"></i></div>
                 <div class="info-cat">
                     <h3>HERBICIDAS</h3>
-                   
                 </div>
             </a>
 
         </div>
     </section>
-
-
 
     <section class="section bg-light">
         <div class="container split-view">
@@ -152,166 +149,174 @@
     </section>
 
     <section class="section featured-products-section" aria-labelledby="featured-products-title">
-    <div class="container featured-products-header">
-        <span class="section-kicker">Productos destacados</span>
-        <h2 class="section-title" id="featured-products-title">SOLUCIONES PARA CADA CULTIVO</h2>
-        <p>Formulas seleccionadas para nutricion, proteccion y recuperacion del suelo con enfoque organico.</p>
-    </div>
-
-    <div class="carousel-container" aria-label="Carrusel de productos destacados">
-        <button class="prev-btn carousel-btn" type="button" aria-label="Producto anterior">
-            <i class="fas fa-chevron-left" aria-hidden="true"></i>
-        </button>
-        
-        <div class="carousel-track-container">
-            <div class="carousel-track">
-                <article class="prod-card" onclick="window.location.href='productos1.html?producto=TRIPLEXAC GALON'" style="cursor: pointer;">
-                    <span class="product-badge">Top ventas</span>
-                    <div class="prod-image-stage">
-                        <img src="img/productos/galon-triplexac.png" alt="Triplexac galon">
-                    </div>
-                    <div class="prod-card-body">
-                        <span class="designation">Fertilizante foliar</span>
-                        <h3>TRIPLEXAC</h3>
-                        <p>Apoyo integral para el manejo sostenible de cultivos exigentes.</p>
-                    </div>
-                </article>
-
-                <article class="prod-card" onclick="window.location.href='productos1.html?producto=FERTI - ORGAN GALON'" style="cursor: pointer;">
-                    <span class="product-badge">Organico</span>
-                    <div class="prod-image-stage">
-                        <img src="img/productos/ferti-galon.png" alt="Ferti-Organ galon">
-                    </div>
-                    <div class="prod-card-body">
-                        <span class="designation">Proteccion vegetal</span>
-                        <h3>FERTI-ORGAN</h3>
-                        <p>Formula orientada a fortalecer la sanidad y calidad del cultivo.</p>
-                    </div>
-                </article>
-
-                <article class="prod-card" onclick="window.location.href='productos1.html?producto=FULL CACAO 25 KG'" style="cursor: pointer;">
-                    <span class="product-badge">Cacao</span>
-                    <div class="prod-image-stage">
-                        <img src="img/productos/full-cacao.png" alt="Full Cacao">
-                    </div>
-                    <div class="prod-card-body">
-                        <span class="designation">Nutricion especializada</span>
-                        <h3>FULL CACAO</h3>
-                        <p>Balance nutricional pensado para rendimiento y desarrollo del cacao.</p>
-                    </div>
-                </article>
-
-                <article class="prod-card" onclick="window.location.href='productos1.html?producto=FULL BANANO 25KG'" style="cursor: pointer;">
-                    <span class="product-badge">Banano</span>
-                    <div class="prod-image-stage">
-                        <img src="img/productos/full-banano.png" alt="Full Banano">
-                    </div>
-                    <div class="prod-card-body">
-                        <span class="designation">Nutricion especializada</span>
-                        <h3>FULL BANANO</h3>
-                        <p>Soporte nutricional para vigor, calidad y consistencia productiva.</p>
-                    </div>
-                </article>
-
-                <article class="prod-card" onclick="window.location.href='productos1.html?producto=NUTRI KIT'" style="cursor: pointer;">
-                    <span class="product-badge">Bioestimulante</span>
-                    <div class="prod-image-stage">
-                        <img src="img/productos/nutrikit.png" alt="Nutrikit">
-                    </div>
-                    <div class="prod-card-body">
-                        <span class="designation">Kit de nutricion</span>
-                        <h3>NUTRIKIT</h3>
-                        <p>Complemento practico para etapas donde el cultivo necesita impulso.</p>
-                    </div>
-                </article>
-
-                <article class="prod-card" onclick="window.location.href='productos1.html?producto=TX2 GALON'" style="cursor: pointer;">
-                    <span class="product-badge">Manejo</span>
-                    <div class="prod-image-stage">
-                        <img src="img/productos/tx2-galon.png" alt="TX2 galon">
-                    </div>
-                    <div class="prod-card-body">
-                        <span class="designation">Solucion agricola</span>
-                        <h3>TX2</h3>
-                        <p>Aliado para programas de manejo con enfoque eficiente y responsable.</p>
-                    </div>
-                </article>
-
-                <article class="prod-card" onclick="window.location.href='productos1.html?producto=SUPER KIT'" style="cursor: pointer;">
-                    <span class="product-badge">Kit</span>
-                    <div class="prod-image-stage">
-                        <img src="img/productos/superkit.png" alt="Superkit">
-                    </div>
-                    <div class="prod-card-body">
-                        <span class="designation">Programa completo</span>
-                        <h3>SUPERKIT</h3>
-                        <p>Seleccion de productos para acompanar el ciclo productivo.</p>
-                    </div>
-                </article>
-
-                <article class="prod-card" onclick="window.location.href='productos1.html?producto=DESBLOQUEADOR 25KG'" style="cursor: pointer;">
-                    <span class="product-badge">Suelo</span>
-                    <div class="prod-image-stage">
-                        <img src="img/productos/desbloq-1kg.png" alt="Desbloqueador de suelo">
-                    </div>
-                    <div class="prod-card-body">
-                        <span class="designation">Recuperacion de suelo</span>
-                        <h3>DESBLOQUEADOR</h3>
-                        <p>Apoyo para mejorar disponibilidad y aprovechamiento de nutrientes.</p>
-                    </div>
-                </article>
-
-                <article class="prod-card" onclick="window.location.href='productos1.html?producto=ALGAMID 500GR'" style="cursor: pointer;">
-                    <span class="product-badge">Nuevo</span>
-                    <div class="prod-image-stage">
-                        <img src="img/productos/empaque-algamid2.png" alt="Algamid">
-                    </div>
-                    <div class="prod-card-body">
-                        <span class="designation">Foliar y Edáfico</span>
-                        <h3>ALGAMID</h3>
-                        <p>Fertilizante con potasio, ácidos algínicos y aminoácidos para el máximo desarrollo.</p>
-                    </div>
-                </article>
-
-                <article class="prod-card" onclick="window.location.href='productos1.html?producto=ENKAPSULADOR 1KG'" style="cursor: pointer;">
-                    <span class="product-badge">Nuevo</span>
-                    <div class="prod-image-stage">
-                        <img src="img/productos/empaque-enkapsulador.png" alt="Enkapsulador">
-                    </div>
-                    <div class="prod-card-body">
-                        <span class="designation">Hidrogeles</span>
-                        <h3>ENKAPSULADOR</h3>
-                        <p>Retenedor de agua para el suelo, optimiza la hidratación en tus cultivos.</p>
-                    </div>
-                </article>
-            </div>
+        <div class="container featured-products-header">
+            <span class="section-kicker">Productos destacados</span>
+            <h2 class="section-title" id="featured-products-title">SOLUCIONES PARA CADA CULTIVO</h2>
+            <p>Formulas seleccionadas para nutricion, proteccion y recuperacion del suelo con enfoque organico.</p>
         </div>
 
-        <button class="next-btn carousel-btn" type="button" aria-label="Producto siguiente">
-            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-        </button>
-    </div>
-    <div class="carousel-dots" aria-label="Indicadores del carrusel"></div>
-</section>
+        <div class="carousel-container" aria-label="Carrusel de productos destacados">
+            <button class="prev-btn carousel-btn" type="button" aria-label="Producto anterior">
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            
+            <div class="carousel-track-container">
+                <div class="carousel-track">
+                    <article class="prod-card" onclick="window.location.href='productos1.html?producto=TRIPLEXAC GALON'" style="cursor: pointer;">
+                        <span class="product-badge">Top ventas</span>
+                        <div class="prod-image-stage">
+                            <img src="img/productos/galon-triplexac.png" alt="Triplexac galon">
+                        </div>
+                        <div class="prod-card-body">
+                            <span class="designation">Fertilizante foliar</span>
+                            <h3>TRIPLEXAC</h3>
+                            <p>Apoyo integral para el manejo sostenible de cultivos exigentes.</p>
+                        </div>
+                    </article>
 
+                    <article class="prod-card" onclick="window.location.href='productos1.html?producto=FERTI - ORGAN GALON'" style="cursor: pointer;">
+                        <span class="product-badge">Organico</span>
+                        <div class="prod-image-stage">
+                            <img src="img/productos/ferti-galon.png" alt="Ferti-Organ galon">
+                        </div>
+                        <div class="prod-card-body">
+                            <span class="designation">Proteccion vegetal</span>
+                            <h3>FERTI-ORGAN</h3>
+                            <p>Formula orientada a fortalecer la sanidad y calidad del cultivo.</p>
+                        </div>
+                    </article>
 
+                    <article class="prod-card" onclick="window.location.href='productos1.html?producto=FULL CACAO 25 KG'" style="cursor: pointer;">
+                        <span class="product-badge">Cacao</span>
+                        <div class="prod-image-stage">
+                            <img src="img/productos/full-cacao.png" alt="Full Cacao">
+                        </div>
+                        <div class="prod-card-body">
+                            <span class="designation">Nutricion especializada</span>
+                            <h3>FULL CACAO</h3>
+                            <p>Balance nutricional pensado para rendimiento y desarrollo del cacao.</p>
+                        </div>
+                    </article>
+
+                    <article class="prod-card" onclick="window.location.href='productos1.html?producto=FULL BANANO 25KG'" style="cursor: pointer;">
+                        <span class="product-badge">Banano</span>
+                        <div class="prod-image-stage">
+                            <img src="img/productos/full-banano.png" alt="Full Banano">
+                        </div>
+                        <div class="prod-card-body">
+                            <span class="designation">Nutricion especializada</span>
+                            <h3>FULL BANANO</h3>
+                            <p>Soporte nutricional para vigor, calidad y consistencia productiva.</p>
+                        </div>
+                    </article>
+
+                    <article class="prod-card" onclick="window.location.href='productos1.html?producto=NUTRI KIT'" style="cursor: pointer;">
+                        <span class="product-badge">Bioestimulante</span>
+                        <div class="prod-image-stage">
+                            <img src="img/productos/nutrikit.png" alt="Nutrikit">
+                        </div>
+                        <div class="prod-card-body">
+                            <span class="designation">Kit de nutricion</span>
+                            <h3>NUTRIKIT</h3>
+                            <p>Complemento practico para etapas donde el cultivo necesita impulso.</p>
+                        </div>
+                    </article>
+
+                    <article class="prod-card" onclick="window.location.href='productos1.html?producto=TX2 GALON'" style="cursor: pointer;">
+                        <span class="product-badge">Manejo</span>
+                        <div class="prod-image-stage">
+                            <img src="img/productos/tx2-galon.png" alt="TX2 galon">
+                        </div>
+                        <div class="prod-card-body">
+                            <span class="designation">Solucion agricola</span>
+                            <h3>TX2</h3>
+                            <p>Aliado para programas de manejo con enfoque eficiente y responsable.</p>
+                        </div>
+                    </article>
+
+                    <article class="prod-card" onclick="window.location.href='productos1.html?producto=SUPER KIT'" style="cursor: pointer;">
+                        <span class="product-badge">Kit</span>
+                        <div class="prod-image-stage">
+                            <img src="img/productos/superkit.png" alt="Superkit">
+                        </div>
+                        <div class="prod-card-body">
+                            <span class="designation">Programa completo</span>
+                            <h3>SUPERKIT</h3>
+                            <p>Seleccion de productos para acompanar el ciclo productivo.</p>
+                        </div>
+                    </article>
+
+                    <article class="prod-card" onclick="window.location.href='productos1.html?producto=DESBLOQUEADOR 25KG'" style="cursor: pointer;">
+                        <span class="product-badge">Suelo</span>
+                        <div class="prod-image-stage">
+                            <img src="img/productos/desbloq-1kg.png" alt="Desbloqueador de suelo">
+                        </div>
+                        <div class="prod-card-body">
+                            <span class="designation">Recuperacion de suelo</span>
+                            <h3>DESBLOQUEADOR</h3>
+                            <p>Apoyo para mejorar disponibilidad y aprovechamiento de nutrientes.</p>
+                        </div>
+                    </article>
+
+                    <article class="prod-card" onclick="window.location.href='productos1.html?producto=ALGAMID 500GR'" style="cursor: pointer;">
+                        <span class="product-badge">Nuevo</span>
+                        <div class="prod-image-stage">
+                            <img src="img/productos/empaque-algamid2.png" alt="Algamid">
+                        </div>
+                        <div class="prod-card-body">
+                            <span class="designation">Foliar y Edáfico</span>
+                            <h3>ALGAMID</h3>
+                            <p>Fertilizante con potasio, ácidos algínicos y aminoácidos para el máximo desarrollo.</p>
+                        </div>
+                    </article>
+
+                    <article class="prod-card" onclick="window.location.href='productos1.html?producto=ENKAPSULADOR 1KG'" style="cursor: pointer;">
+                        <span class="product-badge">Nuevo</span>
+                        <div class="prod-image-stage">
+                            <img src="img/productos/empaque-enkapsulador.png" alt="Enkapsulador">
+                        </div>
+                        <div class="prod-card-body">
+                            <span class="designation">Hidrogeles</span>
+                            <h3>ENKAPSULADOR</h3>
+                            <p>Retenedor de agua para el suelo, optimiza la hidratación en tus cultivos.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <button class="next-btn carousel-btn" type="button" aria-label="Producto siguiente">
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="carousel-dots" aria-label="Indicadores del carrusel"></div>
+    </section>
 
     <section class="cta-dark">
-    <div class="container grid-responsive">
-        <a href="cotizacion.html" class="cta-item" style="text-decoration: none; color: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-            <i class="fas fa-file-alt"></i>
-            <h3>REALIZAR COTIZACIÓN</h3>
-        </a>
-        <a href="ser-distribuidor.html" class="cta-item" style="text-decoration: none; color: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-            <i class="fas fa-handshake"></i>
-            <h3>SER DISTRIBUIDOR</h3>
-        </a>
-        <a href="trabaja-con-nosotros.html" class="cta-item" style="text-decoration: none; color: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-            <i class="fas fa-briefcase"></i>
-            <h3>TRABAJA CON NOSOTROS</h3>
-        </a>
-    </div>
-</section>
+        <div class="container grid-responsive">
+            <a href="https://wa.me/593968308676?text=Hola,%20me%20gustar%C3%ADa%20realizar%20una%20cotizaci%C3%B3n" target="_blank" class="cta-item" style="text-decoration: none; color: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <i class="fas fa-file-alt"></i>
+                <h3>REALIZAR COTIZACIÓN</h3>
+            </a>
+            <a href="ser-distribuidor.html" class="cta-item" style="text-decoration: none; color: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center;">
+                <i class="fas fa-handshake"></i>
+                <h3>SER DISTRIBUIDOR</h3>
+            </a>
+            <a href="trabaja-con-nosotros.html" class="cta-item" style="text-decoration: none; color: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center;">
+                <i class="fas fa-briefcase"></i>
+                <h3>TRABAJA CON NOSOTROS</h3>
+            </a>
+        </div>
+    </section>
+
+
+        <section class="cacao-banner">
+            <div class="container">
+                <a href="https://wa.me/593968308676?text=Hola,%20quiero%20consultar%20el%20precio%20actual%20del%20cacao" target="_blank" rel="noopener noreferrer">
+                    <img src="img/precio.jpeg" alt="Consulta el precio actual del cacao">
+                </a>
+            </div>
+        </section>
+        
 
     <section class="section">
         <h2 class="section-title">TESTIMONIOS</h2>
@@ -333,67 +338,80 @@
         <h2 class="section-title">VIDEOS DESTACADOS</h2>
         <div class="container grid-responsive">
             <div class="video-card">
-                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@agro_organico/video/7626514676683246869" data-video-id="7626514676683246869" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@agro_organico" href="https://www.tiktok.com/@agro_organico?refer=embed">@agro_organico</a> <p>¿Quieres controlar tus malezas sin afectar el suelo? 🌱 La mejor decisión es usar soluciones orgánicas que protejan tu suelo mientras trabajan por ti. 💪 Triplexac + TX2 El aliado perfecto para un control efectivo, seguro y sostenible. 📲 Solicítalo ahora: 0968308676 #AgroOrganico #ControlDeMalezas #AgriculturaSostenible #CuidadoDelSuelo #CultivosSanos #Triplexac #TX2 #ProduccionAgricola #CampoEficiente #malezas #herbicidaorganico #cacaoorganico #cacaotero #agricultor #herbicida #matamaleza</p> <a target="_blank" title="♬ sonido original  - Agro Organico" href="https://www.tiktok.com/music/sonido-original-Agro-Organico-7626514796759026453?refer=embed">♬ sonido original  - Agro Organico</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
-               
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@agro_organico/video/7626514676683246869" data-video-id="7626514676683246869" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@agro_organico" href="https://www.tiktok.com/@agro_organico?refer=embed">@agro_organico</a> <p>¿Quieres controlar tus malezas sin afectar el suelo? 🌱 La mejor decisión es usar soluciones orgánicas que protejan tu suelo mientras trabajan por ti. 💪 Triplexac + TX2 El aliado perfecto para un control efectivo, seguro y sostenible. 📲 Solicítalo ahora: 0968308676</p> <a target="_blank" title="♬ sonido original  - Agro Organico" href="https://www.tiktok.com/music/sonido-original-Agro-Organico-7626514796759026453?refer=embed">♬ sonido original  - Agro Organico</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
             </div>
             <div class="video-card">
-                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@agro_organico/video/7626500800885607700" data-video-id="7626500800885607700" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@agro_organico" href="https://www.tiktok.com/@agro_organico?refer=embed">@agro_organico</a> ¿Tu cultivo de banano está en riesgo por el moko? 🍌⚠️ 🌿 La solución está en actuar a tiempo: Con Triplexac eliminas las malezas de forma efectiva sin dañar tu cultivo ni el suelo. 💪 Protege tu banano, mejora su desarrollo y reduce riesgos. 📲 Recibe asesoría personalizada ahora: 0968308676 #Banano #Moko #ControlDeMalezas #AgriculturaSostenible #Triplexac #ProducciónAgrícola #AgroOrgánico #bananoorganico <a title="herbicidaorganico" target="_blank" href="https://www.tiktok.com/tag/herbicidaorganico?refer=embed">#herbicidaorganico</a> #malezas #herbicidas #herbicidasorganicos #bananero <a title="agricultor" target="_blank" href="https://www.tiktok.com/tag/agricultor?refer=embed">#agricultor</a> <a target="_blank" title="♬ sonido original  - Agro Organico" href="https://www.tiktok.com/music/sonido-original-Agro-Organico-7626500913536731912?refer=embed">♬ sonido original  - Agro Organico</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
-                
-                
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@agro_organico/video/7626500800885607700" data-video-id="7626500800885607700" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@agro_organico" href="https://www.tiktok.com/@agro_organico?refer=embed">@agro_organico</a> ¿Tu cultivo de banano está en riesgo por el moko? 🍌⚠️ 🌿 La solución está en actuar a tiempo: Con Triplexac eliminas las malezas de forma efectiva sin dañar tu cultivo ni el suelo. 💪 Protege tu banano, mejora su desarrollo y reduce riesgos. 📲 Recibe asesoría personalizada ahora: 0968308676 <a target="_blank" title="♬ sonido original  - Agro Organico" href="https://www.tiktok.com/music/sonido-original-Agro-Organico-7626500913536731912?refer=embed">♬ sonido original  - Agro Organico</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
             </div>
             <div class="video-card">
-                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@agro_organico/video/7623046352804662549" data-video-id="7623046352804662549" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@agro_organico" href="https://www.tiktok.com/@agro_organico?refer=embed">@agro_organico</a> 🌿 Protege tu cacao antes que la monilia ataque ✨ Con Ferti-Organ creas una capa protectora natural en la mazorca que bloquea la entrada de hongos y bacterias, fortaleciendo el fruto sin dañar tu cultivo. ✔ Menos enfermedad ✔ Menos pérdidas ✔ Mejor calidad de cacao ⏱ Aplícalo cada 21 días y mantén la protección activa. 📲 ¿Necesitas asesoría? Escríbenos al 0968308676 #Cacao #Monilia #CacaoEcuador #Agricultura #Agroecología #ControlDeEnfermedades #FertiOrgan #ProducciónAgrícola #Campo #Agricultores #CultivoDeCacao #AgroOrgánico #SanidadVegetal #MásProducción #MenosPérdidas #Agroorganico <a title="tipsagrícolas" target="_blank" href="https://www.tiktok.com/tag/tipsagr%C3%ADcolas?refer=embed">#TipsAgrícolas</a> <a target="_blank" title="♬ sonido original  - Agro Organico" href="https://www.tiktok.com/music/sonido-original-Agro-Organico-7623046443049224961?refer=embed">♬ sonido original  - Agro Organico</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
-               
-                
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@agro_organico/video/7623046352804662549" data-video-id="7623046352804662549" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@agro_organico" href="https://www.tiktok.com/@agro_organico?refer=embed">@agro_organico</a> 🌿 Protege tu cacao antes que la monilia ataque ✨ Con Ferti-Organ creas una capa protectora natural en la mazorca que bloquea la entrada de hongos y bacterias, fortaleciendo el fruto sin dañar tu cultivo. ✔ Menos enfermedad ✔ Menos pérdidas ✔ Mejor calidad de cacao ⏱ Aplícalo cada 21 días y mantén la protección activa. 📲 ¿Necesitas asesoría? Escríbenos al 0968308676 <a target="_blank" title="♬ sonido original  - Agro Organico" href="https://www.tiktok.com/music/sonido-original-Agro-Organico-7623046443049224961?refer=embed">♬ sonido original  - Agro Organico</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
             </div>
         </div>
     </section>
 
     <footer class="main-footer">
-    <div class="container footer-content">
-         <div class="footer-logo">
-            <a href="#">
-                <img src="img/favicon.svg" alt="Agro Organico Logo" class="footer-logo-img">
-             </a>
-    </div>
+        <div class="container footer-content">
+             <div class="footer-logo">
+                <a href="#">
+                    <img src="img/favicon.svg" alt="Agro Organico Logo" class="footer-logo-img">
+                 </a>
+            </div>
 
-        <div class="footer-column">
-            <h3>Inicio</h3>
-            <ul>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="productos1.html">Productos</a></li>
-                <li><a href="distribuidores.html">Distribuidores</a></li>
-                <li><a href="#">Contactos</a></li>
-            </ul>
-        </div>
+            <div class="footer-column">
+                <h3>Inicio</h3>
+                <ul>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="productos1.html">Productos</a></li>
+                    <li><a href="distribuidores.html">Distribuidores</a></li>
+                    <li><a href="#">Contactos</a></li>
+                </ul>
+            </div>
 
-        <div class="footer-column">
-            <h3>Contáctanos</h3>
-            <p><strong>MATRIZ QUEVEDO</strong><br>
-            Km. 2.5 Vía Valencia, frente a la entrada Cañalito.</p>
-            <p>0968308676</p>
-            <p>agro_organico@live.com</p>
-        </div>
+            <div class="footer-column">
+                <h3>Contáctanos</h3>
+                <p><strong>MATRIZ QUEVEDO</strong><br>
+                Km. 2.5 Vía Valencia, frente a la entrada Cañalito.</p>
+                <p>0968308676</p>
+                <p>agro_organico@live.com</p>
+            </div>
 
-        <div class="footer-column">
-            <h3>Síguenos</h3>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/agroorganicoec2" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.youtube.com/@agroorganicoec" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="https://www.tiktok.com/@agro_organico" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-tiktok"></i>
-                </a>
+            <div class="footer-column">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/agroorganicoec2" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@agroorganicoec" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@agro_organico" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
-<script>
-    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="hGDR813EPJUDEVnPVBJ04";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </footer>
+
+    <script>
+        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="hGDR813EPJUDEVnPVBJ04";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
     </script>
-<script src="script.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
 </body>
 </html>

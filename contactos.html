@@ -10,22 +10,32 @@
 
     <style>
         /* Estilos específicos para la página de Contactos */
-        
+        /* Ajuste de la palabra CONTACTANOS exclusivo para celulares */
+        @media (max-width: 768px) {
+            .contact-hero h1 {
+                font-size: 2.2rem; /* Tamaño reducido solo para móvil */
+                letter-spacing: 1px;
+                word-wrap: break-word; /* Evita que la palabra se salga de la pantalla */
+                padding: 0 15px;
+            }
+        }
         /* Banner Principal (Hero) */
         .contact-hero {
-            /* Asegúrate de tener esta imagen en tu carpeta img o cámbiala por la ruta correcta */
-            background-image: linear-gradient(rgba(30, 74, 34, 0.6), rgba(30, 74, 34, 0.8)), url('img/chica-contacto.jpg');
+           
+            background-image: linear-gradient(rgba(30, 74, 34, 0.6), rgba(30, 74, 34, 0.8)), url('img/contactos.jpeg');
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
-            padding: 120px 20px;
+            
         }
         .contact-hero h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2.2rem, 8vw, 3.5rem); /* Se adapta solo en celular, en PC se queda grande */
             margin-bottom: 20px;
             font-weight: 800;
             letter-spacing: 2px;
+            word-wrap: break-word; /* Evita que la palabra rompa la pantalla */
+            padding: 0 10px;
         }
         .contact-hero p {
             max-width: 800px;
@@ -142,7 +152,7 @@
 <body>
 
      <header>
-    <div class="container nav-wrapper" style="display: flex; align-items: center; justify-content: space-between;">
+    <div class="container nav-wrapper">
         
         <div class="logo">
             <a href="index.html">
@@ -150,18 +160,23 @@
             </a>
         </div>
         
-        <div class="menu-and-icons" style="display: flex; align-items: center; gap: 30px;">
+        <div class="menu-and-icons">
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+
             <nav>
-                <ul class="nav-links" style="display: flex; align-items: center; gap: 20px; list-style: none; margin: 0; padding: 0;">
+                <ul class="nav-links" id="nav-links">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="nosotros.html">Nosotros</a></li>
                     <li><a href="productos1.html">Productos</a></li>
                     <li><a href="distribuidores.html">Distribuidores</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
                     <li><a href="contactos.html">Contactos</a></li>
                 </ul>
             </nav>
 
-            <div class="nav-icons" style="display: flex; gap: 15px; align-items: center; font-size: 1.2rem;">
+            <div class="nav-icons">
                 <a href="https://www.facebook.com/agroorganicoec2" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.youtube.com/@agroorganicoec" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-youtube"></i></a>
                 <a href="https://www.tiktok.com/@agro_organico" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-tiktok"></i></a>
@@ -170,7 +185,7 @@
                 
                 <a href="productos1.html" id="cart-link" style="color: white; text-decoration: none; font-size: 1.2rem; position: relative; display: flex; align-items: center;">
                     <i class="fas fa-shopping-cart"></i>
-                    <span id="cart-count" style="position: absolute; top: -10px; right: -12px; background: #e74c3c; color: white; border-radius: 50%; font-size: 0.7rem; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-weight: bold;">0</span>
+                    <span id="cart-count">0</span>
                 </a>
             </div>
         </div>
@@ -180,7 +195,7 @@
 
     <section class="contact-hero">
         <div class="container">
-            <h1>CONTACTANOS</h1>
+            <h1>CONTÁCTANOS</h1>
             <p>¿Tienes dudas sobre nuestros productos o necesitas asesoría para tu cultivo? Nuestro equipo está listo para brindarte atención personalizada y ayudarte a encontrar la mejor solución para tus necesidades.</p>
         </div>
     </section>
@@ -190,7 +205,7 @@
             
             <div class="location-card">
                 <i class="fas fa-map-marker-alt icon-pin"></i>
-                <h3>MATRIZ</h3>
+                <h3>MATRIZ QUEVEDO</h3>
                 <p>Km. 2.5 Vía Valencia,</p>
                 <p>frente a la entrada Cañalito.</p>
                 <p>PBX (593) 969542880</p>
@@ -221,44 +236,54 @@
             <p>Forma parte de un equipo comprometido con la agricultura sostenible y el desarrollo del sector agrícola. Buscamos personas apasionadas, innovadoras y con ganas de crecer profesionalmente junto a nosotros.</p>
             
             <div class="work-image-wrapper">
-                <img src="img/agronomo-trabaja.jpg" alt="Trabaja con nosotros en Agro Organico">
+                <img src="img/IMAGEN-TRABAJA-AQUI.png" alt="Trabaja con nosotros en Agro Organico">
                 <a href="trabaja-con-nosotros.html" class="btn-aplica">APLICA<br>AQUI</a>
             </div>
         </div>
     </section>
 
-    <footer class="main-footer" style="background-color: #1e4a22; color: white; padding: 40px 0;">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
-            
-            <div style="flex: 1; min-width: 200px;">
-                <img src="img/favicon.svg" alt="Agro Organico Logo" style="height: 80px; margin-bottom: 10px;">
-                <p style="font-style: italic; font-size: 0.9rem;">Sembrando vida en tus cultivos</p>
-            </div>
+    <footer class="main-footer">
+    <div class="container footer-content">
+         <div class="footer-logo">
+            <a href="#">
+                <img src="img/favicon.svg" alt="Agro Organico Logo" class="footer-logo-img">
+             </a>
+    </div>
 
-            <div style="flex: 1; min-width: 150px; line-height: 1.8;">
-                <a href="nosotros.html" style="color: white; text-decoration: none; display: block;">Nosotros</a>
-                <a href="productos1.html" style="color: white; text-decoration: none; display: block;">Productos</a>
-                <a href="blog.html" style="color: white; text-decoration: none; display: block;">Blog</a>
-                <a href="distribuidores.html" style="color: white; text-decoration: none; display: block;">Distribuidores</a>
-                <a href="contactos.html" style="color: white; text-decoration: none; display: block;">Contactos</a>
-            </div>
-
-            <div style="flex: 1; min-width: 250px; line-height: 1.6; font-size: 0.9rem;">
-                <p><strong>MATRIZ QUEVEDO</strong><br>
-                Km. 2.5 Vía Valencia, frente a la<br>
-                entrada Cañalito.</p>
-                <p>0968308676</p>
-                <p>agro_organico@live.com</p>
-            </div>
-
-            <div style="flex: 0; min-width: 100px; display: flex; gap: 15px; font-size: 1.2rem;">
-                <a href="#" style="color: white;"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" style="color: white;"><i class="fab fa-youtube"></i></a>
-                <a href="#" style="color: white;"><i class="fab fa-tiktok"></i></a>
-            </div>
-
+        <div class="footer-column">
+            <h3>Inicio</h3>
+            <ul>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="productos1.html">Productos</a></li>
+                <li><a href="distribuidores.html">Distribuidores</a></li>
+                <li><a href="#">Contactos</a></li>
+            </ul>
         </div>
-    </footer>
+
+        <div class="footer-column">
+            <h3>Contáctanos</h3>
+            <p><strong>MATRIZ QUEVEDO</strong><br>
+            Km. 2.5 Vía Valencia, frente a la entrada Cañalito.</p>
+            <p>0968308676</p>
+            <p>agro_organico@live.com</p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Síguenos</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/agroorganicoec2" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.youtube.com/@agroorganicoec" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.tiktok.com/@agro_organico" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>

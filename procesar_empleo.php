@@ -1,7 +1,8 @@
 <?php
+// Comprobar si el formulario fue enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // --- VERIFICACIÓN DE RECAPTCHA ---
-    $recaptcha_secret = "6LdKuRotAAAAABNvF2ZzxIMN1RlnSk9IVLxTuI1G"; // Reemplaza esto con tu clave secreta de Google
+    $recaptcha_secret = "6LdKuRotAAAAABNvF2ZzxIMN1RlnSk9IVLxTuI1G"; // Tu clave secreta de Google
     $recaptcha_response = $_POST['g-recaptcha-response'];
 
     // Hacer la consulta a los servidores de Google
@@ -28,12 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     // --- FIN VERIFICACIÓN RECAPTCHA ---
 
-    // A partir de aquí sigue el código que ya tienes (recoger datos, configurar correo, enviar, etc.)
-    // Configuración del correo receptor
-    $destinatario = "agro_organico@live.com"; 
+    // Configuración del correo receptor (Igual al que te funciona)
+    $destinatario = "adrian.avil199823@gmail.com"; 
     $asunto = "Nueva Postulación de Empleo - Web";
 
-    // Recoger los datos de texto
+    // Recoger y limpiar los datos de texto
     $nombres = htmlspecialchars($_POST['Nombres']);
     $apellidos = htmlspecialchars($_POST['Apellidos']);
     $correo = htmlspecialchars($_POST['Correo']);
@@ -44,21 +44,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Construir el mensaje de texto
     $mensaje = "Has recibido una nueva postulación de empleo:\n\n";
+    $mensaje .= "--- Datos del Postulante ---\n";
     $mensaje .= "Nombres: $nombres $apellidos\n";
     $mensaje .= "Correo: $correo\n";
     $mensaje .= "Teléfono: $telefono\n";
     $mensaje .= "Ciudad de Residencia: $ciudad\n";
     $mensaje .= "Área de Interés: $area\n\n";
-    $mensaje .= "Presentación:\n$presentacion\n";
+    $mensaje .= "--- Presentación ---\n";
+    $mensaje .= "$presentacion\n";
 
     // Generar un límite (boundary) para separar el texto del archivo adjunto
     $boundary = md5(time());
 
-    // Cabeceras del correo (Importante: Usa el correo configurado en tu Hostinger)
-    $headers = "From: web@agroorganico.com.ec\r\n";
+    // Cabeceras del correo (Igual al que te funciona, agregando los MIME para el archivo)
+    $headers = "From: aaviles@agroorganicoec.com\r\n";
     $headers .= "Reply-To: $correo\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
+    $headers .= "X-Mailer: PHP/" . phpversion();
 
     // Cuerpo del correo (Texto)
     $body = "--$boundary\r\n";
@@ -73,18 +76,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $file_type = $_FILES['Curriculum_Vitae']['type'];
         $file_size = $_FILES['Curriculum_Vitae']['size'];
 
-        // Leer el archivo y codificarlo en Base64
+        // Leer el archivo y codificarlo en Base64 para adjuntarlo
         $handle = fopen($file_tmp, "r");
-        $content = fread($handle, $file_size);
-        fclose($handle);
-        $encoded_content = chunk_split(base64_encode($content));
+        if ($handle) {
+            $content = fread($handle, $file_size);
+            fclose($handle);
+            $encoded_content = chunk_split(base64_encode($content));
 
-        // Añadir el archivo al cuerpo del correo
-        $body .= "--$boundary\r\n";
-        $body .= "Content-Type: $file_type; name=\"$file_name\"\r\n";
-        $body .= "Content-Disposition: attachment; filename=\"$file_name\"\r\n";
-        $body .= "Content-Transfer-Encoding: base64\r\n\r\n";
-        $body .= $encoded_content . "\r\n";
+            // Añadir el archivo al cuerpo del correo
+            $body .= "--$boundary\r\n";
+            $body .= "Content-Type: $file_type; name=\"$file_name\"\r\n";
+            $body .= "Content-Disposition: attachment; filename=\"$file_name\"\r\n";
+            $body .= "Content-Transfer-Encoding: base64\r\n\r\n";
+            $body .= $encoded_content . "\r\n";
+        }
     }
 
     // Cerrar el límite del correo
@@ -97,6 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script>alert('Hubo un error al enviar la postulación. Inténtalo de nuevo.'); window.history.back();</script>";
     }
 } else {
-    header("Location: index.html");
+    // Redirigir si se accede al archivo directamente
+    header("Location: trabaja-con-nosotros.html");
 }
 ?>
